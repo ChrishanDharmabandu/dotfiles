@@ -16,6 +16,5 @@ else
   config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .dotfiles-backup/{}
 fi
 
-config checkout
+config checkout --force
 config config status.showUntrackedFiles no
-
