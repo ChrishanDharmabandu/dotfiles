@@ -1,4 +1,5 @@
 # Alias for zshrc and bashrc
 alias ls="exa"
+alias ll='ls -alF'
 alias n="nvim"
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
