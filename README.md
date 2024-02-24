@@ -34,5 +34,5 @@ config commit -m "Add .bashrc/.zshrc/config.fish file"
 config push
 ```
 # Acknowledgement
-Heavily inspired by [otfiles-in-a-git-repository](https://mjones44.medium.com/storing-dotfiles-in-a-git-repository-53f765c0005d)
+Heavily inspired by [dotfiles-in-a-git-repository](https://mjones44.medium.com/storing-dotfiles-in-a-git-repository-53f765c0005d)
 
