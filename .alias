@@ -1,6 +1,7 @@
 # Alias for zshrc and bashrc
 alias ls="exa"
-alias lsa="-alh --group-directories-first"
+alias lse="exa --icons -F -H --group-directories-first"
+alias lsea="exa --icons -aF -H --group-directories-first"
 alias ll='exa --icons -alF -H --group-directories-first --git -1'
 alias n="nvim"
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"

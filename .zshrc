@@ -35,3 +35,6 @@ source ~/.alias
 eval "$(starship init zsh)"
 #zoxide (cd repalcement)
 eval "$(zoxide init zsh)"
+
+#FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
