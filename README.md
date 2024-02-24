@@ -3,7 +3,7 @@ Store dotfiles to transport any linux setup
 
 # Setup
 ```
-curl -o config-init.sh https://raw.githubusercontent.com/yourusername/dotfiles/master/config-init.sh
+curl -o config-init.sh https://raw.githubusercontent.com/chrishandharmabandu/dotfiles/master/dotfiles-setup.sh
 ```
 
 # How it works
