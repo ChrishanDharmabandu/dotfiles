@@ -3,7 +3,7 @@ Store dotfiles to transport any linux setup
 
 # Setup
 ```
-curl -o .dotfiles-setup.sh https://raw.githubusercontent.com/chrishandharmabandu/dotfiles/master/dotfiles-setup.sh
+curl https://raw.githubusercontent.com/ChrishanDharmabandu/dotfiles/master/.dotfiles-setup.sh | bash
 ```
 
 # How it works
