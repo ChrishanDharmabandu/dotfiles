@@ -6,3 +6,5 @@ source ~/.alias
 
 #starship
 eval "$(starship init bash)"
+#zoxide (cd replacement)
+eval "$(zoxide init bash)"

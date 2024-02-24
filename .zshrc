@@ -33,3 +33,5 @@ source ~/.alias
 
 #starship
 eval "$(starship init zsh)"
+#zoxide (cd repalcement)
+eval "$(zoxide init zsh)"
