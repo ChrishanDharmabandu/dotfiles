@@ -23,7 +23,7 @@ alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 > The --work-tree=$HOME option sets the directory that the repository tracks to your home directory.
 
 ## Configure the repository to not show untracked files by default
-config config --local status.showUntrackedFiles no
+`config config --local status.showUntrackedFiles no`
 
 ## Tracking Files
 ```bash
