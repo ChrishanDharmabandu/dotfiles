@@ -4,8 +4,8 @@ SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 # Use modern completion system
-autoload -Uz compinit
-compinit
+autoload -U compinit; compinit
+source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -30,6 +30,9 @@ set -o vi
 
 # Sourcing
 source ~/.alias
+source ~/.zsh/
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 #starship
 eval "$(starship init zsh)"
