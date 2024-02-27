@@ -36,3 +36,9 @@ git clone "${fast_syntax_highlighting_url}" "${zsh_plug_dir}/fast-syntax-highlig
 git clone "${fzf_tab_url}" "${zsh_plug_dir}/fzf-tab"
 git clone "${zsh_autosuggestions_url}" "${zsh_plug_dir}/zsh-autosuggestions"
 
+# Install Nerd Font
+bash -c  "$(curl -fsSL https://raw.githubusercontent.com/officialrajdeepsingh/nerd-fonts-installer/main/install.sh)"
+
+# Install FZF properly
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
