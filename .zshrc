@@ -28,6 +28,9 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 # Enable Vi mode
 set -o vi
 
+#set editor
+export EDITOR=nvim
+
 # Sourcing
 source ~/.alias
 source ~/.zsh/
@@ -41,3 +44,7 @@ eval "$(zoxide init zsh)"
 
 #FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#kitty terminal
+export TERMINAL=kitty
+
