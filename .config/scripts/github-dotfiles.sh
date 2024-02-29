@@ -1,4 +1,7 @@
-#!bin/bash
+#!/bin/bash
+# source alias
+shopt -s expand_aliases
+source "$HOME/.alias"
 
 # Check the current remote URL
 config remote -v
