@@ -10,6 +10,9 @@ case $1 in
     gnome)
         exec gnome-shell
         ;;
+    qtile)
+        exec qtile
+        ;;
     *)
         echo "Invalid choice. Exiting."
         ;;

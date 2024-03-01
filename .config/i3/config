@@ -54,7 +54,8 @@ tiling_drag modifier titlebar
 # start a terminal
 bindsym $mod+Return exec kitty
 # start a firefox
-bindsym $mod+b exec firefox
+bindsym $mod+b exec firefox --class=Firefox-no-title
+
 
 # kill focused window
 bindsym $mod+q kill
@@ -64,6 +65,10 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # Polybar
 exec --no-startup-id pkill -x polybar; sleep 1 && polybar --reload
+
+# new windows have a border
+new_window pixel 3
+
 
 # Rofi extras
 bindsym $mod+p exec --no-startup-id ~/.config/rofi/launchers/type-2/launcher.sh
@@ -206,9 +211,8 @@ bindsym $mod+r mode "resize"
 #         status_command i3bar
 # }
 
-# Launch terminal on login
-exec_once kitty
-
-# Launch browser on login
-exec_once firefox
-
+# Color settings
+client.focused #00C1FF #00C1FF #000088 #00C1FF
+client.focused_inactive #2C2C2C #2C2C2C #ffffff #2C2C2C
+client.unfocused #2C2C2C #2C2C2C #ffffff #2C2C2C
+client.urgent #00C1FF #00C1FF #000088 #00C1FF
