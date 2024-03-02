@@ -8,4 +8,6 @@ alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias configa="config add"
 alias configc="config commit -m"
 alias configp="config push"
+alias package-list="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 250"
+alias add-package="echo $1 >> ~/.config/scripts/packages-list.txt"
 
