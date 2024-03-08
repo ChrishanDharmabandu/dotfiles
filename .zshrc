@@ -47,6 +47,7 @@ eval "$(zoxide init zsh)"
 
 #kitty terminal
 export TERMINAL=kitty
+export BROWSER=firefox
 
 #export path
 export PATH="/home/squishy/.local/share/gem/ruby/3.0.0/bin:$PATH"
