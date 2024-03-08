@@ -48,3 +48,6 @@ eval "$(zoxide init zsh)"
 #kitty terminal
 export TERMINAL=kitty
 
+#export path
+export PATH="/home/squishy/.local/share/gem/ruby/3.0.0/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
