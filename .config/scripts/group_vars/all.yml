@@ -1,0 +1,276 @@
+---
+#
+# User configuration
+#
+user:
+  name: Chrishan
+  full_name: "Chrishan Dharmabandu"
+  primary_group: users
+  additional_groups: docker,wheel
+  # /bin/bash or /bin/zsh
+  shell: /bin/zsh
+  # See country list by running `reflector --list-countries`
+  country: "Australia"
+
+git:
+  name: "{{ user['full_name'] }}"
+  # obfuscated a little so bots won't find it
+  email_b64: "bG9nYW5AbG9nYW5tYXJjaGlvbmUuY29t"
+  # can be "cache", "store", "osxkeychain", or "manager"
+  helper: "cache"
+  # can be "true" or "false"
+  rebase: "true"
+  # see this https://git-scm.com/docs/git-diff#Documentation/git-diff.txt---color-movedltmodegt
+  colorMoved: "zebra"
+
+#
+# Miscellaneous
+#
+
+# desktop environment to install
+# "kde" or "gnome"
+desktop: gnome
+
+# only AMD or Intel CPUs are currently supported
+# true or false
+install_microcode: true
+
+# whether to enable printing/scanning or not
+# true or false
+enable_printing: true
+
+# whether to detect the scanner or not
+# true or false
+detect_scanner: false
+
+# whether to enable bluetooth or not
+# true or false
+enable_bluetooth: true
+
+# whether to install laptop tools
+# true or false
+laptop: false
+
+# how many parallel downloads to run at once
+pacman:
+  parallel_downloads: 10
+
+# set aur helper
+# supported helpers are here https://github.com/kewlfft/ansible-aur#kewlfftauraur-module
+aur_helper: yay
+
+#
+# Services
+#
+
+# if not using LVM, disable it
+# true or false
+disable_lvm: true
+
+# if not using systemd homed, disable it
+# true or false
+disable_systemd_homed: true
+
+#
+# Packages
+#
+packages:
+- alsa-utils
+- alsa-plugins
+- alsa-firmware
+- bash
+- bash-completion
+- cadaver
+- chromium
+- code
+- curl
+- docker
+- docker-compose
+- e2fsprogs
+- firefox
+- flatpak
+- fwupd
+- fzf
+- git
+- gnupg
+- gparted
+- gvfs
+- gvfs-smb
+- htop
+- inkscape
+- inetutils
+- iotop
+- iperf3
+- iputils
+- jq
+- keepassxc
+- kubectl
+- linux-firmware
+- man
+- man-db
+- man-pages
+- minicom
+- ncdu
+- neofetch
+- networkmanager
+- nextcloud-client
+- nextcloud-client-cloudproviders
+- ntfs-3g
+- openresolv
+- openssh
+- openvpn
+- picocom
+- pipewire
+- pipewire-alsa
+- pkgstats
+- qbittorrent
+- rsync
+- screen
+- solaar
+- sudo
+- texmaker
+- texlive-latexextra
+- thunar
+- tree
+- usbutils
+- unrar-free
+- unzip
+- vi
+- vim
+- vlc
+- wget
+- wireguard-tools
+- wireplumber
+- wpa_supplicant
+- xdg-desktop-portal-gtk
+- xfsprogs
+- youtube-dl
+- zip
+- zsh
+- zsh-completions
+- zstd
+- neovim
+- tree-sitter
+- xclip
+- github-cli
+- less
+- libpipeline
+- man-db
+- python-colorama
+- python-shtab
+- python-termcolor
+- tldr
+- reflector
+- i3lock
+- i3-wm
+- numlockx
+- libxdg-basedir
+- ranger
+- rofi
+- ffmpeg4.4
+- mpv
+- mujs
+- uchardet
+- vlc
+- gtk2
+- lxappearance
+- arc-gtk-theme
+- zsh
+- arandr
+- xorg-xrandr
+- jsoncpp
+- libmpdclient
+- os-prober
+- tmux
+- btop
+- pcmanfm
+- mpd
+- rust
+- chromium
+- qutebrowser
+- qtile
+- pipewire
+- dbus
+- xorg-xinput
+- bluez
+- bluez-libs
+- gtk3
+- libnm
+- bluez-utils
+- expac
+- htop-vim
+
+aur_packages:
+  - 7-zip-bin
+  - etcher-bin
+  - joplin-appimage
+  - ledger-live-bin
+  - ledger-udev
+  - makemkv
+  - mullvad-vpn-bin
+  - rpi-imager-bin
+  - svgo
+  - variety-git
+  - ventoy-bin
+  - qtile-extras
+
+flatpaks:
+  - com.discordapp.Discord
+  - com.github.tchx84.Flatseal
+  - com.slack.Slack
+  - com.spotify.Client
+  - fr.handbrake.ghb
+  - info.beyondallreason.bar
+  - org.bunkus.mkvtoolnix-gui
+  - org.freedesktop.Platform.ffmpeg-full/x86_64/23.08
+  - org.freedesktop.Platform.openh264/x86_64/2.3.0
+  - io.github.flattool.Warehouse
+  - org.gtk.Gtk3theme.Adwaita-dark
+  - org.gtk.Gtk3theme.Yaru-dark
+  - org.gtk.Gtk3theme.Yaru-light
+  - org.libreoffice.LibreOffice
+  - org.mozilla.Thunderbird
+  - org.remmina.Remmina
+  # See other themes here
+  # flatpak remote-ls flathub | grep org.gtk.Gtk3theme
+
+base_fonts:
+  - adobe-source-code-pro-fonts
+  - adobe-source-sans-pro-fonts
+  - adobe-source-serif-pro-fonts
+  - gnu-free-fonts
+  - noto-fonts
+  - noto-fonts-cjk
+  - noto-fonts-emoji
+  - powerline-fonts
+  - ttf-anonymous-pro
+  - ttf-dejavu
+  - otf-cascadia-code
+  - ttf-cascadia-code
+  - ttf-hack
+
+vscode_extension_list:
+  - ms-python.python
+  - ms-azuretools.vscode-docker
+  - redhat.vscode-yaml
+  - redhat.ansible
+  - vscode-icons-team.vscode-icons
+  - HashiCorp.HCL
+  - HashiCorp.terraform
+  - golang.go
+  - arcticicestudio.nord-visual-studio-code
+  - dracula-theme.theme-dracula
+  - donjayamanne.githistory
+  - eamodio.gitlens
+  - mhutchie.git-graph
+
+printing_scanning_packages:
+  - cups
+  - cups-pdf
+  - sane
+  - sane-airscan
+  - simple-scan
+
+printing_scanning_aur_packages:
+  - brlaser-git
+  - brscan4
