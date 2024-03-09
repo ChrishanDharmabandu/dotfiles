@@ -161,8 +161,9 @@ require('lazy').setup({
   --   end,
   -- },
   {
-    --transparent plugin
-    'tribela/vim-transparent',
+    --markdown/ascii
+    'godlygeek/tabular',
+    'preservim/vim-markdown'
   },
   {
     'Mofiqul/dracula.nvim',
@@ -239,7 +240,9 @@ require('lazy').setup({
   {'mbbill/undotree'},
   {
     'stevearc/oil.nvim',
-    opts = {},
+      opts = {
+    icons = false,  -- Add this line to toggle off icons
+  },
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
