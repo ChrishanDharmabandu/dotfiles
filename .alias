@@ -13,5 +13,4 @@ alias add-package="echo $1 >> ~/.config/scripts/packages-list.txt"
 alias add-package-aur="echo $1 >> ~/.config/scripts/packages-list-aur.txt"
 alias gdrivem="nohup rclone mount cddrive: ~/Documents/gdrive &" 
 alias gdriveu="fusermount -u ~/Documents/gdrive" 
-alias gitnotes="git add . && git commit -m "updated notes" && git push"
-
+alias gitnotes='git add . && git commit -m "updated notes" && git push'
