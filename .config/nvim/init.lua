@@ -160,17 +160,34 @@ require('lazy').setup({
   --     vim.cmd.colorscheme 'onedark'
   --   end,
   -- },
+  -- {
+  --   'Mofiqul/dracula.nvim',
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'dracula'
+  --   end,
+  -- },
+  -- {
+  -- "zootedb0t/citruszest.nvim",
+  -- lazy = false,
+  -- priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'citruszest'
+  --   end,
+  -- },
+  {
+  "folke/tokyonight.nvim",
+  lazy = false,
+  priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'tokyonight'
+    end,
+  opts = {},
+  },
   {
     --markdown/ascii
     'godlygeek/tabular',
-    'preservim/vim-markdown'
-  },
-  {
-    'Mofiqul/dracula.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'dracula'
-    end,
+    'habamax/vim-asciidoctor'
   },
   {
     -- Set lualine as statusline
