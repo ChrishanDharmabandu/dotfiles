@@ -75,130 +75,136 @@ disable_systemd_homed: true
 # Packages
 #
 packages:
-- alsa-utils
-- alsa-plugins
-- alsa-firmware
-- bash
-- bash-completion
-- cadaver
-- chromium
-- code
-- curl
-- docker
-- docker-compose
-- e2fsprogs
-- firefox
-- flatpak
-- fwupd
-- fzf
-- git
-- gnupg
-- gparted
-- gvfs
-- gvfs-smb
-- htop
-- inkscape
-- inetutils
-- iotop
-- iperf3
-- iputils
-- jq
-- keepassxc
-- kubectl
-- linux-firmware
-- man
-- man-db
-- man-pages
-- minicom
-- ncdu
-- neofetch
-- networkmanager
-- nextcloud-client
-- nextcloud-client-cloudproviders
-- ntfs-3g
-- openresolv
-- openssh
-- openvpn
-- picocom
-- pipewire
-- pipewire-alsa
-- pkgstats
-- qbittorrent
-- rsync
-- screen
-- solaar
-- sudo
-- texmaker
-- texlive-latexextra
-- thunar
-- tree
-- usbutils
-- unrar-free
-- unzip
-- vi
-- vim
-- vlc
-- wget
-- wireguard-tools
-- wireplumber
-- wpa_supplicant
-- xdg-desktop-portal-gtk
-- xfsprogs
-- youtube-dl
-- zip
-- zsh
-- zsh-completions
-- zstd
-- neovim
-- tree-sitter
-- xclip
-- github-cli
-- less
-- libpipeline
-- man-db
-- python-colorama
-- python-shtab
-- python-termcolor
-- tldr
-- reflector
-- i3lock
-- i3-wm
-- numlockx
-- libxdg-basedir
-- ranger
-- rofi
-- ffmpeg4.4
-- mpv
-- mujs
-- uchardet
-- vlc
-- gtk2
-- lxappearance
-- arc-gtk-theme
-- zsh
-- arandr
-- xorg-xrandr
-- jsoncpp
-- libmpdclient
-- os-prober
-- tmux
-- btop
-- pcmanfm
-- mpd
-- rust
-- chromium
-- qutebrowser
-- qtile
-- pipewire
-- dbus
-- xorg-xinput
-- bluez
-- bluez-libs
-- gtk3
-- libnm
-- bluez-utils
-- expac
-- htop-vim
+  - alsa-utils
+  - alsa-plugins
+  - alsa-firmware
+  - bash
+  - bash-completion
+  - cadaver
+  - chromium
+  - code
+  - curl
+  - docker
+  - docker-compose
+  - e2fsprogs
+  - firefox
+  - flatpak
+  - fwupd
+  - fzf
+  - git
+  - gnupg
+  - gparted
+  - gvfs
+  - gvfs-smb
+  - htop
+  - inkscape
+  - inetutils
+  - iotop
+  - iperf3
+  - iputils
+  - jq
+  - keepassxc
+  - kubectl
+  - linux-firmware
+  - man
+  - man-db
+  - man-pages
+  - minicom
+  - ncdu
+  - neofetch
+  - networkmanager
+  - nextcloud-client
+  - nextcloud-client-cloudproviders
+  - ntfs-3g
+  - openresolv
+  - openssh
+  - openvpn
+  - picocom
+  - pipewire
+  - pipewire-alsa
+  - pkgstats
+  - qbittorrent
+  - rsync
+  - screen
+  - solaar
+  - sudo
+  - texmaker
+  - texlive-latexextra
+  - thunar
+  - tree
+  - usbutils
+  - unrar-free
+  - unzip
+  - vi
+  - vim
+  - vlc
+  - wget
+  - wireguard-tools
+  - wireplumber
+  - wpa_supplicant
+  - xdg-desktop-portal-gtk
+  - xfsprogs
+  - youtube-dl
+  - zip
+  - zsh
+  - zsh-completions
+  - zstd
+  - neovim
+  - tree-sitter
+  - xclip
+  - github-cli
+  - less
+  - libpipeline
+  - man-db
+  - python-colorama
+  - python-shtab
+  - python-termcolor
+  - tldr
+  - i3lock
+  - i3-wm
+  - numlockx
+  - libxdg-basedir
+  - ranger
+  - rofi
+  - ffmpeg4.4
+  - mpv
+  - mujs
+  - uchardet
+  - vlc
+  - gtk2
+  - lxappearance
+  - arc-gtk-theme
+  - zsh
+  - arandr
+  - xorg-xrandr
+  - jsoncpp
+  - libmpdclient
+  - os-prober
+  - tmux
+  - btop
+  - pcmanfm
+  - mpd
+  - rust
+  - chromium
+  - qutebrowser
+  - qtile
+  - pipewire
+  - dbus
+  - xorg-xinput
+  - bluez
+  - bluez-libs
+  - gtk3
+  - libnm
+  - bluez-utils
+  - expac
+  - htop-vim
+  - yazi 
+  - ffmpegthumbnailer 
+  - unarchiver 
+  - poppler 
+  - fd 
+  - ripgrep 
+
 
 aur_packages:
   - 7-zip-bin
@@ -213,6 +219,7 @@ aur_packages:
   - variety-git
   - ventoy-bin
   - qtile-extras
+  - reflector
 
 flatpaks:
   - com.discordapp.Discord
