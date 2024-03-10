@@ -30,7 +30,7 @@ if ! [ -x "$(command -v ansible)" ]; then
 fi
 
 # Run Ansible playbook
-cd ~/.config/scripts/ansible
+cd $HOME/.config/scripts/ansible
 ansible-playbook --diff main.yml
 
 echo "Bootstrap script completed successfully!"
