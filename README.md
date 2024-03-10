@@ -3,7 +3,7 @@ Store dotfiles to transport any linux setup
 
 ## Ansible complete setup
 ```
-curl -s https://raw.githubusercontent.com/chrishandharmabandu/dotfiles/master/install.sh | bash
+bash -c "$(curl -sSL https://raw.githubusercontent.com/chrishandharmabandu/dotfiles/master/.config/scripts/bootstrap.sh)"
 ```
 
 # How it works
