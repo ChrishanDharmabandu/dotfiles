@@ -11,7 +11,7 @@ echo
 sudo -S pacman -Syu --noconfirm git curl
 
 # Download bootstrap script
-curl -s https://raw.githubusercontent.com/chrishandharmabandu/dotfiles/main/.config/scripts/bootstrap.sh > bootstrap.sh
+curl -s https://raw.githubusercontent.com/chrishandharmabandu/dotfiles/master/.config/scripts/bootstrap.sh > bootstrap.sh
 
 # Run bootstrap script
 sudo -S bash bootstrap.sh <<< "$password"
