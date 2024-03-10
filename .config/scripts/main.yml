@@ -1,0 +1,76 @@
+---
+- name: Main Playbook
+  hosts: localhost  # Targeting the local machine
+  become: yes       # Run tasks with elevated privileges
+
+  tasks:
+    - name: Install additional Pacman packages from file
+      pacman:
+        name: "{{ item }}"
+        state: present
+      with_lines: "{{ lookup('file', '~/.config/scripts/packages-list.txt') }}"
+
+    - name: Install yay (AUR helper)
+      aur:
+        use: yay
+        state: present
+      become: yes
+      become_user: "{{ ansible_env.USER }}"
+
+    - name: Install AUR packages with yay
+      shell: "yay -S --noconfirm {{ item }}"
+      with_lines: "{{ lookup('file', '~/.config/scripts/packages-list-aur.txt') }}"
+      become: yes
+      become_user: "{{ ansible_env.USER }}"
+
+    - name: Clone Git repositories for Zsh plugins
+      git:
+        repo: "{{ item.repo }}"
+        dest: "{{ item.dest }}"
+        force: yes
+      loop:
+        - { repo: "https://github.com/zdharma-continuum/fast-syntax-highlighting.git", dest: "~/.zsh/fast-syntax-highlighting" }
+        - { repo: "https://github.com/Aloxaf/fzf-tab.git", dest: "~/.zsh/fzf-tab" }
+        - { repo: "https://github.com/zsh-users/zsh-autosuggestions.git", dest: "~/.zsh/zsh-autosuggestions" }
+
+    - name: Set Zsh as the default shell
+      become: yes
+      shell: "chsh -s $(which zsh) {{ ansible_env.USER }}"
+
+    - name: Set default display settings
+      become: yes
+      shell: "xrandr --output DP-0 --mode 1920x1080 --rate 239.76 --primary --output HDMI-0 --mode 1920x1080 --rate 60 --same-as DP-0"
+
+    - name: Configure getty@tty1.service
+      become: yes
+      lineinfile:
+        path: /etc/systemd/system/getty@tty1.service.d/override.conf
+        create: yes
+        line: |
+          [Service]
+          ExecStart=
+          ExecStart=-/sbin/agetty --noissue --autologin {{ ansible_env.USER }} %I $TERM
+          Type=idle
+
+    - name: Edit getty@tty1.service using SYSTEMD_EDITOR
+      become: yes
+      shell: "SYSTEMD_EDITOR=vim systemctl edit getty@tty1.service"
+
+    - name: Install fzf
+      become: yes
+      become_user: "{{ ansible_env.USER }}"
+      git:
+        repo: https://github.com/junegunn/fzf.git
+        dest: ~/.fzf
+        depth: 1
+      register: fzf_install
+
+    - name: Run fzf install script
+      become: yes
+      become_user: "{{ ansible_env.USER }}"
+      shell: ~/.fzf/install --bin
+      when: fzf_install.changed
+
+    - name: Finalize the configuration
+      debug:
+        msg: "Configuration completed successfully!"
