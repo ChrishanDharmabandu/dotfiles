@@ -175,20 +175,33 @@ require('lazy').setup({
   --     vim.cmd.colorscheme 'citruszest'
   --   end,
   -- },
+  -- {
+  -- "folke/tokyonight.nvim",
+  -- lazy = false,
+  -- priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'tokyonight'
+  --   end,
+  -- opts = {},
+  -- },
   {
-  "folke/tokyonight.nvim",
+  "NTBBloodbath/doom-one.nvim",
   lazy = false,
   priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'tokyonight'
+      vim.cmd.colorscheme 'doom-one'
     end,
   opts = {},
   },
-  {
-    --markdown/ascii
-    'godlygeek/tabular',
-    'habamax/vim-asciidoctor'
-  },
+  -- {
+  -- "Tsuzat/NeoSolarized.nvim",
+  -- lazy = false,
+  -- priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'NeoSolarized'
+  --   end,
+  -- opts = {},
+  -- },
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -196,11 +209,16 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'dracula',
-        component_separators = '|',
+        -- theme = 'doom-one',
+        clmponent_separators = '|',
         section_separators = '',
       },
     },
+  },
+  {
+    --markdown/ascii
+    'godlygeek/tabular',
+    'habamax/vim-asciidoctor'
   },
 
   {
@@ -266,6 +284,23 @@ require('lazy').setup({
   {
     'sunaku/tmux-navigate',
     lazy = false,
+  },
+  {
+    'psliwka/termcolors.nvim',
+  },
+  {
+  "folke/flash.nvim",
+  event = "VeryLazy",
+  ---@type Flash.Config
+  opts = {},
+  -- stylua: ignore
+  keys = {
+    { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+    { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+    { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+    { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+    { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+    },
   }
 })
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -330,7 +365,7 @@ vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
