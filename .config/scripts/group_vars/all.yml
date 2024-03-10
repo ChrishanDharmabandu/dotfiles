@@ -15,7 +15,7 @@ user:
 git:
   name: "{{ user['full_name'] }}"
   # obfuscated a little so bots won't find it
-  email_b64: "bG9nYW5AbG9nYW5tYXJjaGlvbmUuY29t"
+  email_b64: "ZGNocmlzaGFuOTBAZ21haWwuY29t"
   # can be "cache", "store", "osxkeychain", or "manager"
   helper: "cache"
   # can be "true" or "false"
