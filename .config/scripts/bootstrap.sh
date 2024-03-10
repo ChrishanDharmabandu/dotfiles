@@ -31,6 +31,8 @@ fi
 
 # Run Ansible playbook
 cd $HOME/.config/scripts/
+# Install Ansible galaxy requirements
+ansible-galaxy install -r requirements.yml
 ansible-playbook --diff main.yml
 
-echo "Bootstrap script completed successfully!"
+echo "Bootstrap script completed"
