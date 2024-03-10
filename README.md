@@ -1,9 +1,9 @@
 # Purpose
 Store dotfiles to transport any linux setup
 
-# Setup
+## Ansible complete setup
 ```
-curl https://raw.githubusercontent.com/ChrishanDharmabandu/dotfiles/master/.dotfiles-setup.sh | bash
+curl -s https://raw.githubusercontent.com/chrishandharmabandu/dotfiles/main/install.sh | bash
 ```
 
 # How it works
