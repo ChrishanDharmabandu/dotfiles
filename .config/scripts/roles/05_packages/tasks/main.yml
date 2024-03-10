@@ -5,6 +5,11 @@
     state: present
   become: true
 
+- name: Update system packages
+  pacman:
+    update_cache: yes
+    upgrade: yes
+
 - name: Install font packages
   ansible.builtin.import_tasks: fonts.yml
 
