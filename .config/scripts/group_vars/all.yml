@@ -96,7 +96,7 @@ packages:
   - gparted
   - gvfs
   - gvfs-smb
-  - htop
+  - btop
   - inkscape
   - inetutils
   - iotop
@@ -197,7 +197,6 @@ packages:
   - libnm
   - bluez-utils
   - expac
-  - htop-vim
   - yazi 
   - ffmpegthumbnailer 
   - unarchiver 
