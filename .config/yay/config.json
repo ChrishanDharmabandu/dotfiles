@@ -1,2 +1,6 @@
-"SMP": "true"
-
+{
+  "batchinstall": {
+    "enabled": true,
+    "limit": 10
+  }
+}
