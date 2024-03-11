@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Install git if not already installed
+if ! [ -x "$(command -v git)" ]; then
+  sudo pacman -S git --noconfirm
+fi
+
 # Clone dotfiles repository
 echo "Cloning dotfiles repository..."
 git clone --bare https://github.com/chrishandharmabandu/dotfiles.git $HOME/.dotfiles
