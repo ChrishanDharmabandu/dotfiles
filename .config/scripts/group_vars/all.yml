@@ -203,21 +203,15 @@ packages:
   - poppler 
   - fd 
   - ripgrep 
+  - reflector
 
 aur_packages:
   - 7-zip-bin
-  - etcher-bin
-  - joplin-appimage
-  - ledger-live-bin
-  - ledger-udev
   - makemkv
-  - mullvad-vpn-bin
   - rpi-imager-bin
-  - svgo
   - variety-git
   - ventoy-bin
   - qtile-extras
-  - reflector
 
 flatpaks:
   - com.discordapp.Discord
