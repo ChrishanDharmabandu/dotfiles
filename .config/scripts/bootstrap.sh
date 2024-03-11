@@ -26,7 +26,9 @@ config config status.showUntrackedFiles no
 
 # Install Ansible if not already installed
 if ! [ -x "$(command -v ansible)" ]; then
-  sudo pacman -S ansible --noconfirm
+  echo "Installing Ansible with pip..."
+  sudo pacman -S python-pip --noconfirm  # Install pip if not already installed
+  sudo pip install ansible
 fi
 
 # Run Ansible playbook
