@@ -205,6 +205,9 @@ packages:
   - ripgrep 
   - reflector
   - kitty
+  - eza
+  - zoxide
+  - starship
 
 aur_packages:
   - 7-zip-bin
