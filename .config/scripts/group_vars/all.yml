@@ -204,6 +204,7 @@ packages:
   - fd 
   - ripgrep 
   - reflector
+  - kitty
 
 aur_packages:
   - 7-zip-bin
