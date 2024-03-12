@@ -41,6 +41,7 @@
 
 - name: Update makepkg configuration file
   ansible.builtin.template:
+  become: true
     src: makepkg.conf
     dest: "/home/{{ user.name }}/.makepkg.conf"
     backup: no
