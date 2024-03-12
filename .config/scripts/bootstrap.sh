@@ -29,6 +29,14 @@ fi
 config checkout --force
 config config status.showUntrackedFiles no
 
+# set resoltion globally
+## Get a list of connected monitors
+monitors=$(xrandr --listmonitors | grep -oP '\b\w+\b')
+## Set the resolution for each connected monitor to 1920x1080
+for monitor in $monitors; do
+    xrandr --output $monitor --mode 1920x1080 --fb 1920x1080 --panning 1920x1080
+done
+
 # Install Ansible if not already installed
 if ! [ -x "$(command -v ansible)" ]; then
   sudo pacman -S ansible --noconfirm
