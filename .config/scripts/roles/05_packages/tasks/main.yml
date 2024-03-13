@@ -14,10 +14,10 @@
 - name: Install font packages
   ansible.builtin.import_tasks: fonts.yml
 
-- name: Install AUR packages
+- name: Install aur packages
   ansible.builtin.import_tasks: aur.yml
 
-- name: Install Flatpaks
+- name: Install flatpaks
   ansible.builtin.import_tasks: flatpak.yml
 
 - name: Start systemd service - systemd-modules-load.service
@@ -31,7 +31,6 @@
   command: chsh -s $(which zsh)
 
 - name: Clone ZSH plugins
-  hosts: localhost  # Define hosts for this playbook
   become: true
 
   tasks:
@@ -44,7 +43,7 @@
         - fzf-tab
         - zsh-autosuggestions
 
-    - name: Clone Git repos for ZSH plugins
+    - name: Clone Git repos
       git:
         repo: "{{ item.url }}"
         dest: "{{ zsh_plug_dir }}/{{ item.name }}"
