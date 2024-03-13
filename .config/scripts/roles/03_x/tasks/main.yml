@@ -15,7 +15,7 @@
   loop_control:
     loop_var: display
   when: connected_displays.rc == 0  # Only proceed if xrandr command succeeds
-  with_items: "{{ connected_displays.stdout.split('\n') }}"
+  loop: "{{ connected_displays.stdout.split('\n') }}"
   tasks:
     - name: Set 1080p 60Hz for display "{{ display }}"
       command: xrandr --output {{ display }} --mode 1920x1080 --rate 60
