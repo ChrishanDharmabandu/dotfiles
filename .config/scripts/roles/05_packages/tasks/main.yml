@@ -26,29 +26,3 @@
     state: started
     enabled: yes
   become: true
-
-- name: Set ZSH as default shell
-  command: chsh -s $(which zsh)
-
-- name: Clone ZSH plugins
-  tasks:
-    - name: Remove existing plugin directories (if present)
-      file:
-        path: "{{ zsh_plug_dir }}/{{ item }}"
-        state: absent
-      with_items:
-        - fast-syntax-highlighting
-        - fzf-tab
-        - zsh-autosuggestions
-
-    - name: Clone Git repos
-      git:
-        repo: "{{ item.url }}"
-        dest: "{{ zsh_plug_dir }}/{{ item.name }}"
-        clone: yes
-        update: yes
-      with_items:
-        - { name: fast-syntax-highlighting, url: "https://github.com/zdharma/fast-syntax-highlighting.git" }
-        - { name: fzf-tab, url: "https://github.com/Aloxaf/fzf-tab.git" }
-        - { name: zsh-autosuggestions, url: "https://github.com/zsh-users/zsh-autosuggestions.git" }
-
