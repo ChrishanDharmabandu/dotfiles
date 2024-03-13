@@ -6,42 +6,6 @@
     state: present
   become: true
 
-# Configure display settings - handle potential missing displays
-- name: Get connected displays
-  command: xrandr | grep "connected" | awk '{print $1}'
-  register: connected_displays
-
-- name: Set 1080p 60Hz for each connected display
-  loop_control:
-    loop_var: display
-  when: connected_displays.rc == 0  # Only proceed if xrandr command succeeds
-  loop: "{{ connected_displays.stdout.split('\n') }}"
-  tasks:
-    - name: Set 1080p 60Hz for display "{{ display }}"
-      command: xrandr --output {{ display }} --mode 1920x1080 --rate 60
-      ignore_errors: true  # Allow failures for non-primary displays
-
-# Manage getty@tty1.service override.conf (unchanged)
-- name: Define service content for getty@tty1
-  set_fact:
-    service_content: "[Service]\nExecStart=\nExecStart=-/sbin/agetty --noissue --autologin {{ ansible_user }} %I \\$TERM\nType=idle"
-
-- name: Check if getty@tty1 override file exists
-  stat:
-    path: "/etc/systemd/system/getty@tty1.service.d/override.conf"
-  register: override_file_check
-
-- name: Create getty@tty1 override file (if not present)
-  copy:
-    dest: "/etc/systemd/system/getty@tty1.service.d/override.conf"
-    content: "{{ service_content }}"
-    mode: 0644  # Set appropriate permissions
-  when: not override_file_check.stat.exists
-
-- name: Append content to getty@tty1 override file
-  command: echo "{{ service_content }}" | tee -a "/etc/systemd/system/getty@tty1.service.d/override.conf"
-  when: override_file_check.stat.exists
-
 # - name: Detect GPU
 #   ansible.builtin.shell: set -o pipefail && lspci -v | grep -A1 -e VGA -e 3D  # noqa command-instead-of-shell
 #   register: gpu_result
@@ -70,4 +34,3 @@
 #     state: present
 #   become: true
 #   when: "'Intel' in gpu_result.stdout"
-
