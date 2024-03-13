@@ -31,7 +31,6 @@
   command: chsh -s $(which zsh)
 
 - name: Clone ZSH plugins
-  hosts: localhost
   become: true
 
   tasks:
