@@ -24,7 +24,7 @@
 # Manage getty@tty1.service override.conf (unchanged)
 - name: Define service content for getty@tty1
   set_fact:
-    service_content: "[Service]\nExecStart=\nExecStart=-/sbin/agetty --noissue --autologin {{ ansible_user }} %I \$TERM\nType=idle"
+    service_content: "[Service]\nExecStart=\nExecStart=-/sbin/agetty --noissue --autologin {{ ansible_user }} %I \\$TERM\nType=idle"
 
 - name: Check if getty@tty1 override file exists
   stat:
