@@ -8,8 +8,8 @@
 
 # Configure display settings - handle potential missing displays
 - name: Get connected displays
-   command: xrandr | grep "connected" | awk '{print $1}'
-   register: connected_displays
+  command: xrandr | grep "connected" | awk '{print $1}'
+  register: connected_displays
 
 - name: Set 1080p 60Hz for each connected display
   loop_control:
@@ -70,3 +70,4 @@
 #     state: present
 #   become: true
 #   when: "'Intel' in gpu_result.stdout"
+
