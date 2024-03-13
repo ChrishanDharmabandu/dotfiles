@@ -14,10 +14,10 @@
 - name: Install font packages
   ansible.builtin.import_tasks: fonts.yml
 
-- name: Install aur packages
+- name: Install AUR packages
   ansible.builtin.import_tasks: aur.yml
 
-- name: Install flatpaks
+- name: Install Flatpaks
   ansible.builtin.import_tasks: flatpak.yml
 
 - name: Start systemd service - systemd-modules-load.service
@@ -31,6 +31,7 @@
   command: chsh -s $(which zsh)
 
 - name: Clone ZSH plugins
+  hosts: localhost  # Define hosts for this playbook
   become: true
 
   tasks:
@@ -38,18 +39,19 @@
       file:
         path: "{{ zsh_plug_dir }}/{{ item }}"
         state: absent
-      with_items:
+      loop:
         - fast-syntax-highlighting
         - fzf-tab
         - zsh-autosuggestions
 
-    - name: Clone Git repos
+    - name: Clone Git repos for ZSH plugins
       git:
         repo: "{{ item.url }}"
         dest: "{{ zsh_plug_dir }}/{{ item.name }}"
         clone: yes
         update: yes
-      with_items:
-        - { name: fast-syntax-highlighting, url: "https://github.com/zdharma-continuum/fast-syntax-highlighting.git" }
+      loop:
+        - { name: fast-syntax-highlighting, url: "https://github.com/zdharma/fast-syntax-highlighting.git" }
         - { name: fzf-tab, url: "https://github.com/Aloxaf/fzf-tab.git" }
         - { name: zsh-autosuggestions, url: "https://github.com/zsh-users/zsh-autosuggestions.git" }
+
