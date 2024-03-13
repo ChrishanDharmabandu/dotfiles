@@ -2,7 +2,19 @@
 # zsh default shell
 chsh -s $(which zsh)
 
-# set default display settings
+# set generic display settings
+# Get connected displays
+connected_displays=$(xrandr | grep "connected" | awk '{print $1}')
+# Check if xrandr command succeeded (exit code 0)
+if [[ $? -eq 0 ]]; then
+  # Loop through connected displays
+  for display in $connected_displays; do
+    # Set 1080p 60Hz for each display (ignore errors)
+    xrandr --output "$display" --mode 1920x1080 --rate 60 &>/dev/null
+  done
+fi
+
+# set desktop display settings
 xrandr --output DP-0 --mode 1920x1080 --rate 239.76 --primary --output HDMI-0 --mode 1920x1080 --rate 60 --same-as DP-0
 
 # Script to create or append content to getty@tty1.service override.conf
