@@ -31,7 +31,6 @@
   command: chsh -s $(which zsh)
 
 - name: Clone ZSH plugins
-  become: true
 
   tasks:
     - name: Remove existing plugin directories (if present)
