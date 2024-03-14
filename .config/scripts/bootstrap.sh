@@ -70,6 +70,11 @@ else
 fi
 
 # Script to clone git repos
+# Install fzf
+echo "Installing fzf..."
+yes | git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
 # Specify the paths and URLs
 zsh_plug_dir="$HOME/.zsh"
 fast_syntax_highlighting_url="https://github.com/zdharma-continuum/fast-syntax-highlighting.git"
