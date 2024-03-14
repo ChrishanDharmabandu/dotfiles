@@ -73,7 +73,7 @@ fi
 # Install fzf
 echo "Installing fzf..."
 yes | git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+~/.fzf/install --all
 
 # Specify the paths and URLs
 zsh_plug_dir="$HOME/.zsh"
