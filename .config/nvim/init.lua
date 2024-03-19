@@ -153,26 +153,10 @@ require('lazy').setup({
   },
 
   -- {
-  --   -- Theme inspired by Atom
-  --   'monsonjeremy/onedark.nvim',
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd.colorscheme 'onedark'
-  --   end,
-  -- },
-  -- {
   --   'Mofiqul/dracula.nvim',
   --   priority = 1000,
   --   config = function()
   --     vim.cmd.colorscheme 'dracula'
-  --   end,
-  -- },
-  -- {
-  -- "zootedb0t/citruszest.nvim",
-  -- lazy = false,
-  -- priority = 1000,
-  --   config = function()
-  --     vim.cmd.colorscheme 'citruszest'
   --   end,
   -- },
   -- {
@@ -185,14 +169,23 @@ require('lazy').setup({
   -- opts = {},
   -- },
   {
-  "NTBBloodbath/doom-one.nvim",
+  "olimorris/onedarkpro.nvim",
   lazy = false,
   priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'doom-one'
+      vim.cmd.colorscheme 'onedark_vivid'
     end,
   opts = {},
   },
+  -- {
+  -- "NTBBloodbath/doom-one.nvim",
+  -- lazy = false,
+  -- priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'doom-one'
+  --   end,
+  -- opts = {},
+  -- },
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
