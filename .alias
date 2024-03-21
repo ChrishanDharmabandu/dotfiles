@@ -12,6 +12,8 @@ alias configssh="config remote set-url origin git@github.com:ChrishanDharmabandu
 alias package-list="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 250"
 alias add-package="echo $1 >> ~/.config/scripts/packages-list.txt"
 alias add-package-aur="echo $1 >> ~/.config/scripts/packages-list-aur.txt"
+alias pcloudm="nohup rclone mount pcloud: ~/Documents/pcloud &" 
+alias pcloudu="fusermount -u ~/Documents/pcloud" 
 alias gdrivem="nohup rclone mount cddrive: ~/Documents/gdrive &" 
 alias gdriveu="fusermount -u ~/Documents/gdrive" 
 alias gitnotes='git add . && git commit -m "updated notes" && git push'
