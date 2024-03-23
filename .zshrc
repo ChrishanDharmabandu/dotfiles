@@ -3,6 +3,9 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
+# Enable Vi mode
+set -o vi
+
 # Use modern completion system
 autoload -U compinit; compinit
 source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
@@ -25,8 +28,6 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# Enable Vi mode
-set -o vi
 
 #set editor
 export EDITOR=nvim
