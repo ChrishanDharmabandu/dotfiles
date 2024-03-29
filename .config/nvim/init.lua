@@ -162,6 +162,9 @@ vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 --//custom maps
+-- Conceal
+vim.opt.conceallevel = 2
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
@@ -280,6 +283,10 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left wind
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+
+-- markdown runnner
+vim.keymap.set("n", "<leader>mr", ":MarkdownRunner<CR>")
+vim.keymap.set("n", "<leader>mri", ":MarkdownRunnerInsert<CR>")
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -903,6 +910,23 @@ require("lazy").setup({
 
 	--// custom plugins
 	{
+		"dbridges/vim-markdown-runner",
+	},
+	{
+		"epwalsh/obsidian.nvim",
+		lazy = true,
+		ft = "markdown",
+		-- },
+		dependencies = {
+			-- Required.
+			"nvim-lua/plenary.nvim",
+		},
+		options = {
+			-- other options
+			conceallevel = 1,
+		},
+	},
+	{
 		-- Set lualine as statusline
 		"nvim-lualine/lualine.nvim",
 		-- See `:help lualine.txt`
@@ -1071,6 +1095,9 @@ require("lazy").setup({
 		},
 	},
 })
+
+--python env
+vim.g.python3_host_prog = "/usr/bin/python3"
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
