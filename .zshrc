@@ -53,3 +53,23 @@ export BROWSER=firefox
 #export path
 export PATH="/home/squishy/.local/share/gem/ruby/3.0.0/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+
+#scripts
+## clipboard script
+function _edit_clipboard(){
+    if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null; then
+        # Running on WSL
+        powershell.exe -c Get-Clipboard > /tmp/clipboard_temp_file
+        nvim /tmp/clipboard_temp_file
+        cat /tmp/clipboard_temp_file | clip.exe
+        rm /tmp/clipboard_temp_file
+    else
+        # Not running on WSL, assume X11 environment
+        xclip -o > /tmp/clipboard_temp_file
+        nvim /tmp/clipboard_temp_file
+        xclip -selection clipboard -i /tmp/clipboard_temp_file
+        rm /tmp/clipboard_temp_file
+    fi
+}
+# Bind Ctrl+X followed by Ctrl+V to edit_clipboard function
+bindkey '^X^V' edit-clipboard
