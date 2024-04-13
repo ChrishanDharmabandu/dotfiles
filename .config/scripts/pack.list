@@ -79,3 +79,5 @@ fd-find
 p7zip-full
 rpi-imager
 variety
+python3-venv
+npm

@@ -136,13 +136,10 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-7 "['<Super><Sh
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-8 "['<Super><Shift>8']" 
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-9 "['<Super><Shift>9']" 
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-10 "['<Super><Shift>0']" 
-
 # Set keybinding for toggling fullscreen with Mod+F
 gsettings set org.gnome.mutter.keybindings toggle-fullscreen "['<Mod4>f']"
-
 # Set keybinding for opening browser with Mod+B
 gsettings set org.gnome.desktop.wm.keybindings browser "['<Mod4>b']"
-
 # set kitty as default term
 gsettings set org.gnome.desktop.default-applications.terminal exec 'kitty'
 
@@ -161,5 +158,10 @@ else
     echo "Error: Unable to open browser. Please install xdg-utils or use a browser manually."
     exit 1
 fi
+
+# Install Neovim latest
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt-get update
+sudo apt-get install neovim -y
 
 echo "Bootstrap script completed"
