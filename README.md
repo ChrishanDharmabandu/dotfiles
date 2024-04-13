@@ -1,9 +1,15 @@
 # Purpose
 Store dotfiles to transport any linux setup
 
-## Ansible complete setup
+## Ansible Arch complete setup
 ```
 bash -c "$(curl -sSL https://raw.githubusercontent.com/chrishandharmabandu/dotfiles/master/.config/scripts/bootstrap.sh)"
+```
+
+## Pop-os complete setup
+- Please read any scripts before executing, this is intended for my unattended installation of a new Pop-os system the way I like it. You have been warned.
+```
+bash -c "$(curl -sSL https://raw.githubusercontent.com/chrishandharmabandu/dotfiles/master/.config/scripts/bootstrap-pop.sh)"
 ```
 
 # How it works
