@@ -1,0 +1,89 @@
+# make sure zsh is loaded by default
+set-environment -g ZDOTDIR $HOME
+set-option -g default-command "zsh --login"
+# remap prefix from 'C-b' to 'C-a'
+unbind C-b
+set-option -g prefix C-a
+bind-key C-a send-prefix
+
+# # split panes using | and -
+# unbind '"'
+# unbind %
+# bind-key | split-window -h
+# bind-key - split-window -v
+
+## Enable mouse mode (tmux 2.1 and above)
+set -g mouse on
+
+# make scrolling with wheels work
+bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
+bind -n WheelDownPane select-pane -t= \; send-keys -M 
+
+# Resize panes without the leader key
+bind -n C-M-j resize-pane -D 5
+bind -n C-M-k resize-pane -U 5
+bind -n C-M-h resize-pane -L 5
+bind -n C-M-l resize-pane -R 5
+
+## zen config
+set-option -sa terminal-overrides ",xterm*:Tc"
+set -g mouse on
+
+# # Vim style pane selection
+# bind h select-pane -L
+# bind j select-pane -D 
+# bind k select-pane -U
+# bind l select-pane -R
+
+# Start windows and panes at 1, not 0
+set -g base-index 1
+set -g pane-base-index 1
+set-window-option -g pane-base-index 1
+set-option -g renumber-windows on
+
+# # Use Alt-arrow keys without prefix key to switch panes
+# bind -n M-Left select-pane -L
+# bind -n M-Right select-pane -R
+# bind -n M-Up select-pane -U
+# bind -n M-Down select-pane -D
+
+# # Shift arrow to switch windows
+# bind -n S-Left  previous-window
+# bind -n S-Right next-window
+
+# # Shift Alt vim keys to switch windows
+# bind -n M-H previous-window
+# bind -n M-L next-window
+
+set -g @catppuccin_flavour 'mocha'
+
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'christoomey/vim-tmux-navigator'
+set -g @plugin 'dreamsofcode-io/catppuccin-tmux'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'jabirali/tmux-tilish'
+set -g @plugin 'sunaku/tmux-navigate'
+
+# Plugin options.
+set -g @tilish-navigate 'on'
+
+run '~/.tmux/plugins/tpm/tpm'
+
+#resurect vim settings
+set -g @resurrect-strategy-nvim 'session'
+set -g @continuum-restore 'on'
+# set vi-mode
+set-window-option -g mode-keys vi
+# keybindings
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
+bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+
+# reload config file (change file location to your the tmux.conf you want to use)
+bind r source-file ~/.tmux.conf
+
+#  Fix lag when switching modes in Vim
+set -sg escape-time 0
