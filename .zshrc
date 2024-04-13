@@ -45,7 +45,7 @@ eval "$(zoxide init zsh)"
 # Exports
 export TERM=kitty
 export TERMINAL=kitty
-export BROWSER=firefox
+export BROWSER=brave-browser
 export EDITOR=nvim
 
 #export path
