@@ -18,3 +18,6 @@ alias gdrivem="nohup rclone mount gdrive: ~/Documents/gdrive &"
 alias gdriveu="fusermount -u ~/Documents/gdrive" 
 alias gitnotes='git add . && git commit -m "updated notes" && git push'
 alias ansible-update='ansible-playbook ~/.config/scripts/main.yml --ask-become-pass'
+alias install-pkgs="xargs -a '~/.config/scripts/pack.list' sudo apt install"
+alias add-pkgs="n '~/.config/scripts/pack.list'"
+# sample: alias =''

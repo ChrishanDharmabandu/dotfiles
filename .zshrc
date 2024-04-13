@@ -28,10 +28,6 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-
-#set editor
-export EDITOR=nvim
-
 # Sourcing
 source ~/.alias
 source ~/.zsh/
@@ -46,12 +42,14 @@ eval "$(zoxide init zsh)"
 #FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#kitty terminal
+# Exports
+export TERM=kitty
 export TERMINAL=kitty
 export BROWSER=firefox
+export EDITOR=nvim
 
 #export path
-export PATH="/home/squishy/.local/share/gem/ruby/3.0.0/bin:$PATH"
+export PATH="/home/$USER/.local/share/gem/ruby/3.0.0/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 #scripts
