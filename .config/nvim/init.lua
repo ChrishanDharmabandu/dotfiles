@@ -849,14 +849,26 @@ require("lazy").setup({
 	--     vim.cmd.hi 'Comment gui=none'
 	--   end,
 	-- },
+	-- { -- custom colorscheme
+	-- 	"tiagovla/tokyodark.nvim",
+	-- 	priority = 1000, -- Make sure to load this before all the other start plugins.
+	-- 	init = function()
+	-- 		-- Load the colorscheme here.
+	-- 		-- Like many other themes, this one has different styles, and you could load
+	-- 		-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+	-- 		vim.cmd.colorscheme("tokyodark")
+	-- 		-- You can configure highlights by doing something like:
+	-- 		vim.cmd.hi("Comment gui=none")
+	-- 	end,
+	-- },
 	{ -- custom colorscheme
-		"tiagovla/tokyodark.nvim",
+		"kepano/flexoki-neovim",
 		priority = 1000, -- Make sure to load this before all the other start plugins.
 		init = function()
 			-- Load the colorscheme here.
 			-- Like many other themes, this one has different styles, and you could load
 			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-			vim.cmd.colorscheme("tokyodark")
+			vim.cmd.colorscheme("flexoki-dark")
 			-- You can configure highlights by doing something like:
 			vim.cmd.hi("Comment gui=none")
 		end,
@@ -909,6 +921,16 @@ require("lazy").setup({
 	},
 
 	--// custom plugins
+	{
+		"kylechui/nvim-surround",
+		version = "*", -- Use for stability; omit to use `main` branch for the latest features
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end,
+	},
 	{
 		"dbridges/vim-markdown-runner",
 	},
