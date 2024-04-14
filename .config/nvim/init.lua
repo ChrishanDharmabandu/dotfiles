@@ -868,7 +868,7 @@ require("lazy").setup({
 			-- Load the colorscheme here.
 			-- Like many other themes, this one has different styles, and you could load
 			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-			vim.cmd.colorscheme("catppuccin")
+			vim.cmd.colorscheme("catppuccin-mocha")
 			-- You can configure highlights by doing something like:
 			vim.cmd.hi("Comment gui=none")
 		end,
@@ -936,16 +936,30 @@ require("lazy").setup({
 	},
 	{
 		"epwalsh/obsidian.nvim",
+		version = "*", -- recommended, use latest release instead of latest commit
 		lazy = true,
 		ft = "markdown",
-		-- },
 		dependencies = {
-			-- Required.
 			"nvim-lua/plenary.nvim",
 		},
-		options = {
-			-- other options
-			conceallevel = 1,
+		opts = {
+			follow_url_func = function(url)
+				-- Open the URL in the default web browser.
+				vim.fn.jobstart({ "xdg-open", url }) -- linux
+			end,
+			disable_frontmatter = true,
+			workspaces = {
+				{
+					name = "personal",
+					path = "~/Documents/sync-docs/notes/",
+				},
+				{
+					name = "buf-parent",
+					path = function()
+						return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0)))
+					end,
+				},
+			},
 		},
 	},
 	{
