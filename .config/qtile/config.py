@@ -28,15 +28,16 @@
 # from libqtile.config import Click, Drag, Group, Key, Match, Screen
 # from libqtile.lazy import lazy
 # from libqtile.utils import guess_terminal
-import os
 import subprocess
+import os
+from libqtile import hook
 from libqtile import bar, extension, hook, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, KeyChord, Match, Screen
 from libqtile.lazy import lazy
 # Make sure 'qtile-extras' is installed or this config will not work.
 from qtile_extras import widget
 from qtile_extras.widget.decorations import BorderDecoration
-#from qtile_extras.widget import StatusNotifier
+# from qtile_extras.widget import StatusNotifier
 import colors
 
 
@@ -53,17 +54,22 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    Key([mod], "space", lazy.layout.next(),
+        desc="Move window focus to other window"),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
-    Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
-    Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
+    Key([mod, "shift"], "h", lazy.layout.shuffle_left(),
+        desc="Move window to the left"),
+    Key([mod, "shift"], "l", lazy.layout.shuffle_right(),
+        desc="Move window to the right"),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
-    Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-    Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
+    Key([mod, "control"], "h", lazy.layout.grow_left(),
+        desc="Grow window to the left"),
+    Key([mod, "control"], "l", lazy.layout.grow_right(),
+        desc="Grow window to the right"),
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
@@ -90,13 +96,15 @@ keys = [
         lazy.window.toggle_fullscreen(),
         desc="Toggle fullscreen on the focused window",
     ),
-    Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
+    Key([mod], "t", lazy.window.toggle_floating(),
+        desc="Toggle floating on the focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 
     # wallpaper change
-    Key([mod], "BackSpace", lazy.spawn("/usr/bin/nitrogen --set-zoom-fill --random " + os.path.expanduser("~/Pictures/wallpaper") + " --save")),
+    Key([mod], "BackSpace", lazy.spawn("/usr/bin/nitrogen --set-zoom-fill --random " + \
+        os.path.expanduser("~/Pictures/wallpaper") + " --save")),
 ]
 
 # Add key bindings to switch VTs in Wayland.
@@ -107,7 +115,8 @@ for vt in range(1, 8):
         Key(
             ["control", "mod1"],
             f"f{vt}",
-            lazy.core.change_vt(vt).when(func=lambda: qtile.core.name == "wayland"),
+            lazy.core.change_vt(vt).when(
+                func=lambda: qtile.core.name == "wayland"),
             desc=f"Switch to VT{vt}",
         )
     )
@@ -130,7 +139,8 @@ for i in groups:
                 [mod, "shift"],
                 i.name,
                 lazy.window.togroup(i.name, switch_group=True),
-                desc="Switch to & move focused window to group {}".format(i.name),
+                desc="Switch to & move focused window to group {}".format(
+                    i.name),
             ),
             # Or, use below if you prefer not to switch to that group.
             # # mod1 + shift + group number = move focused window to group
@@ -148,13 +158,13 @@ layout_theme = {"border_width": 2,
                 }
 
 layouts = [
-    #layout.Bsp(**layout_theme),
-    #layout.Floating(**layout_theme)
-    #layout.RatioTile(**layout_theme),
-    #layout.VerticalTile(**layout_theme),
-    #layout.Matrix(**layout_theme),
+    # layout.Bsp(**layout_theme),
+    # layout.Floating(**layout_theme)
+    # layout.RatioTile(**layout_theme),
+    # layout.VerticalTile(**layout_theme),
+    # layout.Matrix(**layout_theme),
     layout.MonadTall(**layout_theme),
-    #layout.MonadWide(**layout_theme),
+    # layout.MonadWide(**layout_theme),
     # layout.Tile(
     #      shift_windows=True,
     #      border_width = 0,
@@ -162,12 +172,12 @@ layouts = [
     #      ratio = 0.335,
     #      ),
     layout.Max(
-         border_width = 0,
-         margin = 0,
-         ),
-    #layout.Stack(**layout_theme, num_stacks=2),
-    #layout.Columns(**layout_theme),
-    #layout.TreeTab(
+        border_width=0,
+        margin=0,
+    ),
+    # layout.Stack(**layout_theme, num_stacks=2),
+    # layout.Columns(**layout_theme),
+    # layout.TreeTab(
     #     font = "Ubuntu Bold",
     #     fontsize = 11,
     #     border_width = 0,
@@ -188,7 +198,7 @@ layouts = [
     #     vspace = 3,
     #     panel_width = 240
     #     ),
-    #layout.Zoomy(**layout_theme),
+    # layout.Zoomy(**layout_theme),
 ]
 
 
@@ -214,7 +224,7 @@ layouts = [
 # ]
 
 widget_defaults = dict(
-    #font="Hack Nerd Font Bold",
+    # font="Hack Nerd Font Bold",
     font="JetBrainsMono Nerd Font Bold",
     fontsize=12,
     padding=1,
@@ -222,132 +232,136 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
+
 def init_widgets_list():
     widgets_list = [
-        widget.Spacer(length = 8),
+        widget.Spacer(length=8),
         widget.Prompt(
-                 font = "Hack Nerd Font",
-                 fontsize=14,
-                 foreground = colors[1]
+            font="Hack Nerd Font",
+            fontsize=14,
+            foreground=colors[1]
         ),
         widget.GroupBox(
-                 fontsize = 11,
-                 margin_y = 5,
-                 margin_x = 5,
-                 padding_y = 0,
-                 padding_x = 1,
-                 borderwidth = 3,
-                 active = colors[8],
-                 inactive = colors[1],
-                 rounded = False,
-                 highlight_color = colors[2],
-                 highlight_method = "line",
-                 this_current_screen_border = colors[7],
-                 this_screen_border = colors [4],
-                 other_current_screen_border = colors[7],
-                 other_screen_border = colors[4],
-                 ),
+            fontsize=11,
+            margin_y=5,
+            margin_x=5,
+            padding_y=0,
+            padding_x=1,
+            borderwidth=3,
+            active=colors[8],
+            inactive=colors[1],
+            rounded=False,
+            highlight_color=colors[2],
+            highlight_method="line",
+            this_current_screen_border=colors[7],
+            this_screen_border=colors[4],
+            other_current_screen_border=colors[7],
+            other_screen_border=colors[4],
+        ),
         widget.TextBox(
-                 text = '|',
-                 font = "Hack Nerd Font",
-                 foreground = colors[1],
-                 padding = 2,
-                 fontsize = 14
-                 ),
+            text='|',
+            font="Hack Nerd Font",
+            foreground=colors[1],
+            padding=2,
+            fontsize=14
+        ),
         widget.CurrentLayoutIcon(
-                 # custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
-                 foreground = colors[1],
-                 padding = 4,
-                 scale = 0.6
-                 ),
+            # custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
+            foreground=colors[1],
+            padding=4,
+            scale=0.6
+        ),
         widget.CurrentLayout(
-                 foreground = colors[1],
-                 padding = 5
-                 ),
+            foreground=colors[1],
+            padding=5
+        ),
         widget.TextBox(
-                 text = '|',
-                 font = "Hack Nerd Font",
-                 foreground = colors[1],
-                 padding = 2,
-                 fontsize = 14
-                 ),
+            text='|',
+            font="Hack Nerd Font",
+            foreground=colors[1],
+            padding=2,
+            fontsize=14
+        ),
         widget.WindowName(
-                 foreground = colors[6],
-                 max_chars = 40
-                 ),
-        widget.Spacer(length = 8),
+            foreground=colors[6],
+            max_chars=40
+        ),
+        widget.Spacer(length=8),
         widget.CPU(
-                 format = '󰁫 Cpu: {load_percent}%',
-                 foreground = colors[4],
-                 decorations=[
-                     BorderDecoration(
-                         colour = colors[4],
-                         border_width = [0, 0, 2, 0],
-                     )
-                 ],
-                 ),
-        widget.Spacer(length = 8),
+            format='󰁫 Cpu: {load_percent}%',
+            foreground=colors[4],
+            decorations=[
+                BorderDecoration(
+                    colour=colors[4],
+                    border_width=[0, 0, 2, 0],
+                )
+            ],
+        ),
+        widget.Spacer(length=8),
         widget.Memory(
-                 foreground = colors[8],
-                 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e htop')},
-                 format = '{MemUsed: .0f}{mm}',
-                 fmt = ' Mem: {}',
-                 decorations=[
-                     BorderDecoration(
-                         colour = colors[8],
-                         border_width = [0, 0, 2, 0],
-                     )
-                 ],
-                 ),
-        widget.Spacer(length = 8),
+            foreground=colors[8],
+            mouse_callbacks={
+                'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e htop')},
+            format='{MemUsed: .0f}{mm}',
+            fmt=' Mem: {}',
+            decorations=[
+                BorderDecoration(
+                    colour=colors[8],
+                    border_width=[0, 0, 2, 0],
+                )
+            ],
+        ),
+        widget.Spacer(length=8),
         widget.DF(
-                 update_interval = 60,
-                 foreground = colors[5],
-                 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e df')},
-                 partition = '/',
-                 #format = '[{p}] {uf}{m} ({r:.0f}%)',
-                 format = '{uf}{m} free',
-                 fmt = '󰨣 Disk: {}',
-                 visible_on_warn = False,
-                 decorations=[
-                     BorderDecoration(
-                         colour = colors[5],
-                         border_width = [0, 0, 2, 0],
-                     )
-                 ],
-                 ),
-        widget.Spacer(length = 8),
+            update_interval=60,
+            foreground=colors[5],
+            mouse_callbacks={
+                'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e df')},
+            partition='/',
+            # format = '[{p}] {uf}{m} ({r:.0f}%)',
+            format='{uf}{m} free',
+            fmt='󰨣 Disk: {}',
+            visible_on_warn=False,
+            decorations=[
+                BorderDecoration(
+                    colour=colors[5],
+                    border_width=[0, 0, 2, 0],
+                )
+            ],
+        ),
+        widget.Spacer(length=8),
         widget.Volume(
-                 foreground = colors[7],
-                 fmt = '󰕾 Vol: {}',
-                 decorations=[
-                     BorderDecoration(
-                         colour = colors[7],
-                         border_width = [0, 0, 2, 0],
-                     )
-                 ],
-                 ),
-        widget.Spacer(length = 8),
+            foreground=colors[7],
+            fmt='󰕾 Vol: {}',
+            decorations=[
+                BorderDecoration(
+                    colour=colors[7],
+                    border_width=[0, 0, 2, 0],
+                )
+            ],
+        ),
+        widget.Spacer(length=8),
         widget.Clock(
-                 foreground = colors[8],
-                 format = "󱑆 %a, %b %d - %H:%M",
-                 decorations=[
-                     BorderDecoration(
-                         colour = colors[8],
-                         border_width = [0, 0, 2, 0],
-                     )
-                 ],
-                 ),
-        widget.Spacer(length = 8),
-        widget.Systray(padding = 3),
-        widget.Spacer(length = 8),
+            foreground=colors[8],
+            format="󱑆 %a, %b %d - %H:%M",
+            decorations=[
+                BorderDecoration(
+                    colour=colors[8],
+                    border_width=[0, 0, 2, 0],
+                )
+            ],
+        ),
+        widget.Spacer(length=8),
+        widget.Systray(padding=3),
+        widget.Spacer(length=8),
 
-        ]
+    ]
     return widgets_list
+
 
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
-    return widgets_screen1 
+    return widgets_screen1
 
 # All other monitors' bars will display everything but widgets 22 (systray) and 23 (spacer).
 # def init_widgets_screen2():
@@ -358,8 +372,10 @@ def init_widgets_screen1():
 # For adding transparency to your bar, add (background="#00000000") to the "Screen" line(s)
 # For ex: Screen(top=bar.Bar(widgets=init_widgets_screen2(), background="#00000000", size=24)),
 
+
 def init_screens():
     return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=26))]
+
 
 if __name__ in ["config", "__main__"]:
     screens = init_screens()
@@ -402,8 +418,10 @@ if __name__ in ["config", "__main__"]:
 
 # Drag floating layouts.
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    Drag([mod], "Button1", lazy.window.set_position_floating(),
+         start=lazy.window.get_position()),
+    Drag([mod], "Button3", lazy.window.set_size_floating(),
+         start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
@@ -445,3 +463,18 @@ wl_input_rules = None
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
+
+
+@hook.subscribe.startup
+def dbus_register():
+    id = os.environ.get('DESKTOP_AUTOSTART_ID')
+    if not id:
+        return
+    subprocess.Popen(['dbus-send',
+                      '--session',
+                      '--print-reply',
+                      '--dest=org.gnome.SessionManager',
+                      '/org/gnome/SessionManager',
+                      'org.gnome.SessionManager.RegisterClient',
+                      'string:qtile',
+                      'string:' + id])
