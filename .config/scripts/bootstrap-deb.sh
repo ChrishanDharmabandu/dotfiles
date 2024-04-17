@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Prompt for sudo password
+sudo echo "Starting script with elevated privileges..."
+
 # Install git if not already installed
 if ! [ -x "$(command -v git)" ]; then
   sudo apt install git -y
