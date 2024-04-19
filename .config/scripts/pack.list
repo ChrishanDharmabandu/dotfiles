@@ -2,7 +2,6 @@ alsa-utils
 bash
 bash-completion
 cadaver
-code
 curl
 docker
 docker-compose
@@ -20,7 +19,6 @@ iotop
 iperf3
 jq
 keepassxc
-linux-firmware
 minicom
 ncdu
 neofetch
@@ -76,7 +74,6 @@ gh
 unar
 fd-find
 p7zip-full
-rpi-imager
 variety
 python3-venv
 npm
