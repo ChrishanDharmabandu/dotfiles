@@ -54,8 +54,8 @@ git clone "${fast_syntax_highlighting_url}" "${zsh_plug_dir}/fast-syntax-highlig
 git clone "${fzf_tab_url}" "${zsh_plug_dir}/fzf-tab"
 git clone "${zsh_autosuggestions_url}" "${zsh_plug_dir}/zsh-autosuggestions"
 
-# zsh-completions
 # URL of the Debian package
+# zsh-completions
 PACKAGE_URL="https://download.opensuse.org/repositories/shells:/zsh-users:/zsh-completions/Debian_10/amd64/zsh-completions_0.34.0-1+2.2_amd64.deb"
 # Temporarily change to /tmp directory
 cd /tmp || exit
@@ -73,6 +73,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 
 # qtile
+sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
 sudo apt install xserver-xorg xinit
 sudo apt install libpangocairo-1.0-0
 sudo apt install python3-pip python3-xcffib python3-cairocffi
@@ -85,6 +86,7 @@ xargs -a "$HOME/.config/scripts/pack.list" sudo apt install
 
 # zsh default shell
 chsh -s $(which zsh)
+source ~/.zshrc
 
 # Install Neovim latest
 # Define the URL of the Neovim nightly release .deb file

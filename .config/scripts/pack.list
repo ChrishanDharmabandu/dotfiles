@@ -7,7 +7,7 @@ curl
 docker
 docker-compose
 e2fsprogs
-firefox
+firefox-esr
 flatpak
 fwupd
 git
