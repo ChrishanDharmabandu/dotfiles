@@ -66,6 +66,15 @@ sudo dpkg -i zsh-completions.deb
 # Clean up downloaded package
 rm zsh-completions.deb
 
+# Install Neovim latest
+echo "Installing Neovim..."
+wget -O /tmp/nvim.appimage https://github.com/neovim/neovim/releases/download/v0.9.5/nvim.appimage
+# Move it to /usr/local/bin
+sudo mv /tmp/nvim.appimage /usr/local/bin/nvim
+# Make it executable
+sudo chmod +x /usr/local/bin/nvim
+echo "Neovim installed successfully!"
+
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
