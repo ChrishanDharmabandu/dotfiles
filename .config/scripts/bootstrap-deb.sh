@@ -37,6 +37,7 @@ config config status.showUntrackedFiles no
 echo "Installing fzf..."
 yes | git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
+source "$HOME/.zshrc"
 
 # Specify the paths and URLs
 zsh_plug_dir="$HOME/.zsh"
@@ -120,6 +121,7 @@ sudo apt install brave-browser -y
 # install tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo "remember to leader+I, for tmux tmp loading"
+echo "remember to 'config remote set-url origin git@github.com:chrishandharmabandu/dotfiles.git' for github auth login"
 
 # eza
 cargo install eza
