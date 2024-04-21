@@ -47,7 +47,7 @@ yes | git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 # Specify the paths and URLs
 echo -e "\n>>>>>>>>>> Step 7 - zsh install plugins <<<<<<<<<<\n"
 zsh_plug_dir="$HOME/.zsh"
-fast_syntax_highlighting_url="https://github.com/zdharma-continuum/fast-syntax-highlighting.git"
+fast_syntax_highlighting_url="https://github.com/zdharma/fast-syntax-highlighting.git"
 fzf_tab_url="https://github.com/Aloxaf/fzf-tab.git"
 zsh_autosuggestions_url="https://github.com/zsh-users/zsh-autosuggestions.git"
 
