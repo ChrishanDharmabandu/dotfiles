@@ -1,6 +1,5 @@
 # Source: https://gitlab.com/maxnatt/dotfiles
 # >>> Gaps <<<
-
   # gaps inner 2
   # gaps outer 0
   # smart_gaps on
@@ -9,6 +8,10 @@
 
   smart_borders on
   for_window [class="^.*"] border pixel 1
+  # Define your colors
+# Modifying colors
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.unfocused        #333333 #2c3e50 #888888 #34495e   #2c3e50
 
 # >>> Workspaces <<<
 
@@ -45,7 +48,7 @@
 
 # >>> Start a browser <<<
 
-  bindsym $mod+b exec brave-brower
+  bindsym $mod+b exec brave-browser
 
 # >>> Start a rofi <<<
 
@@ -59,10 +62,10 @@
 
   # >>> Keyboard <<<
 
-    bindsym $mod+j focus left
-    bindsym $mod+k focus down
-    bindsym $mod+l focus up
-    bindsym $mod+semicolon focus right
+    bindsym $mod+h focus left
+    bindsym $mod+j focus down
+    bindsym $mod+k focus up
+    bindsym $mod+l focus right
 
   # >>> Arrows <<<
 
@@ -75,10 +78,10 @@
 
   # >>> Keyboard <<<
 
-    bindsym $mod+Shift+j move left
-    bindsym $mod+Shift+k move down
-    bindsym $mod+Shift+l move up
-    bindsym $mod+Shift+semicolon move right
+    bindsym $mod+Shift+h move left
+    bindsym $mod+Shift+j move down
+    bindsym $mod+Shift+k move up
+    bindsym $mod+Shift+l move right
 
   # >>> Arrows <<<
 
@@ -91,7 +94,7 @@
 
   # >>> Horizontal <<<
 
-    bindsym $mod+h split h
+    bindsym $mod+backslash split h
 
   # >>> Vertical <<<
 
@@ -115,16 +118,6 @@
 # >>> Change focus between tiling / floating windows <<<
 
   bindsym $mod+space focus mode_toggle
-
-# >>> Focus the container <<<
-
-  # >>> Parent <<<
-
-  bindsym $mod+a focus parent
-
-  # >>> Child <<<
-
-  #bindsym $mod+d focus child
 
 # >>> Switch the workspace <<<
 
@@ -246,9 +239,6 @@
 
 # >>> Application Launcher <<<
 
-  # Automatically switch to Enlish layout
-  bindsym $mod+D exec --no-startup-id "qdbus org.kde.keyboard /Layouts setLayout us && LC_ALL=en_US.UTF-8 zsh -c 'rofi -show'"
-
 # >>> Move a workspace to a primary display <<<
 
   bindsym $mod+P exec --no-startup-id ~/.scripts/i3_ws_to_primary.sh
@@ -258,23 +248,12 @@
   # Might be useful to redraw when display resolution has changed
   bindsym $mod+N exec --no-startup-id ~/.scripts/wallpaper_changer_dynamic.sh
 
-# >> Start some stuff with i3 <<<
-  # exec --no-startup-id ~/.scripts/wallpaper_changer_dynamic.sh
-  exec_always --no-startup-id autotiling
-  # exec --no-startup-id telegram-desktop -startintray
-  # exec --no-startup-id conky --daemonize --pause=10 -c ~/.conky/conky-horizontal-minimalist/conkyrc
-
-# >>> Plasma Integration <<<
-  # Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everything)
-
-  exec --no-startup-id wmctrl -c Plasma
-  for_window [title="Desktop — Plasma"] kill; floating enable; border none
-
   # Compositor (Animations, Shadows, Transparency)
   exec --no-startup-id picom -cCFb --experimental-backends
 
 # autotiling
-exec_always --no-startup-id autotiling
+  exec i3-layouts
+  set $i3l autosplit 
 
 # >>> Window rules <<<
   # >>> Avoid tiling Plasma popups, dropdown windows, etc. <<<
