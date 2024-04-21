@@ -4,27 +4,21 @@
 echo -e "\n>>>>>>>>>> Step 1 - sudo pw <<<<<<<<<<\n"
 sudo echo "Starting script with elevated privileges..."
 
-# Install apt packages
-echo -e "\n>>>>>>>>>> Step 2 - installing apt packages <<<<<<<<<<\n"
-sudo apt update && sudo apt upgrade -y
-xargs -a "$HOME/.config/scripts/pack.list" sudo apt install
-echo "Bootstrap script completed"
-
 # Install git if not already installed
-echo -e "\n>>>>>>>>>> Step 3 - install git <<<<<<<<<<\n"
+echo -e "\n>>>>>>>>>> Step 2 - install git <<<<<<<<<<\n"
 if ! [ -x "$(command -v git)" ]; then
   sudo apt install git -y
 fi
 
 # Clone dotfiles repository
-echo -e "\n>>>>>>>>>> Step 4 - Clone dotfiles Repo <<<<<<<<<<\n"
+echo -e "\n>>>>>>>>>> Step 3 - Clone dotfiles Repo <<<<<<<<<<\n"
 git clone --bare https://github.com/chrishandharmabandu/dotfiles.git $HOME/.dotfiles
 function config {
    git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
 }
 
 # Backup existing dotfiles
-echo -e "\n>>>>>>>>>> Step 5 - Backing up existing dotfiles <<<<<<<<<<\n"
+echo -e "\n>>>>>>>>>> Step 4 - Backing up existing dotfiles <<<<<<<<<<\n"
 mkdir -p .dotfiles-backup
 config checkout
 # Handle existing dotfiles
@@ -37,6 +31,12 @@ fi
 
 config checkout --force
 config config status.showUntrackedFiles no
+
+# Install apt packages
+echo -e "\n>>>>>>>>>> Step 5 - installing apt packages <<<<<<<<<<\n"
+sudo apt update && sudo apt upgrade -y
+xargs -a "$HOME/.config/scripts/pack.list" sudo apt install
+
 
 # Script to clone git repos
 # Install fzf
