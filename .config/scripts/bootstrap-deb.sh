@@ -43,7 +43,6 @@ xargs -a "$HOME/.config/scripts/pack.list" sudo apt install -y
 echo -e "\n>>>>>>>>>> Step 6 - fzf install <<<<<<<<<<\n"
 yes | git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
-source "$HOME/.zshrc"
 
 # Specify the paths and URLs
 echo -e "\n>>>>>>>>>> Step 7 - zsh install plugins <<<<<<<<<<\n"
