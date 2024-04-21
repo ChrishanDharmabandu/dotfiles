@@ -4,21 +4,27 @@
 echo -e "\n>>>>>>>>>> Step 1 - sudo pw <<<<<<<<<<\n"
 sudo echo "Starting script with elevated privileges..."
 
+# Install apt packages
+echo -e "\n>>>>>>>>>> Step 2 - installing apt packages <<<<<<<<<<\n"
+sudo apt update && sudo apt upgrade -y
+xargs -a "$HOME/.config/scripts/pack.list" sudo apt install
+echo "Bootstrap script completed"
+
 # Install git if not already installed
-echo -e "\n>>>>>>>>>> Step 2 - install git <<<<<<<<<<\n"
+echo -e "\n>>>>>>>>>> Step 3 - install git <<<<<<<<<<\n"
 if ! [ -x "$(command -v git)" ]; then
   sudo apt install git -y
 fi
 
 # Clone dotfiles repository
-echo -e "\n>>>>>>>>>> Step 3 - Clone dotfiles Repo <<<<<<<<<<\n"
+echo -e "\n>>>>>>>>>> Step 4 - Clone dotfiles Repo <<<<<<<<<<\n"
 git clone --bare https://github.com/chrishandharmabandu/dotfiles.git $HOME/.dotfiles
 function config {
    git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
 }
 
 # Backup existing dotfiles
-echo -e "\n>>>>>>>>>> Step 4 - Backing up existing dotfiles <<<<<<<<<<\n"
+echo -e "\n>>>>>>>>>> Step 5 - Backing up existing dotfiles <<<<<<<<<<\n"
 mkdir -p .dotfiles-backup
 config checkout
 # Handle existing dotfiles
@@ -34,13 +40,13 @@ config config status.showUntrackedFiles no
 
 # Script to clone git repos
 # Install fzf
-echo -e "\n>>>>>>>>>> Step 5 - fzf install <<<<<<<<<<\n"
+echo -e "\n>>>>>>>>>> Step 6 - fzf install <<<<<<<<<<\n"
 yes | git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
 source "$HOME/.zshrc"
 
 # Specify the paths and URLs
-echo -e "\n>>>>>>>>>> Step 6 - zsh install plugins <<<<<<<<<<\n"
+echo -e "\n>>>>>>>>>> Step 7 - zsh install plugins <<<<<<<<<<\n"
 zsh_plug_dir="$HOME/.zsh"
 fast_syntax_highlighting_url="https://github.com/zdharma-continuum/fast-syntax-highlighting.git"
 fzf_tab_url="https://github.com/Aloxaf/fzf-tab.git"
@@ -56,8 +62,8 @@ git clone "${fast_syntax_highlighting_url}" "${zsh_plug_dir}/fast-syntax-highlig
 git clone "${fzf_tab_url}" "${zsh_plug_dir}/fzf-tab"
 git clone "${zsh_autosuggestions_url}" "${zsh_plug_dir}/zsh-autosuggestions"
 
-# URL of the Debian package
 # zsh-completions
+# URL of the Debian package
 PACKAGE_URL="https://download.opensuse.org/repositories/shells:/zsh-users:/zsh-completions/Debian_10/amd64/zsh-completions_0.34.0-1+2.2_amd64.deb"
 # Temporarily change to /tmp directory
 cd /tmp || exit
@@ -69,7 +75,7 @@ sudo dpkg -i zsh-completions.deb
 rm zsh-completions.deb
 
 # Install Neovim latest
-echo -e "\n>>>>>>>>>> Step 7 - Installing Neovim latest <<<<<<<<<<\n"
+echo -e "\n>>>>>>>>>> Step 8 - Installing Neovim latest <<<<<<<<<<\n"
 wget -O /tmp/nvim.appimage https://github.com/neovim/neovim/releases/download/v0.9.5/nvim.appimage
 # Move it to /usr/local/bin
 sudo mv /tmp/nvim.appimage /usr/local/bin/nvim
@@ -78,21 +84,22 @@ sudo chmod +x /usr/local/bin/nvim
 echo "Neovim installed successfully!"
 
 # rust
-echo -e "\n>>>>>>>>>> Step 8 - Installing Rust & some goodies <<<<<<<<<<\n"
+echo -e "\n>>>>>>>>>> Step 9 - Installing Rust & some goodies <<<<<<<<<<\n"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 # eza
 cargo install eza
 # yazi
 cargo install --locked yazi-fm
-
+# zoxide
+cargo install zoxide --locked
 
 # starship
-echo -e "\n>>>>>>>>>> Step 9 - Installing starship <<<<<<<<<<\n"
+echo -e "\n>>>>>>>>>> Step 10 - Installing starship <<<<<<<<<<\n"
 echo -e "\n>>>>>>>>>> This can take some time <<<<<<<<<<\n"
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 
 # qtile
-echo -e "\n>>>>>>>>>> Step 10 - installing qtile <<<<<<<<<<\n"
+echo -e "\n>>>>>>>>>> Step 11 - installing qtile <<<<<<<<<<\n"
 sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
 sudo apt install xserver-xorg xinit
 sudo apt install libpangocairo-1.0-0
@@ -102,11 +109,11 @@ git clone https://github.com/elParaguayo/qtile-extras.git ~/temp/qtile-extras
 pip install ~/temp/qtile-extras
 
 # zsh default shell
-echo -e "\n>>>>>>>>>> Step 11 - zsh default shell <<<<<<<<<<\n"
+echo -e "\n>>>>>>>>>> Step 12 - zsh default shell <<<<<<<<<<\n"
 chsh -s $(which zsh)
 
 # Install Neovim latest
-echo -e "\n>>>>>>>>>> Step 12 - Install Neovim Latest <<<<<<<<<<\n"
+echo -e "\n>>>>>>>>>> Step 13 - Install Neovim Latest <<<<<<<<<<\n"
 # Define the URL of the Neovim nightly release .deb file
 NEOVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb"
 # Temporary directory to download the .deb file
@@ -119,7 +126,7 @@ sudo dpkg -i "$TEMP_DIR/nvim-linux64.deb"
 rm -rf "$TEMP_DIR"
 
 # Install Brave Browser
-echo -e "\n>>>>>>>>>> Step 13 - Install brave browser <<<<<<<<<<\n"
+echo -e "\n>>>>>>>>>> Step 14 - Install brave browser <<<<<<<<<<\n"
 sudo apt install curl
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
@@ -127,17 +134,12 @@ sudo apt update
 sudo apt install brave-browser -y
 
 # install tmux plugin manager
-echo -e "\n>>>>>>>>>> Step 14 - Install tmux plugins <<<<<<<<<<\n"
+echo -e "\n>>>>>>>>>> Step 15 - Install tmux plugins <<<<<<<<<<\n"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo "remember to leader+I, for tmux tmp loading"
 echo "remember to 'config remote set-url origin git@github.com:chrishandharmabandu/dotfiles.git' for github auth login"
 
-
-# Install apt packages
-echo -e "\n>>>>>>>>>> Step 15 - installing apt packages <<<<<<<<<<\n"
-sudo apt update && sudo apt upgrade -y
-xargs -a "$HOME/.config/scripts/pack.list" sudo apt install
-echo "Bootstrap script completed"
+echo -e "\nbootstrap complete"
 
 # # pop os i3 style window binds
 # # Set up workspace configurations
