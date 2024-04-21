@@ -43,6 +43,14 @@
 
   bindsym $mod+Return exec kitty
 
+# >>> Start a browser <<<
+
+  bindsym $mod+b exec brave-brower
+
+# >>> Start a rofi <<<
+
+  bindsym $mod+d exec "rofi -show drun"
+
 # >>> Kill focused window <<<
 
   bindsym $mod+q kill
