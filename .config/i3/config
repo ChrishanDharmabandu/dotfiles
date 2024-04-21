@@ -273,6 +273,9 @@
   # Compositor (Animations, Shadows, Transparency)
   exec --no-startup-id picom -cCFb --experimental-backends
 
+# autotiling
+exec_always --no-startup-id autotiling
+
 # >>> Window rules <<<
   # >>> Avoid tiling Plasma popups, dropdown windows, etc. <<<
   # For the first time, manually resize them, i3 will remember the setting for floating windows

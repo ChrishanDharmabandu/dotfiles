@@ -98,13 +98,13 @@ echo -e "\n>>>>>>>>>> Step 10 - Installing starship <<<<<<<<<<\n"
 echo -e "\n>>>>>>>>>> This can take some time <<<<<<<<<<\n"
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 
-# qtile
-echo -e "\n>>>>>>>>>> Step 11 - installing qtile <<<<<<<<<<\n"
+# qtile & i3 dependency in python
+echo -e "\n>>>>>>>>>> Step 11 - installing qtile & python dependencies <<<<<<<<<<\n"
 sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
 sudo apt install xserver-xorg xinit
 sudo apt install libpangocairo-1.0-0
 sudo apt install python3-pip python3-xcffib python3-cairocffi
-pip install qtile
+pip install qtile i3ipc
 git clone https://github.com/elParaguayo/qtile-extras.git ~/temp/qtile-extras
 pip install ~/temp/qtile-extras
 
