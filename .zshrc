@@ -51,6 +51,7 @@ export EDITOR=nvim
 #export path
 export PATH="/home/$USER/.local/share/gem/ruby/3.0.0/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
 
 #scripts
 ## clipboard script

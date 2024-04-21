@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Qtile
+Exec=qtile
+Icon=qtile
+Categories=WindowManager;
+
