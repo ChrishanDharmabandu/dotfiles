@@ -43,7 +43,7 @@ import colors
 
 mod = "mod4"
 terminal = "kitty"
-browser = "firefox --class=Firefox-no-title"
+browser = "brave-browser"
 launcher = "rofi -show drun"
 
 keys = [
@@ -225,7 +225,7 @@ layouts = [
 
 widget_defaults = dict(
     # font="Hack Nerd Font Bold",
-    font="JetBrainsMono Nerd Font Bold",
+    font="AnonymicePro Nerd Font Mono",
     fontsize=12,
     padding=1,
     background=colors[0]
@@ -237,7 +237,7 @@ def init_widgets_list():
     widgets_list = [
         widget.Spacer(length=8),
         widget.Prompt(
-            font="Hack Nerd Font",
+            font="AnonymicePro Nerd Font Mono",
             fontsize=14,
             foreground=colors[1]
         ),
@@ -260,7 +260,7 @@ def init_widgets_list():
         ),
         widget.TextBox(
             text='|',
-            font="Hack Nerd Font",
+            font="AnonymicePro Nerd Font Mono",
             foreground=colors[1],
             padding=2,
             fontsize=14
@@ -277,7 +277,7 @@ def init_widgets_list():
         ),
         widget.TextBox(
             text='|',
-            font="Hack Nerd Font",
+            font="AnonymicePro Nerd Font Mono",
             foreground=colors[1],
             padding=2,
             fontsize=14
@@ -287,48 +287,48 @@ def init_widgets_list():
             max_chars=40
         ),
         widget.Spacer(length=8),
-        widget.CPU(
-            format='󰁫 Cpu: {load_percent}%',
-            foreground=colors[4],
-            decorations=[
-                BorderDecoration(
-                    colour=colors[4],
-                    border_width=[0, 0, 2, 0],
-                )
-            ],
-        ),
-        widget.Spacer(length=8),
-        widget.Memory(
-            foreground=colors[8],
-            mouse_callbacks={
-                'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e htop')},
-            format='{MemUsed: .0f}{mm}',
-            fmt=' Mem: {}',
-            decorations=[
-                BorderDecoration(
-                    colour=colors[8],
-                    border_width=[0, 0, 2, 0],
-                )
-            ],
-        ),
-        widget.Spacer(length=8),
-        widget.DF(
-            update_interval=60,
-            foreground=colors[5],
-            mouse_callbacks={
-                'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e df')},
-            partition='/',
-            # format = '[{p}] {uf}{m} ({r:.0f}%)',
-            format='{uf}{m} free',
-            fmt='󰨣 Disk: {}',
-            visible_on_warn=False,
-            decorations=[
-                BorderDecoration(
-                    colour=colors[5],
-                    border_width=[0, 0, 2, 0],
-                )
-            ],
-        ),
+        # widget.CPU(
+        #     format='󰁫 Cpu: {load_percent}%',
+        #     foreground=colors[4],
+        #     decorations=[
+        #         BorderDecoration(
+        #             colour=colors[4],
+        #             border_width=[0, 0, 2, 0],
+        #         )
+        #     ],
+        # ),
+        # widget.Spacer(length=8),
+        # widget.Memory(
+        #     foreground=colors[8],
+        #     mouse_callbacks={
+        #         'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e htop')},
+        #     format='{MemUsed: .0f}{mm}',
+        #     fmt=' Mem: {}',
+        #     decorations=[
+        #         BorderDecoration(
+        #             colour=colors[8],
+        #             border_width=[0, 0, 2, 0],
+        #         )
+        #     ],
+        # ),
+        # widget.Spacer(length=8),
+        # widget.DF(
+        #     update_interval=60,
+        #     foreground=colors[5],
+        #     mouse_callbacks={
+        #         'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e df')},
+        #     partition='/',
+        #     # format = '[{p}] {uf}{m} ({r:.0f}%)',
+        #     format='{uf}{m} free',
+        #     fmt='󰨣 Disk: {}',
+        #     visible_on_warn=False,
+        #     decorations=[
+        #         BorderDecoration(
+        #             colour=colors[5],
+        #             border_width=[0, 0, 2, 0],
+        #         )
+        #     ],
+        # ),
         widget.Spacer(length=8),
         widget.Volume(
             foreground=colors[7],
@@ -340,6 +340,12 @@ def init_widgets_list():
                 )
             ],
         ),
+        widget.Spacer(length=8),
+        widget.Bluetooth(padding=3),
+        widget.Spacer(length=8),
+        widget.WiFiIcon(padding=3),
+        widget.Spacer(length=8),
+        widget.UPowerWidget(padding=3),
         widget.Spacer(length=8),
         widget.Clock(
             foreground=colors[8],
