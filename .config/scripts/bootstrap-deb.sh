@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-# Prompt for sudo password
-echo -e "\n>>>>>>>>>> Step 1 - sudo pw <<<<<<<<<<\n"
+# Prompt for sudo password & set frontend
+echo -e "\n>>>>>>>>>> Step 1 - sudo pw & set frontend <<<<<<<<<<\n"
 sudo echo "Starting script with elevated privileges..."
+export DEBIAN_FRONTEND=noninteractive
 
 # Install git if not already installed
 echo -e "\n>>>>>>>>>> Step 2 - install git <<<<<<<<<<\n"
@@ -100,9 +101,9 @@ curl -sS https://starship.rs/install.sh | sh -s -- -y
 # qtile & i3 dependency in python
 echo -e "\n>>>>>>>>>> Step 11 - installing qtile & python dependencies <<<<<<<<<<\n"
 sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
-sudo apt install xserver-xorg xinit
-sudo apt install libpangocairo-1.0-0
-sudo apt install python3-pip python3-xcffib python3-cairocffi
+sudo apt install xserver-xorg xinit -y
+sudo apt install libpangocairo-1.0-0 -y
+sudo apt install python3-pip python3-xcffib python3-cairocffi -y
 pip install qtile i3ipc
 git clone https://github.com/elParaguayo/qtile-extras.git ~/temp/qtile-extras
 pip install ~/temp/qtile-extras
