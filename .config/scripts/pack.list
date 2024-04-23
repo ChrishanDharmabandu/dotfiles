@@ -79,3 +79,5 @@ syncthing
 timeshift
 build-essential
 picom
+python3-dbus-next
+xinput
