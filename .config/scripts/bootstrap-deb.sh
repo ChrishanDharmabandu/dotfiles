@@ -59,6 +59,7 @@ rm -rf "${zsh_plug_dir}/zsh-autosuggestions"
 
 # Clone the repositories
 git clone "${fast_syntax_highlighting_url}" "${zsh_plug_dir}/fast-syntax-highlighting"
+mv ~/.zsh/fast-syntax-highlighting/*.zsh ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh #fix bug in script
 git clone "${fzf_tab_url}" "${zsh_plug_dir}/fzf-tab"
 git clone "${zsh_autosuggestions_url}" "${zsh_plug_dir}/zsh-autosuggestions"
 
@@ -86,6 +87,8 @@ echo "Neovim installed successfully!"
 # rust
 echo -e "\n>>>>>>>>>> Step 9 - Installing Rust & some goodies <<<<<<<<<<\n"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+# source path
+source "$HOME/.cargo/env"
 # eza
 cargo install eza
 # yazi
@@ -112,21 +115,8 @@ pip install ~/temp/qtile-extras
 echo -e "\n>>>>>>>>>> Step 12 - zsh default shell <<<<<<<<<<\n"
 chsh -s $(which zsh)
 
-# Install Neovim latest
-echo -e "\n>>>>>>>>>> Step 13 - Install Neovim Latest <<<<<<<<<<\n"
-# Define the URL of the Neovim nightly release .deb file
-NEOVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb"
-# Temporary directory to download the .deb file
-TEMP_DIR=$(mktemp -d)
-# Download the Neovim .deb file
-wget "$NEOVIM_URL" -P "$TEMP_DIR"
-# Install Neovim from the downloaded .deb file
-sudo dpkg -i "$TEMP_DIR/nvim-linux64.deb"
-# Clean up temporary directory
-rm -rf "$TEMP_DIR"
-
 # Install Brave Browser
-echo -e "\n>>>>>>>>>> Step 14 - Install brave browser <<<<<<<<<<\n"
+echo -e "\n>>>>>>>>>> Step 13 - Install brave browser <<<<<<<<<<\n"
 sudo apt install curl
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
@@ -134,7 +124,7 @@ sudo apt update
 sudo apt install brave-browser -y
 
 # install tmux plugin manager
-echo -e "\n>>>>>>>>>> Step 15 - Install tmux plugins <<<<<<<<<<\n"
+echo -e "\n>>>>>>>>>> Step 14 - Install tmux plugins <<<<<<<<<<\n"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo "remember to leader+I, for tmux tmp loading"
 echo "remember to 'config remote set-url origin git@github.com:chrishandharmabandu/dotfiles.git' for github auth login"
