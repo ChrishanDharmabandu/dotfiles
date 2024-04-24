@@ -107,7 +107,7 @@ sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
 sudo apt install xserver-xorg xinit -y
 sudo apt install libpangocairo-1.0-0 -y
 sudo apt install python3-pip python3-xcffib python3-cairocffi -y
-pip install qtile i3ipc
+pip install qtile i3ipc iwlib
 git clone https://github.com/elParaguayo/qtile-extras.git ~/temp/qtile-extras
 pip install ~/temp/qtile-extras
 
