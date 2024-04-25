@@ -341,11 +341,60 @@ def init_widgets_list():
             ],
         ),
         widget.Spacer(length=8),
-        widget.Bluetooth(padding=3),
+        widget.Bluetooth(
+            foreground=colors[5],
+            padding=3,
+            default_text='󰂯 BT',
+            symbol_powered=('+','-'),
+            decorations=[
+                BorderDecoration(
+                    colour=colors[5],
+                    border_width=[0, 0, 2, 0],
+                )
+            ],
+        ),
         widget.Spacer(length=8),
-        widget.WiFiIcon(padding=3),
+        widget.Wlan(
+            foreground=colors[4],
+            interface="wlp0s20f3",
+            format='󰤨 {essid} {percent:2.0%}',
+            padding=3,
+            decorations=[
+                BorderDecoration(
+                    colour=colors[4],
+                    border_width=[0, 0, 2, 0],
+                )
+            ],
+        ),
         widget.Spacer(length=8),
-        widget.UPowerWidget(padding=3),
+        widget.UPowerWidget(
+            foreground=colors[6],
+            decorations=[
+                BorderDecoration(
+                    colour=colors[6],
+                    border_width=[0, 0, 2, 0],
+                )
+            ],
+        ),
+        widget.Spacer(
+            length=4,
+            foreground=colors[6],
+            decorations=[
+                BorderDecoration(
+                    colour=colors[6],
+                    border_width=[0, 0, 2, 0],
+                )
+            ],
+        ),
+        widget.Battery(
+            foreground=colors[6],
+            decorations=[
+                BorderDecoration(
+                    colour=colors[6],
+                    border_width=[0, 0, 2, 0],
+                )
+            ],
+        ),
         widget.Spacer(length=8),
         widget.Clock(
             foreground=colors[8],
@@ -469,18 +518,3 @@ wl_input_rules = None
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
-
-
-@hook.subscribe.startup
-def dbus_register():
-    id = os.environ.get('DESKTOP_AUTOSTART_ID')
-    if not id:
-        return
-    subprocess.Popen(['dbus-send',
-                      '--session',
-                      '--print-reply',
-                      '--dest=org.gnome.SessionManager',
-                      '/org/gnome/SessionManager',
-                      'org.gnome.SessionManager.RegisterClient',
-                      'string:qtile',
-                      'string:' + id])
