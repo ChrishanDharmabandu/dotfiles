@@ -105,6 +105,17 @@ keys = [
     # wallpaper change
     Key([mod], "BackSpace", lazy.spawn("/usr/bin/nitrogen --set-zoom-fill --random " + \
         os.path.expanduser("~/Pictures/wallpaper") + " --save")),
+
+     # Screen
+    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +5%")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 5%-")),
+
+    # Audio
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 5%-"), desc="Lower Volume by 5%"),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer sset Master 5%+"), desc="Raise Volume by 5%"),
+    Key([], "XF86AudioMute", lazy.spawn("amixer sset Master 1+ toggle"), desc="Mute/Unmute Volume"),
+    Key([], "XF86AudioPrev", lazy.spawn("playerctl previous"), desc="Skip to previous"),
+
 ]
 
 # Add key bindings to switch VTs in Wayland.
@@ -357,7 +368,7 @@ def init_widgets_list():
         widget.Wlan(
             foreground=colors[4],
             interface="wlp0s20f3",
-            format='󰤨 {essid} {percent:2.0%}',
+            format='󰤨 {essid}',
             padding=3,
             decorations=[
                 BorderDecoration(
