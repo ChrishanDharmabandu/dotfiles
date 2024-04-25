@@ -123,55 +123,68 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] http
 sudo apt update
 sudo apt install brave-browser -y
 
+echo -e "\n>>>>>>>>>> Step 14 - Install Obsidian deb<<<<<<<<<<\n"
+
+# URL of the .deb file
+DEB_URL="https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.12/obsidian_1.5.12_amd64.deb"
+# Download the .deb file
+wget "$DEB_URL" -O obsidian.deb
+# Install the .deb package
+sudo dpkg -i obsidian.deb
+# Check for and install any missing dependencies
+sudo apt-get install -f
+# Clean up the downloaded .deb file
+rm obsidian.deb
+
 # install tmux plugin manager
 echo -e "\n>>>>>>>>>> Step 14 - Install tmux plugins <<<<<<<<<<\n"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo "remember to leader+I, for tmux tmp loading"
 echo "remember to 'config remote set-url origin git@github.com:chrishandharmabandu/dotfiles.git' for github auth login"
 
-# pop os i3 style window binds
-# Set up workspace configurations
-gsettings set org.gnome.mutter dynamic-workspaces false 
-gsettings set org.gnome.desktop.wm.preferences num-workspaces 8 
-gsettings set org.gnome.shell.keybindings switch-to-application-1 [] 
-gsettings set org.gnome.shell.keybindings switch-to-application-2 [] 
-gsettings set org.gnome.shell.keybindings switch-to-application-3 [] 
-gsettings set org.gnome.shell.keybindings switch-to-application-4 [] 
-gsettings set org.gnome.shell.keybindings switch-to-application-5 [] 
-gsettings set org.gnome.shell.keybindings switch-to-application-6 [] 
-gsettings set org.gnome.shell.keybindings switch-to-application-7 [] 
-gsettings set org.gnome.shell.keybindings switch-to-application-8 [] 
-gsettings set org.gnome.shell.keybindings switch-to-application-9 [] 
-
-# Set keybindings for switching workspaces
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 "['<Super>1']" 
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-2 "['<Super>2']" 
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-3 "['<Super>3']" 
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-4 "['<Super>4']" 
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-5 "['<Super>5']" 
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-6 "['<Super>6']" 
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-7 "['<Super>7']" 
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-8 "['<Super>8']" 
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-9 "['<Super>9']" 
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-10 "['<Super>0']" 
-
-# Set keybindings for moving windows to different workspaces
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-1 "['<Super><Shift>1']" 
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-2 "['<Super><Shift>2']" 
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-3 "['<Super><Shift>3']" 
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<Super><Shift>4']" 
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<Super><Shift>5']" 
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-6 "['<Super><Shift>6']" 
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-7 "['<Super><Shift>7']" 
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-8 "['<Super><Shift>8']" 
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-9 "['<Super><Shift>9']" 
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-10 "['<Super><Shift>0']" 
-# Set keybinding for toggling fullscreen with Mod+F
-gsettings set org.gnome.mutter.keybindings toggle-fullscreen "['<Mod4>f']"
-# Set keybinding for opening browser with Mod+B
-gsettings set org.gnome.desktop.wm.keybindings browser "['<Mod4>b']"
-# set kitty as default term
-gsettings set org.gnome.desktop.default-applications.terminal exec 'kitty'
-
 echo -e "\nbootstrap complete"
+
+# # pop os i3 style window binds
+# # Set up workspace configurations
+# gsettings set org.gnome.mutter dynamic-workspaces false 
+# gsettings set org.gnome.desktop.wm.preferences num-workspaces 8 
+# gsettings set org.gnome.shell.keybindings switch-to-application-1 [] 
+# gsettings set org.gnome.shell.keybindings switch-to-application-2 [] 
+# gsettings set org.gnome.shell.keybindings switch-to-application-3 [] 
+# gsettings set org.gnome.shell.keybindings switch-to-application-4 [] 
+# gsettings set org.gnome.shell.keybindings switch-to-application-5 [] 
+# gsettings set org.gnome.shell.keybindings switch-to-application-6 [] 
+# gsettings set org.gnome.shell.keybindings switch-to-application-7 [] 
+# gsettings set org.gnome.shell.keybindings switch-to-application-8 [] 
+# gsettings set org.gnome.shell.keybindings switch-to-application-9 [] 
+#
+# # Set keybindings for switching workspaces
+# gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 "['<Super>1']" 
+# gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-2 "['<Super>2']" 
+# gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-3 "['<Super>3']" 
+# gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-4 "['<Super>4']" 
+# gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-5 "['<Super>5']" 
+# gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-6 "['<Super>6']" 
+# gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-7 "['<Super>7']" 
+# gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-8 "['<Super>8']" 
+# gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-9 "['<Super>9']" 
+# gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-10 "['<Super>0']" 
+#
+# # Set keybindings for moving windows to different workspaces
+# gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-1 "['<Super><Shift>1']" 
+# gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-2 "['<Super><Shift>2']" 
+# gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-3 "['<Super><Shift>3']" 
+# gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<Super><Shift>4']" 
+# gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<Super><Shift>5']" 
+# gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-6 "['<Super><Shift>6']" 
+# gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-7 "['<Super><Shift>7']" 
+# gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-8 "['<Super><Shift>8']" 
+# gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-9 "['<Super><Shift>9']" 
+# gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-10 "['<Super><Shift>0']" 
+# # Set keybinding for toggling fullscreen with Mod+F
+# gsettings set org.gnome.mutter.keybindings toggle-fullscreen "['<Mod4>f']"
+# # Set keybinding for opening browser with Mod+B
+# gsettings set org.gnome.desktop.wm.keybindings browser "['<Mod4>b']"
+# # set kitty as default term
+# gsettings set org.gnome.desktop.default-applications.terminal exec 'kitty'
 
