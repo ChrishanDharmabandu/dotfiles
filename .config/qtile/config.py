@@ -45,6 +45,7 @@ mod = "mod4"
 terminal = "kitty"
 browser = "brave-browser"
 launcher = "rofi -show drun"
+obsidian = "obsidian"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -86,6 +87,7 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn(browser), desc="Launch browser"),
     Key([mod], "d", lazy.spawn(launcher), desc="Launch launcher"),
+    Key([mod], "o", lazy.spawn(obsidian), desc="Launch obsidian"),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
