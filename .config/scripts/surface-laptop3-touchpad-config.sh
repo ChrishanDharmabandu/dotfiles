@@ -9,6 +9,9 @@ CONFIG_CONTENT='Section "InputClass"
     Option "Tapping" "on"
     Option "ClickMethod" "clickfinger"
     Option "NaturalScrolling" "true"
+    Option "PalmDetection" "on"
+    Option "PalmMinWidth" "10"
+    Option "PalmMinZ" "100"
 EndSection'
 
 # Echo the content into the specified file with sudo
