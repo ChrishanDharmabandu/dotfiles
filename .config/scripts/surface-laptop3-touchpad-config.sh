@@ -10,8 +10,8 @@ CONFIG_CONTENT='Section "InputClass"
     Option "ClickMethod" "clickfinger"
     Option "NaturalScrolling" "true"
     Option "PalmDetection" "on"
-    Option "PalmMinWidth" "10"
-    Option "PalmMinZ" "100"
+    Option "PalmMinWidth" "15"
+    Option "PalmMinZ" "150"
 EndSection'
 
 # Echo the content into the specified file with sudo
