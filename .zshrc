@@ -8,7 +8,6 @@ set -o vi
 
 # Use modern completion system
 autoload -U compinit; compinit
-source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -30,9 +29,10 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # Sourcing
 source ~/.alias
-source ~/.zsh/
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+# source ~/.zsh/
+# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+# source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
 
 #starship
 eval "$(starship init zsh)"
@@ -43,9 +43,9 @@ eval "$(zoxide init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Exports
-export TERM=kitty
-export TERMINAL=kitty
-export BROWSER=brave-browser
+# export TERM=kitty
+# export TERMINAL=kitty
+# export BROWSER=brave-browser
 export EDITOR=nvim
 
 #export path
