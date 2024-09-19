@@ -931,7 +931,6 @@ require("lazy").setup({
 			vim.cmd("TransparentEnable")
 		end,
 	},
-
 	-- Highlight todo, notes, etc in comments
 	{
 		"folke/todo-comments.nvim",
