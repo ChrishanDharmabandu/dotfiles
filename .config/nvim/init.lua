@@ -122,23 +122,33 @@ vim.api.nvim_set_keymap("n", "<M-k>", ':echo "Navigate Up"<CR>', { noremap = tru
 vim.api.nvim_set_keymap("n", "<M-l>", ':echo "Navigate Right"<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<M-\\>", ':echo "Navigate Back"<CR>', { noremap = true, silent = true })
 -- [[ added keymaps ]]
+-- Map <leader>xq to toggle the Trouble plugin with quickfix list
+-- <leader> is a customizable key, often set to \ or space
 vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { silent = true, noremap = true })
+
+-- Map - to open the parent directory using the Oil plugin in normal mode
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+-- Move selected lines in visual mode down one line and re-select the moved lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+
+-- Move selected lines in visual mode up one line and re-select the moved lines
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- Join the current line with the next line, setting a mark at the original position for jumping back
 vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("n", "<leader>vwm", function()
-	require("vim-with-me").StartVimWithMe()
-end)
-vim.keymap.set("n", "<leader>svwm", function()
-	require("vim-with-me").StopVimWithMe()
-end)
+-- Scroll half-page down and center the cursor vertically
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+
+-- Scroll half-page up and center the cursor vertically
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- Jump to the next search result and center the cursor vertically
+vim.keymap.set("n", "n", "nzzzv")
+
+-- Jump to the previous search result and center the cursor vertically
+vim.keymap.set("n", "N", "Nzzzv")
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
@@ -920,10 +930,10 @@ require("lazy").setup({
 			end,
 			disable_frontmatter = true,
 			workspaces = {
-				{
-					name = "personal",
-					path = "~/Documents/sync-docs/notes/",
-				},
+				-- {
+				-- 	name = "personal",
+				-- 	path = "~/Documents/sync-docs/notes/",
+				-- },
 				{
 					name = "buf-parent",
 					path = function()
@@ -981,6 +991,13 @@ require("lazy").setup({
 	},
 	{
 		"tpope/vim-markdown",
+	},
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		opts = {},
+		dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
 	},
 	{
 		"folke/flash.nvim",
