@@ -126,8 +126,11 @@ vim.api.nvim_set_keymap("n", "<M-\\>", ':echo "Navigate Back"<CR>', { noremap = 
 -- <leader> is a customizable key, often set to \ or space
 vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { silent = true, noremap = true })
 
--- Map - to open the parent directory using the Oil plugin in normal mode
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+-- Map - to open the parent directory using a plugin
+vim.keymap.set("n", "-", "<CMD>lua require('mini.files').open()<CR>", { desc = "Open mini.files parent directory" })
+
+-- Map - to open the parent directory using a plugin
+vim.keymap.set("n", "+", "<CMD>Neotree toggle<CR>", { desc = "Open Neotree parent directory" })
 
 -- Move selected lines in visual mode down one line and re-select the moved lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -858,6 +861,8 @@ require("lazy").setup({
 				extra_groups = {
 					"NormalFloat", -- For floating panels (Lazy, Mason, LspInfo)
 					"NvimTreeNormal", -- For NvimTree
+					"NeoTreeNormal", -- For Neo-tree
+					"NeoTreeNormalNC", -- For Neo-tree non-current window
 				},
 			})
 			-- Enable transparency on startup
@@ -986,14 +991,26 @@ require("lazy").setup({
 		end,
 	},
 	{ "mbbill/undotree" },
+
 	{
-		"stevearc/oil.nvim",
-		opts = {
-			icons = false, -- Add this line to toggle off icons
-		},
-		-- Optional dependencies
-		dependencies = { "nvim-tree/nvim-web-devicons" },
+		"echasnovski/mini.files",
+		version = "*",
+		config = function()
+			require("mini.files").setup()
+		end,
 	},
+
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+			-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+		},
+	},
+
 	{
 		"sunaku/tmux-navigate",
 		lazy = false,
