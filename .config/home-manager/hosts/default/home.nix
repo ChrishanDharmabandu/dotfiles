@@ -21,6 +21,7 @@
 	../../modules/cli-pkgs.nix
 	../../modules/gui-linux-pkgs.nix
 	../../modules/tmux.nix
+	../../modules/zsh.nix
   ];
   # The home.packages option allows you to install Nix packages into your
   # environment.
