@@ -827,6 +827,9 @@ require("lazy").setup({
 		lazy = false,
 		priority = 1000,
 		opts = {},
+		init = function()
+			vim.cmd.colorscheme("eldritch")
+		end,
 	},
 	-- { -- custom colorscheme
 	-- 	"catppuccin/nvim",
