@@ -47,3 +47,59 @@ In Lua, `function() ... end` creates **anonymous functions**. These are useful f
 vim.keymap.set('n', '<Leader>x', function() print("Hello, World!") end)
 ```
 
+# Neovim Autocommand Events: `'BufNewFile'` and `'BufRead'`
+
+In Neovim, autocommands can be triggered by specific events. Two common events are:
+
+- **`'BufNewFile'`**: 
+  - This event is triggered when a new buffer (file) is created. 
+  - It occurs before the buffer is opened for editing. 
+  - Useful for setting options or performing actions specific to new files.
+
+- **`'BufRead'`**: 
+  - This event is triggered when an existing buffer (file) is opened.
+  - It occurs after the buffer is loaded but before it is displayed.
+  - Useful for setting options or performing actions specific to files being read.
+
+## Example Usage
+You can use these events to set specific configurations for different file types:
+
+```lua
+vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+  pattern = '*.txt',
+  command = 'setlocal number',  -- Example: Show line numbers for .txt files
+})
+```
+# Created user commands
+
+```lua
+vim.api.nvim_create_user_command('Upper',
+  function(opts)
+    print(string.upper(opts.fargs[1]))  -- Converts the first argument to uppercase
+  end,
+  { nargs = 1 })  -- Requires one argument
+
+vim.cmd.Upper('foo')  -- This will output: FOO
+```
+
+```lua
+vim.api.nvim_create_user_command('SayHello',
+  function(opts)
+    local name = opts.fargs[1] or "World"  -- Get the first argument or default to "World"
+    print("Hello, " .. name .. "!")
+  end,
+  { nargs = 1 })  -- Requires one argument
+```
+
+```lua
+--- Example Usage
+Here’s how you might use opts in a user command:
+
+vim.api.nvim_create_user_command('SayHello',
+  function(opts)
+    local name = opts.fargs[1] or "World"  -- Get the first argument or default to "World"
+    print("Hello, " .. name .. "!")
+  end,
+  { nargs = 1 })  -- Requires one argument
+--- In this example, when you run :SayHello Alice, the function will output "Hello, Alice!". If you run :SayHello, it will default to "Hello, World!" because opts.fargs[1] is nil.
+```
