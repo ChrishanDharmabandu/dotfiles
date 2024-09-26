@@ -882,8 +882,8 @@ require("lazy").setup({
 		-- See `:help lualine.txt`
 		opts = {
 			options = {
-				icons_enabled = false,
-				-- theme = 'doom-one',
+				icons_enabled = true,
+				-- theme = "molokai",
 				clmponent_separators = "|",
 				section_separators = "",
 			},
