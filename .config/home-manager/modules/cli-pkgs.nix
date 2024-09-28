@@ -30,6 +30,7 @@
     python3
     gcc
     zoxide
+    nodejs_22
   ];
 }
 
