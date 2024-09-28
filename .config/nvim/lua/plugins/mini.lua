@@ -32,8 +32,16 @@ return {
 				return "%2l:%-2v"
 			end
 
+		require("mini.files").setup({ filters = { dotfiles = true, }, lazy = false })
 			-- ... and there is more!
 			--  Check out: https://github.com/echasnovski/mini.nvim
+		end,
+	},
+	{
+		"echasnovski/mini.files",
+		version = "*",
+		config = function()
+			require("mini.files").setup()
 		end,
 	},
 }
