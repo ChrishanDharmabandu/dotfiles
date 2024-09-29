@@ -43,6 +43,13 @@ return {
 			})
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
+				settings = {
+					Lua = {
+						diagnostics = {
+							globals = { 'vim' }
+						}
+					}
+				}
 			})
 
 			vim.keymap.set("n", "\\", vim.lsp.buf.hover, {})
