@@ -33,8 +33,8 @@ return {
 			end
 
 		require("mini.files").setup({ filters = { dotfiles = true, }, lazy = false })
-			-- ... and there is more!
-			--  Check out: https://github.com/echasnovski/mini.nvim
+			-- Map - to open the parent directory using a plugin
+			vim.keymap.set("n", "-", "<CMD>lua require('mini.files').open()<CR>", { desc = "Open mini.files parent directory" })
 		end,
 	},
 	{

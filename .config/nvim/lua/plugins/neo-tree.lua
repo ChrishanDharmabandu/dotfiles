@@ -10,5 +10,7 @@ return {
 	config = function()
 		-- vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {})
 		vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
+		-- Map - to open the parent directory using a plugin
+		vim.keymap.set("n", "+", "<CMD>Neotree toggle<CR>", { desc = "Open Neotree parent directory" })
 	end,
 }

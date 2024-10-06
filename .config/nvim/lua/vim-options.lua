@@ -1,5 +1,4 @@
 -- General settings
-vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
@@ -10,11 +9,6 @@ vim.opt.smartindent = true
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
-
--- Enable line wrapping
-vim.o.wrap = true
-vim.o.showbreak = "↪ "
-vim.o.textwidth = 80
 
 -- Enable line wrapping
 vim.o.wrap = true
@@ -50,24 +44,6 @@ vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 -- Remap for dealing with word wrap
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-
--- [[ added keymaps for tmux-navigate]]
--- Set key mappings for navigation in Neovim
-vim.api.nvim_set_keymap("n", "<M-h>", ':echo "Navigate Left"<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<M-j>", ':echo "Navigate Down"<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<M-k>", ':echo "Navigate Up"<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<M-l>", ':echo "Navigate Right"<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<M-\\>", ':echo "Navigate Back"<CR>', { noremap = true, silent = true })
-
--- [[ added keymaps ]]
--- Map <leader>xq to toggle the Trouble plugin with quickfix list
-vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { silent = true, noremap = true })
-
--- Map - to open the parent directory using a plugin
-vim.keymap.set("n", "-", "<CMD>lua require('mini.files').open()<CR>", { desc = "Open mini.files parent directory" })
-
--- Map - to open the parent directory using a plugin
-vim.keymap.set("n", "+", "<CMD>Neotree toggle<CR>", { desc = "Open Neotree parent directory" })
 
 -- Move selected lines in visual mode down one line and re-select the moved lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -118,9 +94,5 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- Make executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
--- markdown runnner
-vim.keymap.set("n", "<leader>r", ":MarkdownRunner<CR>")
-vim.keymap.set("n", "<leader>R", ":MarkdownRunnerInsert<CR>")
-
--- Telescope mapping
-vim.keymap.set("n", "<leader>m", ":Telescope keymaps<CR>")
+-- Keymap for buffer delete
+vim.api.nvim_set_keymap('n', '<leader>bd', ':bd<CR>', { noremap = true, silent = true })
