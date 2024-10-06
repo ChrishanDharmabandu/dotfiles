@@ -33,8 +33,6 @@ return {
 			end
 
 		require("mini.files").setup({ filters = { dotfiles = true, }, lazy = false })
-			-- Map - to open the parent directory using a plugin
-			vim.keymap.set("n", "-", "<CMD>lua require('mini.files').open()<CR>", { desc = "Open mini.files parent directory" })
 		end,
 	},
 	{
@@ -42,6 +40,8 @@ return {
 		version = "*",
 		config = function()
 			require("mini.files").setup()
+			-- Map - to open the parent directory using a plugin
+			vim.keymap.set("n", "-", "<CMD>lua require('mini.files').open()<CR>", { desc = "Open mini.files parent directory" })
 		end,
 	},
 }
