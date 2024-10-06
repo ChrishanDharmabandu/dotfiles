@@ -14,10 +14,6 @@ return {
 			end,
 			disable_frontmatter = true,
 			workspaces = {
-				-- {
-				-- 	name = "personal",
-				-- 	path = "~/Documents/sync-docs/notes/",
-				-- },
 				{
 					name = "buf-parent",
 					path = function()
@@ -25,6 +21,11 @@ return {
 					end,
 				},
 			},
+			-- Add the UI configuration here
+			ui = {
+				enable = false,
+			},
 		},
 	},
 }
+
