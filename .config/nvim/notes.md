@@ -103,3 +103,8 @@ vim.api.nvim_create_user_command('SayHello',
   { nargs = 1 })  -- Requires one argument
 --- In this example, when you run :SayHello Alice, the function will output "Hello, Alice!". If you run :SayHello, it will default to "Hello, World!" because opts.fargs[1] is nil.
 ```
+
+# Lua script for nvim
+- **`vim.cmd`** : For running Vimscript commands.
+- **`vim.g`** : For setting/getting global variables.
+- **`vim.opt`** : For configuring Vim options in a Lua-friendly way.

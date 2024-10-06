@@ -96,3 +96,6 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Keymap for buffer delete
 vim.api.nvim_set_keymap('n', '<leader>bd', ':bd<CR>', { noremap = true, silent = true })
+
+-- Keymap for esc
+vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true, silent = true })
