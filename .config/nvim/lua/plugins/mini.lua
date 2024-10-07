@@ -42,5 +42,5 @@ return {
 			-- Map - to open the parent directory using a plugin
 		end,
 	},
-	vim.keymap.set("n", "-", "<CMD>lua require('mini.files').open()<CR>", { desc = "Open mini.files parent directory" })
+	vim.keymap.set("n", "-", "<CMD>lua require('mini.files').open()<CR>", { desc = "Open mini.files parent directory" }),
 }
