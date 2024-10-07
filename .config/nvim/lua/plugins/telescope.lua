@@ -85,17 +85,6 @@ return {
         })
       end, { desc = "[S]earch [/] in Open Files" })
 
-        -- Function to perform live grep in the current directory
-      local function live_grep_in_cwd()
-        local current_dir = vim.fn.expand("%:p:h") -- Get the current file's directory
-        require('telescope.builtin').live_grep({
-          cwd = current_dir -- Set the current working directory for grep
-        })
-      end
-
-      -- Key mapping for live grep in the current directory
-      vim.keymap.set("n", "<leader>sl", live_grep_in_cwd, { desc = "Live Grep in Current Directory" })
-
       -- Shortcut for searching your Neovim configuration files
       vim.keymap.set("n", "<leader>sn", function()
         builtin.find_files({ cwd = vim.fn.stdpath("config") })
