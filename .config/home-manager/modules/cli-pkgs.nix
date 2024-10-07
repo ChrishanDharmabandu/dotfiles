@@ -31,6 +31,7 @@
     gcc
     zoxide
     nodejs_22
+    ripgrep
   ];
 }
 
