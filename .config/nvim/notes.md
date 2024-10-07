@@ -108,3 +108,6 @@ vim.api.nvim_create_user_command('SayHello',
 - **`vim.cmd`** : For running Vimscript commands.
 - **`vim.g`** : For setting/getting global variables.
 - **`vim.opt`** : For configuring Vim options in a Lua-friendly way.
+
+# Indent text
+- Use '>' or '<' to indent or unindent text.
