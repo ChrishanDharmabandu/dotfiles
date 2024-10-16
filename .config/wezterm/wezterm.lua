@@ -12,7 +12,7 @@ config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.75
 config.win32_system_backdrop = 'Acrylic'
-config.color_scheme = 'Dracula'
+config.color_scheme = 'One Dark'
 
 -- Window padding
 config.window_padding = {
