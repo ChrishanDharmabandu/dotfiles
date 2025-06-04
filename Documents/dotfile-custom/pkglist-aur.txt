@@ -1,0 +1,8 @@
+dmenu-rs
+docker-desktop
+qtile-extras
+qutebrowser-git
+snapper-gui-git
+spotify
+warp-terminal
+
