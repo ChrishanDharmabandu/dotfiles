@@ -48,8 +48,8 @@ echo "Setting Zsh as the default shell..."
 chsh -s "$(which zsh)"
 
 # Set default display settings
-echo "Setting default display settings..."
-xrandr --output DP-0 --mode 1920x1080 --rate 239.76 --primary --output HDMI-0 --mode 1920x1080 --rate 60 --same-as DP-0
+# echo "Setting default display settings..."
+# xrandr --output DP-0 --mode 1920x1080 --rate 239.76 --primary --output HDMI-0 --mode 1920x1080 --rate 60 --same-as DP-0
 
 # Configure getty@tty1.service
 echo "Configuring getty@tty1.service..."
@@ -74,7 +74,7 @@ fi
 
 # Edit the service using SYSTEMD_EDITOR
 echo "Opening $override_file for editing..."
-sudo SYSTEMD_EDITOR=vim systemctl edit getty@tty1.service
+sudo SYSTEMD_EDITOR=nvim systemctl edit getty@tty1.service
 
 # Install fzf
 echo "Installing fzf..."
