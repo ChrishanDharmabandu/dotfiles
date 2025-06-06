@@ -1,17 +1,10 @@
 # Purpose
-Store dotfiles to transport any linux setup
+Store dotfiles to transport my linux setup
 
-## Ansible Arch complete setup
+## Created on Arch Linux but compatible with debian and MacOS
 ```
-bash -c "$(curl -sSL https://raw.githubusercontent.com/chrishandharmabandu/dotfiles/master/.config/scripts/bootstrap.sh)"
+curl -fsSL https://raw.githubusercontent.com/chrishandharmabandu/dotfiles/master/.config/bootstrap-scripts/install.sh | bash
 ```
-
-## Pop-os complete setup
-- Please read any scripts before executing, this is intended for my unattended installation of a new Pop-os system the way I like it. You have been warned.
-```
-bash -c "$(curl -sSL https://raw.githubusercontent.com/chrishandharmabandu/dotfiles/master/.config/scripts/bootstrap-deb.sh)"
-```
-
 # How it works
 ## Setting Up the Bare Repository
 
