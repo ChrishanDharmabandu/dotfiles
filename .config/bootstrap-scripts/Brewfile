@@ -1,0 +1,34 @@
+# Generated Brewfile for macOS
+# Based on Arch Linux package lists
+
+# Core packages
+brew "git"
+brew "neovim"
+brew "tmux"
+brew "curl"
+brew "wget"
+brew "ripgrep"
+brew "node"
+brew "npm"
+brew "python@3.12"
+brew "starship"
+brew "zoxide"
+brew "btop"
+brew "yazi"
+
+# GUI Applications
+brew "--cask firefox"
+brew "--cask discord"
+brew "--cask obsidian"
+brew "--cask spotify"
+brew "--cask kitty"
+brew "--cask alacritty"
+brew "--cask wezterm"
+brew "--cask bitwarden"
+brew "--cask docker"
+
+# Additional GUI applications
+brew "--cask visual-studio-code"
+brew "--cask rectangle"
+brew "--cask raycast"
+

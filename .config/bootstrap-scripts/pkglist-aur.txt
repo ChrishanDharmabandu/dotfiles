@@ -1,0 +1,11 @@
+[0;32m[INFO][0m Getting all explicitly installed packages...
+dmenu-rs
+docker-desktop
+qtile-extras
+qutebrowser-git
+rasdaemon
+snapd
+snapper-gui-git
+spotify
+warp-terminal
+youtube-cli
