@@ -1,0 +1,336 @@
+04:56:23.889: Platform: Wayland
+04:56:23.889: CPU Name: AMD Ryzen 7 7800X3D 8-Core Processor
+04:56:23.889: CPU Speed: 4265.196MHz
+04:56:23.890: Physical Cores: 8, Logical Cores: 16
+04:56:23.890: Physical Memory: 31685MB Total, 11244MB Free
+04:56:23.890: Kernel Version: Linux 6.15.0-2-cachyos
+04:56:23.890: Distribution: "CachyOS Linux" Unknown
+04:56:23.890: Desktop Environment: Hyprland (hyprland)
+04:56:23.890: Session Type: wayland
+04:56:23.891: Qt Version: 6.9.0 (runtime), 6.9.0 (compiled)
+04:56:23.891: Portable mode: false
+04:56:23.912: OBS 31.0.3 (linux)
+04:56:23.912: ---------------------------------
+04:56:23.912: ---------------------------------
+04:56:23.912: audio settings reset:
+04:56:23.912: 	samples per sec: 48000
+04:56:23.912: 	speakers:        2
+04:56:23.912: 	max buffering:   960 milliseconds
+04:56:23.912: 	buffering type:  dynamically increasing
+04:56:23.913: ---------------------------------
+04:56:23.913: Initializing OpenGL...
+04:56:23.913: Using EGL/Wayland
+04:56:23.942: Initialized EGL 1.5
+04:56:23.984: Loading up OpenGL on adapter NVIDIA Corporation NVIDIA GeForce RTX 4070/PCIe/SSE2
+04:56:23.984: OpenGL loaded successfully, version 3.3.0 NVIDIA 570.153.02, shading language 3.30 NVIDIA via Cg compiler
+04:56:24.000: ---------------------------------
+04:56:24.000: video settings reset:
+04:56:24.000: 	base resolution:   1920x1080
+04:56:24.000: 	output resolution: 1920x1080
+04:56:24.000: 	downscale filter:  Bicubic
+04:56:24.000: 	fps:               60/1
+04:56:24.000: 	format:            NV12
+04:56:24.000: 	YUV mode:          Rec. 709/Partial
+04:56:24.000: NV12 texture support enabled
+04:56:24.000: P010 texture support not available
+04:56:24.000: Audio monitoring device:
+04:56:24.000: 	name: Default
+04:56:24.000: 	id: default
+04:56:24.001: ---------------------------------
+04:56:24.005: Failed to load 'en-US' text for module: 'decklink-captions.so'
+04:56:24.008: Failed to load 'en-US' text for module: 'decklink-output-ui.so'
+04:56:24.011: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+04:56:24.011: Failed to initialize module 'decklink.so'
+04:56:24.083: [pipewire] Available capture sources:
+04:56:24.083: [pipewire]     - Monitor source
+04:56:24.083: [pipewire]     - Window source
+04:56:24.214: VAAPI: API version 1.22
+04:56:24.267: FFmpeg VAAPI H264 encoding supported
+04:56:24.392: FFmpeg VAAPI AV1 encoding supported
+04:56:24.509: FFmpeg VAAPI HEVC encoding supported
+04:56:24.955: [obs-nvenc] NVENC version: 13.0 (compiled) / 13.0 (driver), CUDA driver version: 12.80, AV1 supported: true
+04:56:25.345: os_dlopen(/usr/lib/obs-plugins/obs-websocket.so->/usr/lib/obs-plugins/obs-websocket.so): libqrcodegencpp.so.1: cannot open shared object file: No such file or directory
+04:56:25.345: 
+04:56:25.346: os_dlopen(/usr/lib/obs-plugins/obs-websocket.so->/usr/lib/obs-plugins/obs-websocket.so): libqrcodegencpp.so.1: cannot open shared object file: No such file or directory
+04:56:25.346: 
+04:56:25.346: Module '/usr/lib/obs-plugins/obs-websocket.so' not loaded
+04:56:25.359: ---------------------------------
+04:56:25.359:   Loaded Modules:
+04:56:25.359:     text-freetype2.so
+04:56:25.359:     rtmp-services.so
+04:56:25.359:     obs-x264.so
+04:56:25.359:     obs-webrtc.so
+04:56:25.359:     obs-vst.so
+04:56:25.359:     obs-transitions.so
+04:56:25.359:     obs-qsv11.so
+04:56:25.359:     obs-outputs.so
+04:56:25.359:     obs-nvenc.so
+04:56:25.359:     obs-libfdk.so
+04:56:25.359:     obs-filters.so
+04:56:25.359:     obs-ffmpeg.so
+04:56:25.359:     linux-v4l2.so
+04:56:25.359:     linux-pulseaudio.so
+04:56:25.359:     linux-pipewire.so
+04:56:25.359:     linux-jack.so
+04:56:25.359:     linux-capture.so
+04:56:25.359:     linux-alsa.so
+04:56:25.359:     image-source.so
+04:56:25.359:     frontend-tools.so
+04:56:25.359:     decklink-output-ui.so
+04:56:25.359:     decklink-captions.so
+04:56:25.359: ---------------------------------
+04:56:25.359: ---------------------------------
+04:56:25.359: Available Encoders:
+04:56:25.359:   Video Encoders:
+04:56:25.359: 	- ffmpeg_svt_av1 (SVT-AV1)
+04:56:25.359: 	- ffmpeg_aom_av1 (AOM AV1)
+04:56:25.359: 	- ffmpeg_vaapi_tex (FFmpeg VAAPI H.264)
+04:56:25.359: 	- av1_ffmpeg_vaapi_tex (FFmpeg VAAPI AV1)
+04:56:25.359: 	- hevc_ffmpeg_vaapi_tex (FFmpeg VAAPI HEVC)
+04:56:25.359: 	- obs_nvenc_h264_tex (NVIDIA NVENC H.264)
+04:56:25.359: 	- obs_nvenc_hevc_tex (NVIDIA NVENC HEVC)
+04:56:25.359: 	- obs_nvenc_av1_tex (NVIDIA NVENC AV1)
+04:56:25.359: 	- obs_x264 (x264)
+04:56:25.359:   Audio Encoders:
+04:56:25.359: 	- ffmpeg_aac (FFmpeg AAC)
+04:56:25.359: 	- ffmpeg_opus (FFmpeg Opus)
+04:56:25.359: 	- ffmpeg_pcm_s16le (FFmpeg PCM (16-bit))
+04:56:25.359: 	- ffmpeg_pcm_s24le (FFmpeg PCM (24-bit))
+04:56:25.359: 	- ffmpeg_pcm_f32le (FFmpeg PCM (32-bit float))
+04:56:25.359: 	- ffmpeg_alac (FFmpeg ALAC (24-bit))
+04:56:25.359: 	- ffmpeg_flac (FFmpeg FLAC (16-bit))
+04:56:25.359: 	- libfdk_aac (libfdk AAC)
+04:56:25.359: ==== Startup complete ===============================================
+04:56:25.386: All scene data cleared
+04:56:25.386: ------------------------------------------------
+04:56:25.388: pulse-input: Server name: 'PulseAudio (on PipeWire 1.4.4) 15.0.0'
+04:56:25.388: pulse-input: Audio format: s24le, 48000 Hz, 2 channels
+04:56:25.388: pulse-input: Sample format s24le not supported by OBS,using float32le instead for recording
+04:56:25.388: pulse-input: Started recording from 'alsa_output.usb-DAC-X6_DAC-X6-01.analog-stereo.monitor' (default)
+04:56:25.388: [Loaded global audio device]: 'Desktop Audio'
+04:56:25.388: pulse-input: Server name: 'PulseAudio (on PipeWire 1.4.4) 15.0.0'
+04:56:25.388: pulse-input: Audio format: s24le, 48000 Hz, 2 channels
+04:56:25.388: pulse-input: Sample format s24le not supported by OBS,using float32le instead for recording
+04:56:25.388: pulse-input: Started recording from 'alsa_output.usb-DAC-X6_DAC-X6-01.analog-stereo.monitor' (default)
+04:56:25.388: [Loaded global audio device]: 'Mic/Aux'
+04:56:25.388: PipeWire initialized
+04:56:25.388: PipeWire initialized
+04:56:25.389: Switched to scene 'Scene'
+04:56:25.389: ------------------------------------------------
+04:56:25.389: Loaded scenes:
+04:56:25.389: - scene 'Scene':
+04:56:25.389:     - source: 'Screen Capture (PipeWire)' (pipewire-screen-capture-source)
+04:56:25.389:     - source: 'finals' (pipewire-screen-capture-source)
+04:56:25.389: ------------------------------------------------
+04:56:25.414: [pipewire] Screencast session created
+04:56:25.414: [pipewire] Screencast session created
+04:56:25.961: adding 21 milliseconds of audio buffering, total audio buffering is now 21 milliseconds (source: Desktop Audio)
+04:56:25.961: 
+04:56:26.794: [pipewire] Asking for monitor and window
+04:56:30.075: [pipewire] Asking for monitor and window
+04:56:30.081: [pipewire] source selected, setting up screencast
+04:56:30.082: [pipewire] source selected, setting up screencast
+04:56:30.086: [pipewire] Server version: 1.4.4
+04:56:30.086: [pipewire] Library version: 1.4.4
+04:56:30.086: [pipewire] Header version: 1.4.2
+04:56:30.086: [pipewire] Created stream 0x61448af57190
+04:56:30.086: [pipewire] Stream 0x61448af57190 state: "connecting" (error: none)
+04:56:30.086: [pipewire] Playing stream 0x61448af57190
+04:56:30.086: [pipewire] Stream 0x61448af57190 state: "paused" (error: none)
+04:56:30.087: [pipewire] Server version: 1.4.4
+04:56:30.087: [pipewire] Library version: 1.4.4
+04:56:30.087: [pipewire] Header version: 1.4.2
+04:56:30.087: [pipewire] Created stream 0x61448a90bf50
+04:56:30.087: [pipewire] Stream 0x61448a90bf50 state: "connecting" (error: none)
+04:56:30.087: [pipewire] Playing stream 0x61448a90bf50
+04:56:30.087: [pipewire] Stream 0x61448a90bf50 state: "paused" (error: none)
+04:56:30.099: [pipewire] Negotiated format:
+04:56:30.099: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+04:56:30.099: [pipewire]     Modifier: 0x0
+04:56:30.099: [pipewire]     Size: 2560x1440
+04:56:30.099: [pipewire]     Framerate: 0/1
+04:56:30.099: [pipewire] Negotiated format:
+04:56:30.099: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+04:56:30.099: [pipewire]     Modifier: 0x300000000e08014
+04:56:30.099: [pipewire]     Size: 2560x1440
+04:56:30.099: [pipewire]     Framerate: 0/1
+04:56:30.099: [pipewire] Stream 0x61448af57190 state: "streaming" (error: none)
+04:56:30.100: [pipewire] Negotiated format:
+04:56:30.100: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+04:56:30.100: [pipewire]     Modifier: 0x0
+04:56:30.100: [pipewire]     Size: 2560x1440
+04:56:30.100: [pipewire]     Framerate: 0/1
+04:56:30.100: [pipewire] Negotiated format:
+04:56:30.100: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+04:56:30.100: [pipewire]     Modifier: 0x300000000e08014
+04:56:30.100: [pipewire]     Size: 2560x1440
+04:56:30.100: [pipewire]     Framerate: 0/1
+04:56:30.101: [pipewire] Stream 0x61448a90bf50 state: "streaming" (error: none)
+04:56:30.165: [pipewire] Stream 0x61448a90bf50 state: "paused" (error: none)
+04:56:30.165: [pipewire] Negotiated format:
+04:56:30.165: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+04:56:30.165: [pipewire]     Modifier: 0x300000000e08014
+04:56:30.165: [pipewire]     Size: 2560x1440
+04:56:30.165: [pipewire]     Framerate: 0/1
+04:56:30.165: [pipewire] Negotiated format:
+04:56:30.165: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+04:56:30.165: [pipewire]     Modifier: 0x300000000e08014
+04:56:30.165: [pipewire]     Size: 2560x1440
+04:56:30.165: [pipewire]     Framerate: 0/1
+04:56:30.165: [pipewire] Negotiated format:
+04:56:30.165: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+04:56:30.165: [pipewire]     Modifier: 0x300000000e08014
+04:56:30.165: [pipewire]     Size: 2560x1440
+04:56:30.165: [pipewire]     Framerate: 0/1
+04:56:30.166: [pipewire] Stream 0x61448a90bf50 state: "streaming" (error: none)
+04:56:35.151: [obs-nvenc: 'advanced_video_recording'] settings:
+04:56:35.151: 	codec:        AV1
+04:56:35.151: 	rate_control: CBR
+04:56:35.151: 	bitrate:      20000
+04:56:35.151: 	keyint:       250
+04:56:35.151: 	preset:       p5
+04:56:35.151: 	tuning:       ull
+04:56:35.151: 	multipass:    qres
+04:56:35.151: 	profile:      main
+04:56:35.151: 	width:        1920
+04:56:35.151: 	height:       1080
+04:56:35.151: 	b-frames:     2
+04:56:35.151: 	b-ref-mode:   0
+04:56:35.151: 	lookahead:    true (8 frames)
+04:56:35.151: 	aq:           true
+04:56:35.151: 
+04:56:35.180: libfdk_aac encoder created
+04:56:35.180: libfdk_aac bitrate: 160, channels: 2
+04:56:35.203: ==== Recording Start ===============================================
+04:56:35.203: [ffmpeg muxer: 'adv_file_output'] Writing file '/mnt/games&apps/2_Docs/Videos/Captures/2025-06-06_04-56-35.mkv'...
+05:04:47.550: adding 21 milliseconds of audio buffering, total audio buffering is now 42 milliseconds (source: Mic/Aux)
+05:04:47.550: 
+05:12:48.382: adding 64 milliseconds of audio buffering, total audio buffering is now 106 milliseconds (source: Mic/Aux)
+05:12:48.382: 
+05:56:12.238: [ffmpeg muxer: 'adv_file_output'] Output of file '/mnt/games&apps/2_Docs/Videos/Captures/2025-06-06_04-56-35.mkv' stopped
+05:56:12.238: Output 'adv_file_output': stopping
+05:56:12.238: Output 'adv_file_output': Total frames output: 214600
+05:56:12.238: Output 'adv_file_output': Total drawn frames: 214620 (214622 attempted)
+05:56:12.238: Output 'adv_file_output': Number of lagged frames due to rendering lag/stalls: 2 (0.0%)
+05:56:12.238: Video stopped, number of skipped frames due to encoding lag: 2/214619 (0.0%)
+05:56:12.238: ==== Recording Stop ================================================
+05:56:12.375: libfdk_aac encoder destroyed
+05:56:12.693: [obs-nvenc: 'advanced_video_recording'] settings:
+05:56:12.693: 	codec:        AV1
+05:56:12.693: 	rate_control: CBR
+05:56:12.693: 	bitrate:      20000
+05:56:12.693: 	keyint:       250
+05:56:12.693: 	preset:       p5
+05:56:12.693: 	tuning:       ull
+05:56:12.693: 	multipass:    qres
+05:56:12.693: 	profile:      main
+05:56:12.693: 	width:        1920
+05:56:12.693: 	height:       1080
+05:56:12.693: 	b-frames:     2
+05:56:12.693: 	b-ref-mode:   0
+05:56:12.693: 	lookahead:    true (8 frames)
+05:56:12.693: 	aq:           true
+05:56:12.693: 
+05:56:12.721: libfdk_aac encoder created
+05:56:12.721: libfdk_aac bitrate: 160, channels: 2
+05:56:12.728: ==== Recording Start ===============================================
+05:56:12.728: [ffmpeg muxer: 'adv_file_output'] Writing file '/mnt/games&apps/2_Docs/Videos/Captures/2025-06-06_05-56-12.mkv'...
+07:11:51.108: [ffmpeg muxer: 'adv_file_output'] Output of file '/mnt/games&apps/2_Docs/Videos/Captures/2025-06-06_05-56-12.mkv' stopped
+07:11:51.108: Output 'adv_file_output': stopping
+07:11:51.108: Output 'adv_file_output': Total frames output: 95198
+07:11:51.108: Output 'adv_file_output': Total drawn frames: 94852 (95481 attempted)
+07:11:51.108: Output 'adv_file_output': Number of lagged frames due to rendering lag/stalls: 629 (0.7%)
+07:11:51.108: Video stopped, number of skipped frames due to encoding lag: 704/95478 (0.7%)
+07:11:51.108: ==== Recording Stop ================================================
+07:11:51.218: [pipewire] Stream 0x61448a90bf50 state: "paused" (error: none)
+07:11:51.219: [pipewire] Negotiated format:
+07:11:51.219: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+07:11:51.219: [pipewire]     Modifier: 0x300000000e08014
+07:11:51.219: [pipewire]     Size: 2560x1440
+07:11:51.219: [pipewire]     Framerate: 0/1
+07:11:51.219: [pipewire] Negotiated format:
+07:11:51.219: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+07:11:51.219: [pipewire]     Modifier: 0x300000000e08014
+07:11:51.219: [pipewire]     Size: 2560x1440
+07:11:51.219: [pipewire]     Framerate: 0/1
+07:11:51.219: [pipewire] Negotiated format:
+07:11:51.219: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+07:11:51.219: [pipewire]     Modifier: 0x300000000e08014
+07:11:51.219: [pipewire]     Size: 2560x1440
+07:11:51.219: [pipewire]     Framerate: 0/1
+07:11:51.220: [pipewire] Stream 0x61448a90bf50 state: "streaming" (error: none)
+07:11:51.363: libfdk_aac encoder destroyed
+07:22:27.846: [obs-nvenc: 'advanced_video_recording'] settings:
+07:22:27.846: 	codec:        AV1
+07:22:27.846: 	rate_control: CBR
+07:22:27.846: 	bitrate:      20000
+07:22:27.846: 	keyint:       250
+07:22:27.846: 	preset:       p5
+07:22:27.846: 	tuning:       ull
+07:22:27.846: 	multipass:    qres
+07:22:27.846: 	profile:      main
+07:22:27.846: 	width:        1920
+07:22:27.846: 	height:       1080
+07:22:27.846: 	b-frames:     2
+07:22:27.846: 	b-ref-mode:   0
+07:22:27.846: 	lookahead:    true (8 frames)
+07:22:27.846: 	aq:           true
+07:22:27.846: 
+07:22:27.878: libfdk_aac encoder created
+07:22:27.878: libfdk_aac bitrate: 160, channels: 2
+07:22:27.879: ==== Recording Start ===============================================
+07:22:27.879: [ffmpeg muxer: 'adv_file_output'] Writing file '/mnt/games&apps/2_Docs/Videos/Captures/2025-06-06_07-22-27.mkv'...
+07:41:38.774: [ffmpeg muxer: 'adv_file_output'] Output of file '/mnt/games&apps/2_Docs/Videos/Captures/2025-06-06_07-22-27.mkv' stopped
+07:41:38.774: Output 'adv_file_output': stopping
+07:41:38.774: Output 'adv_file_output': Total frames output: 69037
+07:41:38.774: Output 'adv_file_output': Total drawn frames: 69054
+07:41:38.774: ==== Recording Stop ================================================
+07:41:38.910: libfdk_aac encoder destroyed
+07:41:39.496: [obs-nvenc: 'advanced_video_recording'] settings:
+07:41:39.496: 	codec:        AV1
+07:41:39.496: 	rate_control: CBR
+07:41:39.496: 	bitrate:      20000
+07:41:39.496: 	keyint:       250
+07:41:39.496: 	preset:       p5
+07:41:39.496: 	tuning:       ull
+07:41:39.496: 	multipass:    qres
+07:41:39.496: 	profile:      main
+07:41:39.496: 	width:        1920
+07:41:39.496: 	height:       1080
+07:41:39.496: 	b-frames:     2
+07:41:39.496: 	b-ref-mode:   0
+07:41:39.496: 	lookahead:    true (8 frames)
+07:41:39.496: 	aq:           true
+07:41:39.496: 
+07:41:39.527: libfdk_aac encoder created
+07:41:39.527: libfdk_aac bitrate: 160, channels: 2
+07:41:39.528: ==== Recording Start ===============================================
+07:41:39.528: [ffmpeg muxer: 'adv_file_output'] Writing file '/mnt/games&apps/2_Docs/Videos/Captures/2025-06-06_07-41-39.mkv'...
+10:24:52.308: [ffmpeg muxer: 'adv_file_output'] Output of file '/mnt/games&apps/2_Docs/Videos/Captures/2025-06-06_07-41-39.mkv' stopped
+10:24:52.308: Output 'adv_file_output': stopping
+10:24:52.308: Output 'adv_file_output': Total frames output: 409132
+10:24:52.308: Output 'adv_file_output': Total drawn frames: 408808 (409403 attempted)
+10:24:52.308: Output 'adv_file_output': Number of lagged frames due to rendering lag/stalls: 595 (0.1%)
+10:24:52.308: Video stopped, number of skipped frames due to encoding lag: 664/409401 (0.2%)
+10:24:52.308: ==== Recording Stop ================================================
+10:24:52.444: libfdk_aac encoder destroyed
+10:46:19.898: [obs-nvenc: 'advanced_video_recording'] settings:
+10:46:19.898: 	codec:        AV1
+10:46:19.898: 	rate_control: CBR
+10:46:19.898: 	bitrate:      20000
+10:46:19.898: 	keyint:       250
+10:46:19.898: 	preset:       p5
+10:46:19.898: 	tuning:       ull
+10:46:19.898: 	multipass:    qres
+10:46:19.898: 	profile:      main
+10:46:19.898: 	width:        1920
+10:46:19.898: 	height:       1080
+10:46:19.898: 	b-frames:     2
+10:46:19.898: 	b-ref-mode:   0
+10:46:19.898: 	lookahead:    true (8 frames)
+10:46:19.898: 	aq:           true
+10:46:19.898: 
+10:46:19.926: libfdk_aac encoder created
+10:46:19.926: libfdk_aac bitrate: 160, channels: 2
+10:46:19.934: ==== Recording Start ===============================================
+10:46:19.934: [ffmpeg muxer: 'adv_file_output'] Writing file '/mnt/games&apps/2_Docs/Videos/Captures/2025-06-06_10-46-19.mkv'...

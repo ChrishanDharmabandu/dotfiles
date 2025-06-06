@@ -1,0 +1,19 @@
+# Debian/Ubuntu package equivalents
+# Basic packages for debian-based systems
+
+git
+neovim
+tmux
+curl
+wget
+ripgrep
+nodejs
+npm
+python3
+python3-pip
+zsh
+fzf
+build-essential
+firefox-esr
+kitty
+

@@ -1,0 +1,6 @@
+[Default Applications]
+application/x-zerosize=neovide.desktop
+
+[Added Associations]
+application/x-zerosize=neovide.desktop;
+application/vnd.exstream-package=dev.warp.Warp.desktop;

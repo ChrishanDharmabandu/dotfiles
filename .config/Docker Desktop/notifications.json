@@ -1,0 +1,56 @@
+{
+	"notifications": [
+		{
+			"guid": "1e9d8744-2c84-4759-a3cf-067f792cc54a",
+			"timestamp": 1748843082837,
+			"read": true,
+			"displayState": "background",
+			"notification": {
+				"message": "How was your experience installing Docker Desktop?",
+				"icon": "campaign",
+				"type": "feedback",
+				"actionText": "Give feedback",
+				"action": {
+					"action": "open-external-url",
+					"params": {
+						"url": "https://docker.qualtrics.com/jfe/form/SV_6AaVyp25bygjirY?DD_Version=4.41.2&Tab=Install%2BComplete&OS=Linux"
+					}
+				}
+			}
+		},
+		{
+			"guid": "34c0974f-cfc4-40b0-a60c-49ead8087e47",
+			"timestamp": 1748859681463,
+			"read": false,
+			"displayState": "background",
+			"notification": {
+				"message": "You must initialize pass before logging in to Docker Desktop",
+				"icon": "error",
+				"type": "action-result",
+				"operation": "user-log-in",
+				"title": "Unable to log in",
+				"actionText": "Learn how",
+				"action": {
+					"action": "open-credential-store-instructions",
+					"params": {}
+				}
+			}
+		},
+		{
+			"guid": "899c3704-3e1d-4adc-9402-36c00bd8e4ad",
+			"timestamp": 1748859931069,
+			"read": true,
+			"displayState": "background",
+			"notification": {
+				"message": "Scout wants to send OS Notifications through Docker Desktop",
+				"icon": "sparkles",
+				"type": "general-purpose",
+				"actionText": "View",
+				"action": {
+					"action": "enable-scout-os-notifications",
+					"params": {}
+				}
+			}
+		}
+	]
+}
