@@ -1,7 +1,10 @@
+# Sample
+# echo 'alias =""'
+
 # Alias for zshrc and bashrc
 alias ls="eza"
-alias lse="eza --icons -F -H --group-directories-first"
-alias lsea="eza --icons -aF -H --group-directories-first"
+alias lsd="eza --icons -F -H --group-directories-first"
+alias lsda="eza --icons -aF -H --group-directories-first"
 alias ll='eza --icons -alF -H --group-directories-first --git -1'
 alias lt='eza -aT --color=always --group-directories-first --icons'
 alias cl='clear'
