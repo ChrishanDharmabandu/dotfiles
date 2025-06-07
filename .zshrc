@@ -64,5 +64,4 @@ if [[ "$(uname)" == "Darwin" ]]; then
   alias pip="pip3"
 fi
 
-
 fastfetch
