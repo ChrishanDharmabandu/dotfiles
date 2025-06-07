@@ -4,6 +4,7 @@ alias lse="eza --icons -F -H --group-directories-first"
 alias lsea="eza --icons -aF -H --group-directories-first"
 alias ll='eza --icons -alF -H --group-directories-first --git -1'
 alias lt='eza -aT --color=always --group-directories-first --icons'
+alias cl='clear'
 alias n="nvim"
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias configa="config add"
@@ -11,18 +12,5 @@ alias configc="config commit -m"
 alias configp="config push"
 alias config-auto='configa -u; configc "auto-update"; configp'
 alias configssh="config remote set-url origin git@github.com:ChrishanDharmabandu/dotfiles.git"
-alias package-list="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 250"
-alias add-package="echo $1 >> ~/.config/scripts/packages-list.txt"
-alias add-package-aur="echo $1 >> ~/.config/scripts/packages-list-aur.txt"
-alias pcloudm="nohup rclone mount pcloud: ~/Documents/pcloud &" 
-alias pcloudu="fusermount -u ~/Documents/pcloud" 
-alias gdrivem="nohup rclone mount gdrive: ~/Documents/gdrive &" 
-alias gdriveu="fusermount -u ~/Documents/gdrive" 
-alias gitnotes='git add . && git commit -m "updated notes" && git push'
-alias ansible-update='ansible-playbook ~/.config/scripts/main.yml --ask-become-pass'
-alias pkg-install='xargs -a '~/.config/scripts/pack.list' sudo apt install'
-alias pkg-add='n '~/.config/scripts/pack.list''
-alias gnome-backup='dconf dump / >~/.config/scripts/popsettings.conf'
-alias gnome-restore='dconf load / <~/.config/scripts/popsettings.conf'
-alias obsidian='cd "/mnt/c/Users/SyncthingServiceAcct/sync-docs/notes"; n .'
-# sample: alias =''
+alias ssh-mac="ssh squishy-macos@squishym1.local"
+alias ssh-desktop="ssh squishy@arch-beast.local"
