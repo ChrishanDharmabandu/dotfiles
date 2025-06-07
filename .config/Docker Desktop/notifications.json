@@ -21,7 +21,7 @@
 		{
 			"guid": "34c0974f-cfc4-40b0-a60c-49ead8087e47",
 			"timestamp": 1748859681463,
-			"read": false,
+			"read": true,
 			"displayState": "background",
 			"notification": {
 				"message": "You must initialize pass before logging in to Docker Desktop",

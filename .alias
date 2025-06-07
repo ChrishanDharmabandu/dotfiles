@@ -16,3 +16,7 @@ alias ssh-mac="ssh squishy-macos@squishym1.local"
 alias ssh-desktop="ssh squishy@arch-beast.local"
 alias rsync-sample='rsync -avP --info=progress2 Hermes8B.gguf squishy@squishym1.local:~/1-LLM/1-Models/'
 alias rsync-mac='rsync -avP --info=progress2 [file] squishy@squishym1.local:[location on remote]'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
