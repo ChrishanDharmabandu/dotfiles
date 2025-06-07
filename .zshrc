@@ -43,6 +43,8 @@ eval "$(zoxide init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Exports
+# export TERM=kitty
+# export TERMINAL=kitty
 # export BROWSER=brave-browser
 export EDITOR=nvim
 
