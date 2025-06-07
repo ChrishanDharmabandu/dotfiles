@@ -29,24 +29,22 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # Sourcing
 source ~/.alias
-# source ~/.zsh/
-# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-# source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
+source ~/.zsh/
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
 
 #starship
 eval "$(starship init zsh)"
-#zoxide (cd repalcement)
+# zoxide (cd repalcement)
 eval "$(zoxide init zsh)"
 
 #FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Exports
-# export TERM=kitty
-# export TERMINAL=kitty
-# export BROWSER=brave-browser
 export EDITOR=nvim
+export PAGER=nvim
 export TERM="xterm-256color"
 
 #export path
@@ -64,4 +62,5 @@ if [[ "$(uname)" == "Darwin" ]]; then
   alias pip="pip3"
 fi
 
+# fast fetch on load
 fastfetch
