@@ -1,9 +1,6 @@
-# Sample
-# echo 'alias =""'
-
 # Alias for zshrc and bashrc
-alias ls="eza"
-alias lsd="eza --icons -F -H --group-directories-first"
+alias lsd="eza"
+alias ls="eza --icons -F -H --group-directories-first"
 alias lsda="eza --icons -aF -H --group-directories-first"
 alias ll='eza --icons -alF -H --group-directories-first --git -1'
 alias lt='eza -aT --color=always --group-directories-first --icons'
@@ -26,3 +23,4 @@ alias .....='cd ../../../..'
 alias cdn='cd ~/Documents/Vaults/Notes/4-Terminal_notes'
 alias cdl="cd ~/Downloads"
 alias cdo="cd ~/Documents "
+alias chx="chmod +x"
