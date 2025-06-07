@@ -43,8 +43,6 @@ eval "$(zoxide init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Exports
-# export TERM=kitty
-# export TERMINAL=kitty
 # export BROWSER=brave-browser
 export EDITOR=nvim
 
@@ -56,3 +54,12 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
+
+# Only alias on macOS (Darwin)
+if [[ "$(uname)" == "Darwin" ]]; then
+  alias python="python3"
+  alias pip="pip3"
+fi
+
+
+fastfetch
