@@ -42,16 +42,17 @@ eval "$(zoxide init zsh)"
 #FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Exports
+# Exports tools
 export EDITOR=nvim
 export PAGER=nvim
 export TERM="xterm-256color"
 
-#export path
-export PATH="/home/$USER/.local/share/gem/ruby/3.0.0/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$HOME/.local/bin:$PATH"
+# Export path
+# Prioritize user-installed language binaries and then custom local scripts
+export PATH="$HOME/.local/bin:$PATH" # Custom scripts first
+export PATH="$HOME/.local/bin/scripts:$PATH" # Custom scripts first
+export PATH="$HOME/.cargo/bin:$PATH" # Rust binaries
+export PATH="/home/$USER/.local/share/gem/ruby/3.0.0/bin:$PATH" # Ruby Gems binaries
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
