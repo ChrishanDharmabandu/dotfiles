@@ -20,3 +20,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
+alias cdn='cd ~/Documents/Vaults/Notes/4-Terminal_notes'
+alias cdl="cd ~/Downloads"
+alias cdo="cd ~/Documents "
