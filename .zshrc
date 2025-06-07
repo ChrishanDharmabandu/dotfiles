@@ -56,3 +56,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
+
+# Set mac backspace
+bindkey '^?' backward-delete-char

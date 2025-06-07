@@ -1,5 +1,12 @@
-2025/06/01-11:35:12.699 285f Creating DB /home/squishy/.config/discord/Local Storage/leveldb since it was missing.
-2025/06/01-11:35:12.715 285f Reusing MANIFEST /home/squishy/.config/discord/Local Storage/leveldb/MANIFEST-000001
-2025/06/01-11:39:01.633 285f Level-0 table #5: started
-2025/06/01-11:39:01.651 285f Level-0 table #5: 1036661 bytes OK
-2025/06/01-11:39:01.660 285f Delete type=0 #3
+2025/06/06-20:55:27.385 1e19 Reusing MANIFEST /home/squishy/.config/discord/Local Storage/leveldb/MANIFEST-000001
+2025/06/06-20:55:27.388 1e19 Recovering log #4
+2025/06/06-20:55:27.388 1e19 Reusing old log /home/squishy/.config/discord/Local Storage/leveldb/000004.log 
+2025/06/06-21:01:12.924 1e1a Level-0 table #8: started
+2025/06/06-21:01:12.947 1e1a Level-0 table #8: 1061209 bytes OK
+2025/06/06-21:01:12.957 1e1a Delete type=0 #4
+2025/06/06-21:13:46.863 1e19 Level-0 table #10: started
+2025/06/06-21:13:46.874 1e19 Level-0 table #10: 34261 bytes OK
+2025/06/06-21:13:46.883 1e19 Delete type=0 #7
+2025/06/06-22:40:46.863 1e1a Level-0 table #12: started
+2025/06/06-22:40:46.874 1e1a Level-0 table #12: 8689 bytes OK
+2025/06/06-22:40:46.883 1e1a Delete type=0 #9

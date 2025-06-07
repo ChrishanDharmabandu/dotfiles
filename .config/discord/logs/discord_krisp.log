@@ -6,3 +6,47 @@
 [2025-Jun-01 11:35:43.282 +10:00][10466:10466][info ] Initializing Krisp SDK in PID 10466, addr 0x7ad51e38c820
 [2025-Jun-01 11:35:43.414 +10:00][10466:10466][info ] Initialized Krisp SDK successfully
 [2025-Jun-01 11:35:43.414 +10:00][10466:10466][info ] Krisp SDK initialized
+[2025-Jun-06 20:55:57.934 +10:00][ 8115: 8115][info ] Logging initialized
+[2025-Jun-06 20:55:57.934 +10:00][ 8115: 8115][info ] Initializing krisp SDK...
+[2025-Jun-06 20:55:57.934 +10:00][ 8115: 8115][info ] DoKrispInitialize
+[2025-Jun-06 20:55:58.198 +10:00][ 8115: 8115][info ] LoadDynamicKrisp
+[2025-Jun-06 20:55:58.198 +10:00][ 8115: 8115][info ] Did not find KRISP_DYLIB_PATH, skipping dynamic loading
+[2025-Jun-06 20:55:58.198 +10:00][ 8115: 8115][info ] Initializing Krisp SDK in PID 8115, addr 0x7e6e1e58c820
+[2025-Jun-06 20:55:58.347 +10:00][ 8115: 8115][info ] Initialized Krisp SDK successfully
+[2025-Jun-06 20:55:58.347 +10:00][ 8115: 8115][info ] Krisp SDK initialized
+[2025-Jun-06 21:02:40.683 +10:00][ 8115: 8225][info ] KrispNCSetup: sampleRate = 48000, duration = 10
+[2025-Jun-06 21:02:40.683 +10:00][ 8115: 8225][info ] Setting Krisp model: full_NC
+[2025-Jun-06 21:02:40.690 +10:00][ 8115: 8225][info ] KrispVADSetup: sampleRate = 48000, duration = 10
+[2025-Jun-06 21:03:09.633 +10:00][ 8115: 8225][info ] KrispVADSetup: sampleRate = 48000, duration = 10
+[2025-Jun-06 21:03:37.273 +10:00][ 8115: 8214][info ] KrispVADReset
+[2025-Jun-06 21:03:37.281 +10:00][ 8115: 8225][info ] KrispVADSetup: sampleRate = 48000, duration = 10
+[2025-Jun-06 21:03:51.723 +10:00][ 8115: 8214][info ] KrispVADReset
+[2025-Jun-06 21:03:51.723 +10:00][ 8115: 8225][info ] KrispVADSetup: sampleRate = 48000, duration = 10
+[2025-Jun-06 21:03:53.869 +10:00][ 8115: 8214][info ] KrispVADReset
+[2025-Jun-06 21:03:53.878 +10:00][ 8115: 8225][info ] KrispVADSetup: sampleRate = 48000, duration = 10
+[2025-Jun-06 21:03:54.821 +10:00][ 8115: 8214][info ] KrispNCReset
+[2025-Jun-06 21:03:54.822 +10:00][ 8115: 8214][info ] KrispVADReset
+[2025-Jun-06 21:03:54.839 +10:00][ 8115: 8225][info ] KrispVADSetup: sampleRate = 48000, duration = 10
+[2025-Jun-06 21:03:57.974 +10:00][ 8115: 8214][info ] KrispVADReset
+[2025-Jun-06 21:03:57.995 +10:00][ 8115: 8225][info ] KrispNCSetup: sampleRate = 48000, duration = 10
+[2025-Jun-06 21:03:57.995 +10:00][ 8115: 8225][info ] Setting Krisp model: full_NC
+[2025-Jun-06 21:03:58.009 +10:00][ 8115: 8225][info ] KrispVADSetup: sampleRate = 48000, duration = 10
+[2025-Jun-06 21:03:59.592 +10:00][ 8115: 8214][info ] KrispNCReset
+[2025-Jun-06 21:03:59.593 +10:00][ 8115: 8214][info ] KrispVADReset
+[2025-Jun-06 21:03:59.617 +10:00][ 8115: 8225][info ] KrispVADSetup: sampleRate = 48000, duration = 10
+[2025-Jun-06 21:04:02.155 +10:00][ 8115: 8225][info ] KrispNCSetup: sampleRate = 48000, duration = 10
+[2025-Jun-06 21:04:02.155 +10:00][ 8115: 8225][info ] Setting Krisp model: full_NC
+[2025-Jun-06 21:04:02.156 +10:00][ 8115: 8214][info ] KrispVADReset
+[2025-Jun-06 21:04:02.165 +10:00][ 8115: 8225][info ] KrispVADSetup: sampleRate = 48000, duration = 10
+[2025-Jun-06 21:04:02.169 +10:00][ 8115: 8214][info ] KrispVADReset
+[2025-Jun-06 21:04:02.169 +10:00][ 8115: 8225][info ] KrispVADSetup: sampleRate = 48000, duration = 10
+[2025-Jun-06 21:04:02.174 +10:00][ 8115: 8214][info ] KrispVADReset
+[2025-Jun-06 21:04:02.175 +10:00][ 8115: 8225][info ] KrispVADSetup: sampleRate = 48000, duration = 10
+[2025-Jun-06 21:04:05.206 +10:00][ 8115: 8214][info ] KrispVADReset
+[2025-Jun-06 21:04:05.228 +10:00][ 8115: 8225][info ] KrispVADSetup: sampleRate = 48000, duration = 10
+[2025-Jun-06 21:04:16.956 +10:00][ 8115: 8214][info ] KrispVADReset
+[2025-Jun-06 21:04:16.961 +10:00][ 8115: 8225][info ] KrispVADSetup: sampleRate = 48000, duration = 10
+[2025-Jun-06 21:04:19.278 +10:00][ 8115: 8214][info ] KrispVADReset
+[2025-Jun-06 21:06:38.315 +10:00][ 8115: 8225][info ] KrispVADSetup: sampleRate = 48000, duration = 10
+[2025-Jun-06 21:06:57.930 +10:00][ 8115: 8214][info ] KrispVADReset
+[2025-Jun-06 23:28:08.857 +10:00][ 8115: 8214][info ] KrispVADReset

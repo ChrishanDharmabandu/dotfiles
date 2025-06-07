@@ -1,22 +1,3 @@
-2025/06/06-14:30:05.695 274a Reusing MANIFEST /home/squishy/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/MANIFEST-000001
-2025/06/06-14:30:05.695 274a Recovering log #475
-2025/06/06-14:30:05.702 274a Reusing old log /home/squishy/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/000475.log 
-2025/06/06-14:30:29.224 274b Level-0 table #485: started
-2025/06/06-14:30:29.249 274b Level-0 table #485: 1285979 bytes OK
-2025/06/06-14:30:29.258 274b Delete type=0 #475
-2025/06/06-14:30:32.255 27aa Compacting 1@1 + 6@2 files
-2025/06/06-14:30:32.277 27aa Generated table #486@1: 2229 keys, 2137491 bytes
-2025/06/06-14:30:32.286 27aa Generated table #487@1: 782 keys, 2111965 bytes
-2025/06/06-14:30:32.296 27aa Generated table #488@1: 850 keys, 2124605 bytes
-2025/06/06-14:30:32.305 27aa Generated table #489@1: 782 keys, 2113579 bytes
-2025/06/06-14:30:32.314 27aa Generated table #490@1: 741 keys, 2111113 bytes
-2025/06/06-14:30:32.329 27aa Generated table #491@1: 13518 keys, 1486554 bytes
-2025/06/06-14:30:32.329 27aa Compacted 1@1 + 6@2 files => 12085307 bytes
-2025/06/06-14:30:32.343 27aa compacted to: files[ 0 0 6 0 0 0 0 ]
-2025/06/06-14:30:32.343 27aa Delete type=2 #477
-2025/06/06-14:30:32.343 27aa Delete type=2 #478
-2025/06/06-14:30:32.343 27aa Delete type=2 #479
-2025/06/06-14:30:32.343 27aa Delete type=2 #480
-2025/06/06-14:30:32.343 27aa Delete type=2 #481
-2025/06/06-14:30:32.343 27aa Delete type=2 #482
-2025/06/06-14:30:32.343 27aa Delete type=2 #485
+2025/06/06-16:46:21.123 1f80 Reusing MANIFEST /home/squishy/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/MANIFEST-000001
+2025/06/06-16:46:21.123 1f80 Recovering log #484
+2025/06/06-16:46:21.124 1f80 Reusing old log /home/squishy/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/000484.log 
