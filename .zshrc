@@ -47,6 +47,7 @@ eval "$(zoxide init zsh)"
 # export TERMINAL=kitty
 # export BROWSER=brave-browser
 export EDITOR=nvim
+export TERM="xterm-256color"
 
 #export path
 export PATH="/home/$USER/.local/share/gem/ruby/3.0.0/bin:$PATH"
