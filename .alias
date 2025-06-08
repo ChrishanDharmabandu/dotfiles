@@ -12,7 +12,7 @@ alias configc="config commit -m"
 alias configp="config push"
 alias config-auto='configa -u; configc "auto-update"; configp'
 alias configssh="config remote set-url origin git@github.com:ChrishanDharmabandu/dotfiles.git"
-alias ssh-mac='ssh squishy-macos@squishym1.local "caffeinate -s"'
+alias ssh-mac='ssh squishy-macos@squishym1.local'
 alias ssh-desktop="ssh squishy@arch-beast.local"
 alias rsync-sample='rsync -avP --info=progress2 Hermes8B.gguf squishy@squishym1.local:~/1-LLM/1-Models/'
 alias rsync-mac='rsync -avP --info=progress2 [file] squishy@squishym1.local:[location on remote]'
@@ -25,3 +25,4 @@ alias cdl="cd ~/Downloads"
 alias cdo="cd ~/Documents "
 alias chx="chmod +x"
 alias create-alias="alias.sh"
+alias rysnc-local="rsync -avP --info=progress2"
