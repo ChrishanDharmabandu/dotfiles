@@ -65,3 +65,10 @@ fi
 
 # fast fetch on load
 fastfetch
+
+# Always try to attach to a tmux session, or create a new one.
+# This will lead to nested tmux sessions if you SSH from an existing tmux session
+# to a remote host that also has this configuration.
+if command -v tmux &> /dev/null; then
+  tmux attach -t default || tmux new -s default
+fi
