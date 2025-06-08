@@ -24,3 +24,4 @@ alias cdn='cd ~/Documents/Vaults/Notes/4-Terminal_notes'
 alias cdl="cd ~/Downloads"
 alias cdo="cd ~/Documents "
 alias chx="chmod +x"
+alias create-alias="alias.sh"
