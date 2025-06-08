@@ -65,4 +65,4 @@ fi
 
 # fast fetch on load
 fastfetch
-
+echo 'HAVE YOU TMUXED, DO YOU NEED TO TMUX?'
