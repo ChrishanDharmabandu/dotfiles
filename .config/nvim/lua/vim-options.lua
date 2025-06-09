@@ -1,9 +1,10 @@
+-- This line is CRUCIAL and should be near the top
+vim.opt.termguicolors = true
 -- General settings
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.g.mapleader = " "
-vim.g.background = "light"
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.swapfile = false
