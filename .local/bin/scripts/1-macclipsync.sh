@@ -21,7 +21,7 @@ else
 fi
 
 # Replace this with your actual macOS SSH hostname or IP
-MACOS_HOST="squishy-macos@macos-hostname"
+MACOS_HOST="squishy-macos@squishym1.local"
 
 echo "Copying Linux clipboard TO macOS clipboard..."
 $PASTE_CMD | ssh "$MACOS_HOST" 'pbcopy'
