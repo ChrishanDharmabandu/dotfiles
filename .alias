@@ -34,3 +34,5 @@ alias aliasa="nvim ~/.alias"
 alias sourcea="source ~/.zshrc"
 alias 1-allowAI='export $(gpg -d secret-oi1.env.gpg | grep OPENAI_API_KEY)'
 alias 2-revokeAI='unset OPENAI_API_KEY'
+alias mv-notes='mv ~/Downloads/*.md ~/Documents/Vaults/Notes'
+
