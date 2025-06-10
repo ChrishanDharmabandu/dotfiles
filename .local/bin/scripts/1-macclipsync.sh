@@ -64,14 +64,14 @@ echo "Syncing clipboard between $LOCAL_OS and remote..."
 
 if [[ "$LOCAL_OS" == "linux" ]]; then
   # Linux -> macOS
-  paste_local | ssh "$REMOTE_HOST" "pbcopy"
+  paste_local | ssh -T "$REMOTE_HOST" "pbcopy"
   # macOS -> Linux
-  ssh "$REMOTE_HOST" "pbpaste" | copy_local
+  ssh -T "$REMOTE_HOST" "pbpaste" | copy_local
 else
   # macOS -> Linux
-  paste_local | ssh "$REMOTE_HOST" "$COPY_CMD"
+  paste_local | ssh -T "$REMOTE_HOST" "$COPY_CMD"
   # Linux -> macOS
-  ssh "$REMOTE_HOST" "$PASTE_CMD" | macos_copy
+  ssh -T "$REMOTE_HOST" "$PASTE_CMD" | macos_copy
 fi
 
 echo "Clipboard sync complete."
