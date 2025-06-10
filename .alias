@@ -32,6 +32,5 @@ alias mvdlmd="mv ~/Downloads/*.md ~/Documents/Vaults/Notes/"
 alias cdv="cd /mnt/games&apps/2_Docs/Videos/Captures"
 alias aliasa="nvim ~/.alias"
 alias sourcea="source ~/.zshrc"
-alias 1-mac-to-arch='pbpaste | ssh squishy@arch-beast.local wl-copy'
-alias 2-arch-to-mac='wl-paste | ssh squishy-macos@squishym1.local pbcopy'
-
+alias 1-allowAI='export $(gpg -d secrets.env.gpg | grep OPENAI_API_KEY)'
+alias 2-revokeAI='unset OPENAI_API_KEY'
