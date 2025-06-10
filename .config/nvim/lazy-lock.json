@@ -44,5 +44,6 @@
   "vim-markdown-runner": { "branch": "master", "commit": "8afc2b63e6b5856779647962b4de7093d3ae1c52" },
   "vim-sleuth": { "branch": "master", "commit": "be69bff86754b1aa5adcbb527d7fcd1635a84080" },
   "vim-test": { "branch": "master", "commit": "5ee917b97ccd32722385762657f7306d1f8cd252" },
+  "vim-tmux-navigator": { "branch": "master", "commit": "412c474e97468e7934b9c217064025ea7a69e05e" },
   "vimux": { "branch": "master", "commit": "7db6b2f79d432ee3820668b1d4625311dbe1d0ad" }
 }

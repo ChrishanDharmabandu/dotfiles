@@ -32,7 +32,9 @@ alias mvdlmd="mv ~/Downloads/*.md ~/Documents/Vaults/Notes/"
 alias cdv="cd /mnt/games&apps/2_Docs/Videos/Captures"
 alias aliasa="nvim ~/.alias"
 alias sourcea="source ~/.zshrc"
-alias 1-allowAI='export $(gpg -d secret-oi1.env.gpg | grep OPENAI_API_KEY)'
-alias 2-revokeAI='unset OPENAI_API_KEY'
 alias mv-notes='mv ~/Downloads/*.md ~/Documents/Vaults/Notes'
+
+# AI tools
+alias 1-allowAI='export $(gpg -d ~/secret-oi1.env.gpg | grep OPENAI_API_KEY); export TMUXAI_OPENROUTER_API_KEY=$OPENAI_API_KEY'
+alias 2-revokeAI='unset OPENAI_API_KEY TMUXAI_OPENROUTER_API_KEY'
 
