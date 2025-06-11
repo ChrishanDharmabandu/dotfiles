@@ -95,7 +95,7 @@ cmd-alt-h = [] # Disable "hide others"
 
 # Alt-Return for Kitty terminal
 # The key for 'Return' is often 'enter' in these configs.
-"alt-enter" = 'exec-and-forget open -na "Kitty"'
+"alt-enter" = 'exec-and-forget open -na "ghostty"'
 
 # Alt-f for fullscreen toggle
 # This might still be 'fullscreen' but if it fails, we'll need an osascript for F11.
