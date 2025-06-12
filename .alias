@@ -37,4 +37,6 @@ alias mv-notes='mv ~/Downloads/*.md ~/Documents/Vaults/Notes'
 # AI tools
 alias 1-allowAI='export $(gpg -d ~/secret-oi1.env.gpg | grep OPENAI_API_KEY); export TMUXAI_OPENROUTER_API_KEY=$OPENAI_API_KEY'
 alias 2-revokeAI='unset OPENAI_API_KEY TMUXAI_OPENROUTER_API_KEY'
+alias lite-llm="load_cloudapi_env && lite-llm"
+
 
