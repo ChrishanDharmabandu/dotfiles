@@ -102,6 +102,8 @@ function decrypt_env() {
 function load_cloudapi_env() {
   decrypt_env "cloudapi.env.gpg"
 }
+
+load_cloudapi_env
 # <<<<<< custom encrytion calls
 
 # fast fetch on load
