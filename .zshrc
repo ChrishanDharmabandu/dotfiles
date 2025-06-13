@@ -76,38 +76,11 @@ if [[ "$(uname)" == "Darwin" ]]; then
   alias pip="pip3"
 fi
 
-# custom encrytion calls start >>>>>
-function decrypt_env() {
-  if [ -f "$1" ]; then
-    gpg -d -q "$1" > /dev/null 2>&1
-    if [ $? -eq 0 ]; then
-      gpg -d "$1" > "${1%.gpg}"
-      if [ $? -eq 0 ]; then
-        export $(cat "${1%.gpg}")
-        return 0
-      else
-        rm "${1%.gpg}"
-        return 1
-      fi
-    else
-      echo "Decryption failed (bad passphrase?)" >&2
-      return 1
-    fi
-  else
-    echo "Encrypted environment file $1 not found." >&2
-    retourn 1
-  fi
-}
-
-function load_cloudapi_env() {
-  decrypt_env "cloudapi.env.gpg"
-}
-
-load_cloudapi_env
-# <<<<<< custom encrytion calls
-
 # fast fetch on load
 fastfetch
 cowsay 'HAVE YOU TMUXED, DO YOU NEED TO TMUX?'
 
-
+# >>>>>> custom todolist
+# Print the contents of the .todo.md file, using a more explicit method:
+echo "$(bat ~/todo.hl.md)"
+# <<<<<< custom todolist

@@ -1,23 +1,33 @@
 # Alias for zshrc and bashrc
+
+alias ze='nvim ~/.zshrc' # zshrc edit
+alias zs='source ~/.zshrc' # zshrc source
+alias ae='nvim ~/.alias' # alias edit 
+
 alias lsd="eza"
 alias ls="eza --icons -F -H --group-directories-first"
 alias lsda="eza --icons -aF -H --group-directories-first"
 alias ll='eza --icons -alF -H --group-directories-first --git -1'
 alias lt='eza -aT --color=always --group-directories-first --icons'
 alias cl='clear'
+
 alias n="nvim"
+
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias configa="config add"
 alias configc="config commit -m"
 alias configp="config push"
 alias config-auto='configa -u; configc "auto-update"; configp'
 alias configssh="config remote set-url origin git@github.com:ChrishanDharmabandu/dotfiles.git"
+
 alias ssh-mac='ssh squishy-macos@squishym1.local'
 alias ssh-filetomac='rsync -avP --inplace --info=progress2 file squishy-macos@squishym1.local:/Users/squishy-macos/'
 alias ssh-desktop="ssh squishy@arch-beast.local"
+
 alias rsync-sample='rsync -avP --info=progress2 Hermes8B.gguf squishy@squishym1.local:~/1-LLM/1-Models/'
 alias rsync-mac='rsync -avP --info=progress2 [file] squishy@squishym1.local:[location on remote]'
 alias rysnc-local="rsync -avP --info=progress2"
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -27,16 +37,12 @@ alias cdl="cd ~/Downloads"
 alias cdo="cd ~/Documents"
 alias cdm="cd /mnt/games&apps/2_Docs"
 alias chx="chmod +x"
-alias create-alias="alias.sh"
-alias mvdlmd="mv ~/Downloads/*.md ~/Documents/Vaults/Notes/"
 alias cdv="cd /mnt/games&apps/2_Docs/Videos/Captures"
-alias aliasa="nvim ~/.alias"
-alias sourcea="source ~/.zshrc"
-alias mv-notes='mv ~/Downloads/*.md ~/Documents/Vaults/Notes'
+alias te='nvim ~/.todo.hl.md' #edit todo
+alias tls='echo "$(bat ~/.todo.hl.md)"' # list todo 
+alias todo-link='find ~/Documents -type f | grep -aE "*todo\.md$" | xargs -I{} ln {} ~/todo.hl.md'
 
 # AI tools
 alias 1-allowAI='export $(gpg -d ~/secret-oi1.env.gpg | grep OPENAI_API_KEY); export TMUXAI_OPENROUTER_API_KEY=$OPENAI_API_KEY'
 alias 2-revokeAI='unset OPENAI_API_KEY TMUXAI_OPENROUTER_API_KEY'
 alias lite-llm="load_cloudapi_env && lite-llm"
-
-
