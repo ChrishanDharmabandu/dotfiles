@@ -33,7 +33,6 @@ source ~/.zsh/
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
-source /usr/share/wikiman/widgets/widget.zsh
 
 #starship
 eval "$(starship init zsh)"
