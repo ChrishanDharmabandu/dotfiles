@@ -1,0 +1,23 @@
+# ~/.config/litellm/litellm_config.yaml
+litellm_settings:
+  drop_params: true
+  master_key: os.environ/LITELLM_MASTER_KEY
+
+model_list:
+  - model_name: openai/gpt-4o-mini
+    litellm_provider: openai
+    api_key: os.environ/OPENAI_API_KEY
+    litellm_params:
+      model: gpt-4o-mini
+  - model_name: gemini-2.0-flash
+    litellm_params:
+      model: gemini/gemini-2.0-flash
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE

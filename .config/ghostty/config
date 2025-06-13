@@ -19,8 +19,16 @@
 # ==========================
 # # The config file consists of simple key-value pairs,
 # # separated by equals signs.
-# font-family = Iosevka
-# window-padding-x = 2
+font-family = Input Mono
+font-size = 13
+window-padding-x = 2
+shell-integration-features = no-cursor,sudo,no-title
+cursor-style = block
+
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+
+
 #
 # # Spacing around the equals sign does not matter.
 # # All of these are identical:
@@ -42,4 +50,6 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 #
-theme = "Dracula"
+theme = "Gruvbox"
+
+
