@@ -40,7 +40,7 @@ alias chx="chmod +x"
 alias cdv="cd /mnt/games&apps/2_Docs/Videos/Captures"
 alias te='nvim ~/.todo.hl.md' #edit todo
 alias tls='echo "$(bat ~/.todo.hl.md)"' # list todo 
-alias todo-link='find ~/Documents -type f | grep -aE "*todo\.md$" | xargs -I{} ln {} ~/todo.hl.md'
+alias todo-link='find ~/Documents -type f | grep -aE "todo\.md$" | xargs -I{} ln {} ~/todo.hl.md'
 alias bwu='export BW_SESSION=$(bw unlock --raw)'
 
 # AI tools
