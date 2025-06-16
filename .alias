@@ -52,10 +52,10 @@ alias 2-revokeAI='unset OPENAI_API_KEY GEMINI_API_KEY'
 # Gatekeeper Macoas (temp disable)
 
 # Disable Gatekeeper
-alias gatekeeper-off='echo "Disabling Gatekeeper..."; sudo spctl --master-disable && echo "Gatekeeper disabled. You may now install apps."'
+alias firewall-off='echo "Disabling Gatekeeper..."; sudo spctl --master-disable && echo "Gatekeeper disabled. You may now install apps."'
 
 # Enable Gatekeeper
-alias gatekeeper-on='echo "Enabling Gatekeeper..."; sudo spctl --master-enable && echo "Gatekeeper re-enabled."'
+alias firewall-on='echo "Enabling Gatekeeper..."; sudo spctl --master-enable && echo "Gatekeeper re-enabled."'
 
 # Check Gatekeeper Status
 alias gatekeeper-status='spctl --status'
