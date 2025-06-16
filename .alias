@@ -58,5 +58,5 @@ alias firewall-off='echo "Disabling Gatekeeper..."; sudo spctl --master-disable 
 alias firewall-on='echo "Enabling Gatekeeper..."; sudo spctl --master-enable && echo "Gatekeeper re-enabled."'
 
 # Check Gatekeeper Status
-alias gatekeeper-status='spctl --status'
+alias firewall-status='spctl --status'
 
