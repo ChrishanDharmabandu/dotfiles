@@ -11,3 +11,8 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$HOME/.local/bin:$PATH"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/squishy-macos/.lmstudio/bin"
+# End of LM Studio CLI section
+
