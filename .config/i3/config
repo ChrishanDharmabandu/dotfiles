@@ -287,7 +287,7 @@ exec_always xrandr --output DP-2 --primary --mode 3840x2160 --rate 239.99 --pos 
 # Start i3bar to display a workspace bar (plus the i3status output)
 bar {
     position top               # Can be 'bottom' or 'top'
-    status_command i3blocks    # Or i3blocks, Polybar, etc.
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
     colors {
         background #000000
@@ -304,3 +304,15 @@ bar {
 
 # >>> Screenshot Bindings <<<
 bindsym $mod+Shift+c exec --no-startup-id flameshot gui
+
+# Increase Volume by 10%
+bindsym $mod+Control+Shift+equal exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && pkill -RTMIN+10 i3blocks
+
+# Decrease Volume by 10%
+bindsym $mod+Control+Shift+minus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && pkill -RTMIN+10 i3blocks
+
+# Volume control using multimedia keys and notify i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+10 i3blocks
+
