@@ -1,16 +1,15 @@
-# Source: https://gitlab.com/maxnatt/dotfiles
 # >>> Gaps <<<
-  # gaps inner 2
-  # gaps outer 0
-  # smart_gaps on
+  gaps inner 2
+  gaps outer 0
+  smart_gaps on
 
 # >>> Remove title bar and set border <<<
 
   smart_borders on
   for_window [class="^.*"] border pixel 1
-  # Define your colors
-# Modifying colors
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+
+# Modifying colors - UPDATED FOCUSED BORDER COLOR
+client.focused          #4c7899 #285577 #00FF00 #2e9ef4   #285577
 client.unfocused        #333333 #2c3e50 #888888 #34495e   #2c3e50
 
 # >>> Workspaces <<<
@@ -44,11 +43,11 @@ client.unfocused        #333333 #2c3e50 #888888 #34495e   #2c3e50
 
 # >>> Start a terminal <<<
 
-  bindsym $mod+Return exec kitty
+  bindsym $mod+Return exec ghostty
 
 # >>> Start a browser <<<
 
-  bindsym $mod+b exec brave-browser
+  bindsym $mod+b exec firefox
 
 # >>> Start a rofi <<<
 
@@ -167,7 +166,7 @@ client.unfocused        #333333 #2c3e50 #888888 #34495e   #2c3e50
 
 # >>> Reload the configuration file <<<
 
-  bindsym $mod+Shift+c reload
+  bindsym $mod+Shift+x reload
 
 # >>> Restart i3 inplace (preserves your layout/session, can be used to upgrade i3) <<<
 
@@ -248,8 +247,8 @@ client.unfocused        #333333 #2c3e50 #888888 #34495e   #2c3e50
   # Might be useful to redraw when display resolution has changed
   bindsym $mod+N exec --no-startup-id ~/.scripts/wallpaper_changer_dynamic.sh
 
-  # Compositor (Animations, Shadows, Transparency)
-  exec --no-startup-id picom -cCFb --experimental-backends
+# Compositor (Animations, Shadows, Transparency)
+exec --no-startup-id picom -cCFb --experimental-backends
 
 # autotiling
   exec i3-layouts
@@ -281,3 +280,27 @@ client.unfocused        #333333 #2c3e50 #888888 #34495e   #2c3e50
     for_window [window_type="menu"] floating enable
     for_window [instance="__scratchpad"] floating enable
 
+# >>> Display Setup <<< - ADDED THIS SECTION
+exec_always xrandr --output DP-2 --primary --mode 3840x2160 --rate 239.99 --pos 0x0 --output HDMI-0 --off
+
+# >>> i3bar Configuration <<< - ADDED THIS SECTION
+# Start i3bar to display a workspace bar (plus the i3status output)
+bar {
+    position top               # Can be 'bottom' or 'top'
+    status_command i3blocks    # Or i3blocks, Polybar, etc.
+
+    colors {
+        background #000000
+        statusline #ffffff
+        separator #666666
+        #                 border  background text
+        focused_workspace  #00FF00 #285577 #ffffff   # UPDATED BORDER FOR FOCUSED WORKSPACE
+        active_workspace   #333333 #5f676a #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #2f343a #900000 #ffffff
+        binding_mode       #2f343a #900000 #ffffff
+    }
+}
+
+# >>> Screenshot Bindings <<<
+bindsym $mod+Shift+c exec --no-startup-id flameshot gui
