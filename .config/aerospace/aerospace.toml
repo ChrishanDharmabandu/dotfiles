@@ -82,7 +82,7 @@ cmd-alt-h = [] # Disable "hide others"
 # "alt-q" = 'exec-and-forget osascript -e "tell application id \\"com.apple.systemevents\\" to keystroke \\"q\\" using command down"'
 # Alternative (simulates Command+W for closing a tab/window - often preferred):
 # "alt-q" = 'exec-and-forget osascript -e "tell application id \\"com.apple.systemevents\\" to keystroke \\"w\\" using command down"'
-"alt-q" = 'exec-and-forget aerospace close'
+"alt-q" = 'aerospace close'
 
 # Alt-b for Brave browser
 # Uses 'open -na' to open a new instance of the application.
@@ -218,7 +218,3 @@ alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
-
-[window]
-animations = false
-
