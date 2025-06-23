@@ -73,16 +73,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 [mode.main.binding]
 cmd-h = [] # Disable "hide application"
 cmd-alt-h = [] # Disable "hide others"
-# --- start of custom binds
-# Alt-q for close window
-# This command might not be directly 'close-window' in older versions,
-# so we'll try a common macOS key combo for closing windows.
-# "alt-q" = 'exec-and-forget osascript -e "tell application (path to frontmost application as text) to quit"'
-# Alternative (simulates Command+Q for the app, might quit the app):
-# "alt-q" = 'exec-and-forget osascript -e "tell application id \\"com.apple.systemevents\\" to keystroke \\"q\\" using command down"'
-# Alternative (simulates Command+W for closing a tab/window - often preferred):
-# "alt-q" = 'exec-and-forget osascript -e "tell application id \\"com.apple.systemevents\\" to keystroke \\"w\\" using command down"'
-"alt-q" = 'aerospace close'
+
 
 # Alt-b for Brave browser
 # Uses 'open -na' to open a new instance of the application.

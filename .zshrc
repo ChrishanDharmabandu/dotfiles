@@ -88,3 +88,4 @@ echo "$(bat ~/todo.hl.md)"
 export PATH="$PATH:/Users/squishy-macos/.lmstudio/bin"
 # End of LM Studio CLI section
 
+alias nproc="gnproc"
