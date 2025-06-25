@@ -51,7 +51,7 @@ client.unfocused        #333333 #2c3e50 #888888 #34495e   #2c3e50
 
 # >>> Start a rofi <<<
 
-  bindsym $mod+d exec "rofi -show drun"
+  bindsym $mod+space exec "rofi -show drun"
 
 # >>> Kill focused window <<<
 
@@ -116,7 +116,7 @@ client.unfocused        #333333 #2c3e50 #888888 #34495e   #2c3e50
 
 # >>> Change focus between tiling / floating windows <<<
 
-  bindsym $mod+space focus mode_toggle
+  bindsym $mod+Shift+t focus mode_toggle
 
 # >>> Switch the workspace <<<
 
@@ -148,6 +148,8 @@ client.unfocused        #333333 #2c3e50 #888888 #34495e   #2c3e50
 
   bindsym $mod+Shift+minus move scratchpad
   bindsym $mod+Shift+plus scratchpad show
+  bindsym $mod+minus scratchpad show; move container to workspace current
+
 
 # >>> Sticky window (on all workspaces) <<<
 
