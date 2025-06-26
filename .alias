@@ -13,12 +13,14 @@ alias cl='clear'
 
 alias n="nvim"
 
+# GIT
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias configa="config add"
 alias configc="config commit -m"
 alias configp="config push"
 alias config-auto='configa -u; configc "auto-update"; configp'
 alias configssh="config remote set-url origin git@github.com:ChrishanDharmabandu/dotfiles.git"
+alias syncnotes='rsync -avP --info=progress2 ~/Documents/Vaults/Notes/ ~/Documents/Vaults/Notes-git/ && git -C ~/Documents/Vaults/Notes-git add . && git -C ~/Documents/Vaults/Notes-git commit -m "Automated notes sync" && git -C ~/Documents/Vaults/Notes-git push'
 
 alias ssh-mac='ssh squishy-macos@squishym1.local'
 alias ssh-filetomac='rsync -avP --inplace --info=progress2 file squishy-macos@squishym1.local:/Users/squishy-macos/'
