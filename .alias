@@ -37,6 +37,7 @@ alias .....='cd ../../../..'
 alias cdn='cd ~/Documents/Vaults/Notes/4-Terminal_notes'
 alias cdl="cd ~/Downloads"
 alias cdo="cd ~/Documents"
+alias cdn="cd ~/Documents/syncthing/notes/"
 alias cdm="cd /mnt/games&apps/2_Docs"
 alias chx="chmod +x"
 alias cdv="cd /mnt/games&apps/2_Docs/Videos/Captures"

@@ -1,3 +1,5 @@
 [user]
 	email = dchrishan90@gmail.com
 	name = Chrishan Dharmabandu
+[push]
+	autoSetupRemote = true
