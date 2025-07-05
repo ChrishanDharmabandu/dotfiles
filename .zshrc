@@ -79,8 +79,7 @@ fi
 fastfetch
 cowsay 'HAVE YOU TMUXED, DO YOU NEED TO TMUX?'
 
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/squishy-macos/.lmstudio/bin"
-# End of LM Studio CLI section
-
-alias nproc="gnproc"
+# Added paths for LLMs
+export PATH="$PATH:/home/squishy/.lmstudio/bin"
+export OLLAMA_MODELS=~/1-LLM/1-Models
+export PATH="/home/squishy/1-LLM/1-Models/llama.cpp/build/bin:$PATH"

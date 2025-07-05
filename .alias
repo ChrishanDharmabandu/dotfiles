@@ -37,7 +37,7 @@ alias .....='cd ../../../..'
 alias cdn='cd ~/Documents/Vaults/Notes/4-Terminal_notes'
 alias cdl="cd ~/Downloads"
 alias cdo="cd ~/Documents"
-alias cdn="cd ~/Documents/syncthing/notes/"
+alias cdn="cd ~/Documents/syncthing/notes/0-zettle-pettle/"
 alias cdm="cd /mnt/games&apps/2_Docs"
 alias chx="chmod +x"
 alias cdv="cd /mnt/games&apps/2_Docs/Videos/Captures"
@@ -62,4 +62,12 @@ alias firewall-on='echo "Enabling Gatekeeper..."; sudo spctl --master-enable && 
 
 # Check Gatekeeper Status
 alias firewall-status='spctl --status'
+
+# use rg% to rip grep contents for a file to open in nvim. 
+# Note: Fuctions allow arugment input afterwards
+rgn() {
+  rg --vimgrep . "$@" | fzf --ansi --delimiter : \
+    --preview 'bat --style=numbers --color=always {1} --highlight-line {2}' \
+    --bind 'enter:execute(nvim +{2} {1})'
+}
 
