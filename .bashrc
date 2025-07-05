@@ -16,3 +16,8 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:/Users/squishy-macos/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/squishy/.lmstudio/bin"
+# End of LM Studio CLI section
+

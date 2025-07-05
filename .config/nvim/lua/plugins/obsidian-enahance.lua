@@ -26,7 +26,7 @@ return {
     },
     completion = { nvim_cmp = true }, -- enable nvim-cmp integration
     new_notes_location = "current_dir", -- or "notes_subdir"
-    notes_subdir = "notes", -- if you keep notes in a subdirectory
+    -- notes_subdir = "notes", -- if you keep notes in a subdirectory
     -- daily_notes = {
     --   folder = "daily",
     --   date_format = "%Y-%m-%d",

@@ -79,6 +79,7 @@ fi
 fastfetch
 cowsay 'HAVE YOU TMUXED, DO YOU NEED TO TMUX?'
 
+<<<<<<< HEAD
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/squishy-macos/.lmstudio/bin"
 # End of LM Studio CLI section
@@ -117,3 +118,9 @@ for pattern_file in ~/.config/fabric/patterns/*; do
     "
 done
 # \--------------
+=======
+# Added paths for LLMs
+export PATH="$PATH:/home/squishy/.lmstudio/bin"
+export OLLAMA_MODELS=~/1-LLM/1-Models
+export PATH="/home/squishy/1-LLM/1-Models/llama.cpp/build/bin:$PATH"
+>>>>>>> b129ae884bb4ffaa9c5db199aa7f73bfee3977d2
