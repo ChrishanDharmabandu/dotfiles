@@ -6,4 +6,10 @@ vim.api.nvim_create_autocmd("FileType", {
     end)
   end,
 })
-
+vim.api.nvim_create_autocmd("User", {
+  pattern = "VeryLazy",
+  callback = function()
+    vim.opt.relativenumber = true
+    vim.opt.number = true
+  end,
+})

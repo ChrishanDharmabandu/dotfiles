@@ -20,5 +20,9 @@ M.base46 = {
 --          lazyload = false
 --      }
 --}
+M.options = {
+  relativenumber = true, -- <- enable rnu
+  number = true,         -- <- ensure absolute number shows on current line
+}
 
 return M
