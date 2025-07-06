@@ -14,7 +14,7 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
+# eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -79,48 +79,17 @@ fi
 fastfetch
 cowsay 'HAVE YOU TMUXED, DO YOU NEED TO TMUX?'
 
-<<<<<<< HEAD
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/squishy-macos/.lmstudio/bin"
 # End of LM Studio CLI section
 
-alias nproc="gnproc"
+# Added paths for LLMs
+export PATH="$PATH:/home/squishy/.lmstudio/bin"
+export OLLAMA_MODELS=~/1-LLM/1-Models
+export PATH="/home/squishy/1-LLM/1-Models/llama.cpp/build/bin:$PATH"
 
 # fabric AI prompt
 # /--------------
 # Define the base directory for Obsidian notes
 obsidian_base="~/Documents/syncthing/notes/0-zettle-pettle/"
-
-# Loop through all files in the ~/.config/fabric/patterns directory
-for pattern_file in ~/.config/fabric/patterns/*; do
-    # Get the base name of the file (i.e., remove the directory path)
-    pattern_name=$(basename "$pattern_file")
-
-    # Remove any existing alias with the same name
-    unalias "$pattern_name" 2>/dev/null
-
-    # Define a function dynamically for each pattern
-    eval "
-    $pattern_name() {
-        local title=\$1
-        local date_stamp=\$(date +'%Y-%m-%d')
-        local output_path=\"\$obsidian_base/\${date_stamp}-\${title}.md\"
-
-        # Check if a title was provided
-        if [ -n \"\$title\" ]; then
-            # If a title is provided, use the output path
-            fabric --pattern \"$pattern_name\" -o \"\$output_path\"
-        else
-            # If no title is provided, use --stream
-            fabric --pattern \"$pattern_name\" --stream
-        fi
-    }
-    "
-done
 # \--------------
-=======
-# Added paths for LLMs
-export PATH="$PATH:/home/squishy/.lmstudio/bin"
-export OLLAMA_MODELS=~/1-LLM/1-Models
-export PATH="/home/squishy/1-LLM/1-Models/llama.cpp/build/bin:$PATH"
->>>>>>> b129ae884bb4ffaa9c5db199aa7f73bfee3977d2
