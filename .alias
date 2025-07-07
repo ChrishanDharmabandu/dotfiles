@@ -54,6 +54,7 @@ alias bwu='export BW_SESSION=$(bw unlock --raw)'
 alias 1-allowAI='while IFS= read -r line; do export "$line"; done < <(gpg -d ~/.secure-folder/cloudapi.env.gpg | grep -E "OPENAI_API_KEY|GEMINI_API_KEY")'
 # To revoke (unset) AI API keys
 alias 2-revokeAI='unset OPENAI_API_KEY GEMINI_API_KEY'
+alias cdlcpp="cd ~/.cache/llama.cpp"
 
 # Gatekeeper Macoas (temp disable)
 
