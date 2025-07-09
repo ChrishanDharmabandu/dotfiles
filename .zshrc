@@ -96,3 +96,8 @@ obsidian_base="~/Documents/syncthing/notes/0-zettle-pettle/"
 # Source .env for apis
 [ -f ~/.env ] && source ~/.env
 
+# unraid nvim setup
+## Only cd into /data/notes if it exists and you're inside the container
+if [[ -d /data/notes && "$HOST" == "nvim-ssh" ]]; then
+  cd /data/notes
+fi
