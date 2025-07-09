@@ -93,3 +93,6 @@ export PATH="/home/squishy/1-LLM/1-Models/llama.cpp/build/bin:$PATH"
 # Define the base directory for Obsidian notes
 obsidian_base="~/Documents/syncthing/notes/0-zettle-pettle/"
 # \--------------
+# Source .env for apis
+[ -f ~/.env ] && source ~/.env
+
