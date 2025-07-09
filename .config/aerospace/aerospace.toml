@@ -77,7 +77,7 @@ cmd-alt-h = [] # Disable "hide others"
 
 # Alt-b for Brave browser
 # Uses 'open -na' to open a new instance of the application.
-"alt-b" = 'exec-and-forget open -na "Firefox"'
+"alt-b" = 'exec-and-forget open -na "Brave Browser"'
 
 # Alt-Shift-b for Qute browser
 # Uses 'open -na' to open a new instance of the application.
