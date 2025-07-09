@@ -34,13 +34,11 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias cdn='cd ~/Documents/Vaults/Notes/4-Terminal_notes'
 alias cdl="cd ~/Downloads"
 alias cdo="cd ~/Documents"
-alias cdn="cd ~/Documents/syncthing/notes/"
 alias note="cd ~/Documents/syncthing/notes/ && nvim ~/Documents/syncthing/notes/0-zettle-pettle/00-index-file.md"
-alias cdn="cd ~/Documents/syncthing/notes/0-zettle-pettle/"
-alias videnote="cd ~/Documents/syncthing/notes/0-zettle-pettle/ && neovide ~/Documents/syncthing/notes/0-zettle-pettle/00-index-file.md"
+alias cdn="cd ~/Documents/syncthing/notes/0-zettle-pettle/ && git pull"
+alias newnote="cd ~/Documents/syncthing/notes/0-zettle-pettle/ && neovide ~/Documents/syncthing/notes/0-zettle-pettle/00-index-file.md"
 alias cdm="cd /mnt/games&apps/2_Docs"
 alias chx="chmod +x"
 alias cdv="cd /mnt/games&apps/2_Docs/Videos/Captures"
@@ -50,11 +48,10 @@ alias todo-link='find ~/Documents -type f | grep -aE "todo\.md$" | xargs -I{} ln
 alias bwu='export BW_SESSION=$(bw unlock --raw)'
 
 # AI tools
-# To allow AI API keys
-alias 1-allowAI='while IFS= read -r line; do export "$line"; done < <(gpg -d ~/.secure-folder/cloudapi.env.gpg | grep -E "OPENAI_API_KEY|GEMINI_API_KEY")'
-# To revoke (unset) AI API keys
-alias 2-revokeAI='unset OPENAI_API_KEY GEMINI_API_KEY'
-alias cdlcpp="cd ~/.cache/llama.cpp"
+loadenv() {
+  ~/loadenv.sh  # decrypts ~/.env
+  source ~/.env
+}
 
 # Gatekeeper Macoas (temp disable)
 
