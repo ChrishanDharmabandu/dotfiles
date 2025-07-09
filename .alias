@@ -20,8 +20,7 @@ alias configc="config commit -m"
 alias configp="config push"
 alias config-auto='configa -u; configc "auto-update"; configp'
 alias configssh="config remote set-url origin git@github.com:ChrishanDharmabandu/dotfiles.git"
-alias gitnotes-arch="cd ~/Documents/syncthing/notes/ && git add . && git commit -m 'autoupdate' && git push"
-alias gitnotes-mac="cd ~/Documents/syncthing/notes/ && git add . && git commit -m 'autoupdate' && git push -u origin macos-m1"
+alias gitnotes="cd ~/Documents/syncthing/notes/ && git add . && git commit -m 'autoupdate' && git push"
 
 alias ssh-mac='ssh squishy-macos@squishym1.local'
 alias ssh-filetomac='rsync -avP --inplace --info=progress2 file squishy-macos@squishym1.local:/Users/squishy-macos/'
