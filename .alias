@@ -25,6 +25,7 @@ alias gitnotes="cd ~/Documents/syncthing/notes/ && git add . && git commit -m 'a
 alias ssh-mac='ssh squishy-macos@squishym1.local'
 alias ssh-filetomac='rsync -avP --inplace --info=progress2 file squishy-macos@squishym1.local:/Users/squishy-macos/'
 alias ssh-desktop="ssh squishy@arch-beast.local"
+alias ssh-tower="ssh -p 874 root@192.168.0.50"
 
 alias rsync-sample='rsync -avP --info=progress2 Hermes8B.gguf squishy@squishym1.local:~/1-LLM/1-Models/'
 alias rsync-mac='rsync -avP --info=progress2 [file] squishy@squishym1.local:[location on remote]'
