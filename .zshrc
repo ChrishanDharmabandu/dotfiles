@@ -102,36 +102,43 @@ if [[ -d /data/notes && "$HOST" == "nvim-ssh" ]]; then
   cd /data/notes
 fi
 
-# -----/ pushd and popd fun
-BOOKMARK_FILE="$HOME/.bookmarks"
+# # -----/ pushd and popd fun for built in bookmarks on any unix device!
+# BOOKMARK_FILE="${XDG_BOOKMARK_FILE:-$HOME/syncthing/share/scripts/.bookmarks}"
+#
+# # Save current stack to the bookmarks file (deduplicated)
+# save_stack_to_bookmarks() {
+#   mkdir -p "$(dirname "$BOOKMARK_FILE")"
+#   # Deduplicate while preserving order
+#   awk '!seen[$0]++' <(dirs -l -p) > "$BOOKMARK_FILE"
+# }
+#
+# # Wrap pushd to auto-save
+# pushd() {
+#   builtin pushd "$@" > /dev/null
+#   save_stack_to_bookmarks
+#   dirs -v
+# }
+#
+# # Wrap popd to auto-save
+# popd() {
+#   builtin popd "$@" > /dev/null
+#   save_stack_to_bookmarks
+#   dirs -v
+# }
+#
+# # Load stack from bookmarks file on shell start
+# if [[ -f "$BOOKMARK_FILE" ]]; then
+#   while read -r dir; do
+#     [[ -d "$dir" ]] && pushd "$dir" > /dev/null
+#   done < <(tac "$BOOKMARK_FILE")  # Load in reverse so last becomes top
+# fi
+#
+# # Save again on shell exit just in case
+# trap save_stack_to_bookmarks EXIT
 
-# Save current stack to the bookmarks file (deduplicated)
-save_stack_to_bookmarks() {
-  mkdir -p "$(dirname "$BOOKMARK_FILE")"
-  # Deduplicate while preserving order
-  awk '!seen[$0]++' <(dirs -l -p) > "$BOOKMARK_FILE"
-}
 
-# Wrap pushd to auto-save
-pushd() {
-  builtin pushd "$@" > /dev/null
-  save_stack_to_bookmarks
-  dirs -v
-}
+# Set synced zoxide database location
+export _ZO_DATA_DIR="$HOME/Documents/syncthing/share/scripts/zoxide"
 
-# Wrap popd to auto-save
-popd() {
-  builtin popd "$@" > /dev/null
-  save_stack_to_bookmarks
-  dirs -v
-}
-
-# Load stack from bookmarks file on shell start
-if [[ -f "$BOOKMARK_FILE" ]]; then
-  while read -r dir; do
-    [[ -d "$dir" ]] && pushd "$dir" > /dev/null
-  done < <(tac "$BOOKMARK_FILE")  # Load in reverse so last becomes top
-fi
-
-# Save again on shell exit just in case
-trap save_stack_to_bookmarks EXIT
+# Initialize zoxide
+eval "$(zoxide init zsh)"
