@@ -115,9 +115,3 @@ fi
 # Optional: reset to home directory after loading
 cd ~
 
-# Save the current stack back to the bookmarks file on shell exit
-save_bookmarks() {
-  mkdir -p "$(dirname "$BOOKMARK_FILE")"
-  dirs -l -p > "$BOOKMARK_FILE"
-}
-trap save_bookmarks EXIT
