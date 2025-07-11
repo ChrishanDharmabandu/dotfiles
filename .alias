@@ -29,6 +29,7 @@ alias ssh-tower="ssh -p 874 root@192.168.0.50"
 alias ssh-nvim="ssh -p 2222 linuxserver.io@192.168.0.50"
 
 alias serve="llm-server -c 4096 --host 0.0.0.0 --port 8748 -ngl 999 -m"
+alias bookmarkedit="nvim ~/.bookmarks"
 
 alias rsync-sample='rsync -avP --info=progress2 Hermes8B.gguf squishy@squishym1.local:~/1-LLM/1-Models/'
 alias rsync-mac='rsync -avP --info=progress2 [file] squishy@squishym1.local:[location on remote]'
