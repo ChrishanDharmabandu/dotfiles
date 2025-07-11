@@ -101,3 +101,23 @@ obsidian_base="~/Documents/syncthing/notes/0-zettle-pettle/"
 if [[ -d /data/notes && "$HOST" == "nvim-ssh" ]]; then
   cd /data/notes
 fi
+
+# -----/ pushd and popd fun
+BOOKMARK_FILE="$HOME/.bookmarks"
+
+# Load stack/bookmarks on shell start (if file exists)
+if [[ -f "$BOOKMARK_FILE" ]]; then
+  while read -r dir; do
+    [[ -d "$dir" ]] && pushd "$dir" > /dev/null
+  done < <(tac "$BOOKMARK_FILE")  # reverse order so last line is top of stack
+fi
+
+# Optional: reset to home directory after loading
+cd ~
+
+# Save the current stack back to the bookmarks file on shell exit
+save_bookmarks() {
+  mkdir -p "$(dirname "$BOOKMARK_FILE")"
+  dirs -l -p > "$BOOKMARK_FILE"
+}
+trap save_bookmarks EXIT
