@@ -105,19 +105,33 @@ fi
 # -----/ pushd and popd fun
 BOOKMARK_FILE="$HOME/.bookmarks"
 
-# Load stack/bookmarks on shell start (if file exists)
+# Save current stack to the bookmarks file (deduplicated)
+save_stack_to_bookmarks() {
+  mkdir -p "$(dirname "$BOOKMARK_FILE")"
+  # Deduplicate while preserving order
+  awk '!seen[$0]++' <(dirs -l -p) > "$BOOKMARK_FILE"
+}
+
+# Wrap pushd to auto-save
+pushd() {
+  builtin pushd "$@" > /dev/null
+  save_stack_to_bookmarks
+  dirs -v
+}
+
+# Wrap popd to auto-save
+popd() {
+  builtin popd "$@" > /dev/null
+  save_stack_to_bookmarks
+  dirs -v
+}
+
+# Load stack from bookmarks file on shell start
 if [[ -f "$BOOKMARK_FILE" ]]; then
   while read -r dir; do
     [[ -d "$dir" ]] && pushd "$dir" > /dev/null
-  done < <(tac "$BOOKMARK_FILE")  # reverse order so last line is top of stack
+  done < <(tac "$BOOKMARK_FILE")  # Load in reverse so last becomes top
 fi
 
-# Optional: reset to home directory after loading
-cd ~
-
-# Save the current stack back to the bookmarks file on shell exit
-save_bookmarks() {
-  mkdir -p "$(dirname "$BOOKMARK_FILE")"
-  dirs -l -p > "$BOOKMARK_FILE"
-}
-trap save_bookmarks EXIT
+# Save again on shell exit just in case
+trap save_stack_to_bookmarks EXIT
