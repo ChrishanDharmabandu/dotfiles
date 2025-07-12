@@ -143,3 +143,25 @@ export _ZO_DATA_DIR="$HOME/Documents/syncthing/share/scripts/zoxide"
 
 # Initialize zoxide
 eval "$(zoxide init zsh)"
+
+# apis
+# ~/.zshrc
+
+# ... (other existing .zshrc configurations) ...
+
+# Source API key loader script for secure environment variables
+# ~/.zshrc
+
+# ... (other existing .zshrc configurations) ...
+
+# Source API key loader script for secure environment variables
+##   The script and the .secrets.env file are expected in the Syncthing secure directory.
+SYNCTHING_SECURE_DIR="$HOME/Documents/syncthing/share/secure" # Using $HOME for portability
+API_KEY_LOADER_SCRIPT="$SYNCTHING_SECURE_DIR/load_api_keys.sh"
+
+if [ -f "$API_KEY_LOADER_SCRIPT" ]; then
+    source "$API_KEY_LOADER_SCRIPT"
+else
+    echo "Warning: API key loader script not found at $API_KEY_LOADER_SCRIPT" >&2
+    echo "Please ensure it exists and has executable permissions." >&2
+fi

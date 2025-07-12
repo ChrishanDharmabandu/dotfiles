@@ -10,6 +10,7 @@ alias lsda="eza --icons -aF -H --group-directories-first"
 alias ll='eza --icons -alF -H --group-directories-first --git -1'
 alias lt='eza -aT --color=always --group-directories-first --icons'
 alias cl='clear'
+alias fabric='fabric-ai'
 
 alias n="nvim"
 
