@@ -22,19 +22,19 @@ return {
     provider = "ollama", -- Example: default to Ollama
 
     providers = {
-      claude = {
-        endpoint = "https://api.anthropic.com",
-        model = "claude-sonnet-4-20250514",
-        timeout = 30000, -- Timeout in milliseconds
-        extra_request_body = {
-          temperature = 0.75,
-          max_tokens = 20480,
-        },
-        -- It's recommended to use environment variables for API keys for security.
-        -- Example: api_key = os.getenv("ANTHROPIC_API_KEY"),
-        -- For testing, you can hardcode, but avoid in production:
-        -- api_key = "YOUR_ANTHROPIC_API_KEY_HERE",
-      },
+      -- claude = {
+      --   endpoint = "https://api.anthropic.com",
+      --   model = "claude-sonnet-4-20250514",
+      --   timeout = 30000, -- Timeout in milliseconds
+      --   extra_request_body = {
+      --     temperature = 0.75,
+      --     max_tokens = 20480,
+      --   },
+      --   -- It's recommended to use environment variables for API keys for security.
+      --   -- Example: api_key = os.getenv("ANTHROPIC_API_KEY"),
+      --   -- For testing, you can hardcode, but avoid in production:
+      --   -- api_key = "YOUR_ANTHROPIC_API_KEY_HERE",
+      -- },
       -- OpenAI API configuration
       openai = {
         endpoint = "https://api.openai.com/v1",
@@ -50,51 +50,51 @@ return {
         -- api_key = "YOUR_OPENAI_API_KEY_HERE",
       },
       -- Local MLX API configuration (assuming it exposes an OpenAI-compatible API)
-      mlx = {
-        endpoint = "http://localhost:8080/v1", -- Common default port for MLX
-        model = "mlx-model", -- Replace with the actual model name if MLX serves one
-        timeout = 60000, -- May need a longer timeout for local models
-        extra_request_body = {
-          temperature = 0.7,
-          max_tokens = 4096,
-        },
-      },
-      -- Llama.cpp configuration (assuming it exposes an OpenAI-compatible API)
-      llamacpp = {
-        endpoint = "http://localhost:8080/v1", -- Default llama.cpp server endpoint
-        model = "llama.cpp", -- Replace with your specific model filename
-        timeout = 60000,
-        extra_request_body = {
-          temperature = 0.7,
-          max_tokens = 4096,
-        },
-      },
-      -- LM Studio configuration (exposes an OpenAI-compatible API)
-      lmstudio = {
-        endpoint = "http://localhost:1234/v1", -- Default LM Studio server endpoint
-        model = "lm-studio-model", -- Replace with the model name loaded in LM Studio
-        timeout = 60000,
-        extra_request_body = {
-          temperature = 0.7,
-          max_tokens = 4096,
-        },
-      },
-      -- Ollama configuration
-      ollama = {
-        endpoint = "http://localhost:11434/api", -- Default Ollama API endpoint
-        model = "llama3", -- Replace with the model you've pulled (e.g., "llama2", "mistral", "codellama")
-        timeout = 60000,
-        -- Ollama has a slightly different API for chat completions
-        -- You might need to adjust `extra_request_body` or how Avante interacts with it
-        -- based on Avante's specific Ollama integration.
-        -- This is a common structure for Ollama's chat endpoint:
-        extra_request_body = {
-          temperature = 0.7,
-          options = {
-            num_ctx = 4096, -- Context window size
-          },
-        },
-      },
+      -- mlx = {
+      --   endpoint = "http://localhost:8080/v1", -- Common default port for MLX
+      --   model = "mlx-model", -- Replace with the actual model name if MLX serves one
+      --   timeout = 60000, -- May need a longer timeout for local models
+      --   extra_request_body = {
+      --     temperature = 0.7,
+      --     max_tokens = 4096,
+      --   },
+      -- },
+      -- -- Llama.cpp configuration (assuming it exposes an OpenAI-compatible API)
+      -- llamacpp = {
+      --   endpoint = "http://localhost:8080/v1", -- Default llama.cpp server endpoint
+      --   model = "llama.cpp", -- Replace with your specific model filename
+      --   timeout = 60000,
+      --   extra_request_body = {
+      --     temperature = 0.7,
+      --     max_tokens = 4096,
+      --   },
+      -- },
+      -- -- -- LM Studio configuration (exposes an OpenAI-compatible API)
+      -- -- lmstudio = {
+      -- --   endpoint = "http://localhost:1234/v1", -- Default LM Studio server endpoint
+      -- --   model = "lm-studio-model", -- Replace with the model name loaded in LM Studio
+      -- --   timeout = 60000,
+      -- --   extra_request_body = {
+      -- --     temperature = 0.7,
+      -- --     max_tokens = 4096,
+      -- --   },
+      -- -- },
+      -- -- Ollama configuration
+      -- ollama = {
+      --   endpoint = "http://localhost:8748/api", -- Default Ollama API endpoint
+      --   model = "llama", -- Replace with the model you've pulled (e.g., "llama2", "mistral", "codellama")
+      --   timeout = 60000,
+      --   -- Ollama has a slightly different API for chat completions
+      --   -- You might need to adjust `extra_request_body` or how Avante interacts with it
+      --   -- based on Avante's specific Ollama integration.
+      --   -- This is a common structure for Ollama's chat endpoint:
+      --   extra_request_body = {
+      --     temperature = 0.7,
+      --     options = {
+      --       num_ctx = 4096, -- Context window size
+      --     },
+      --   },
+      -- },
     },
   },
   dependencies = {
