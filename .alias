@@ -27,6 +27,7 @@ alias ssh-filetomac='rsync -avP --inplace --info=progress2 file squishy-macos@sq
 alias ssh-desktop="ssh -p 874 squishy@arch-beast.local"
 alias ssh-tower="ssh -p 874 root@192.168.0.50"
 alias ssh-nvim="ssh -p 2222 linuxserver.io@192.168.0.50"
+alias cat-auth="cat ~/.ssh/id_ed25519.pub >> ~/Documents/syncthing/share/secure/ssh-authorized_keys_synced"
 
 alias serve="~/Documents/llama.cpp/build/bin/llama-server -c 2048 --host 0.0.0.0 --port 8748 -ngl 60 -m"
 
