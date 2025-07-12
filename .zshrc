@@ -35,7 +35,11 @@ source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
 
 #starship
-eval "$(starship init zsh)"
+if [[ -z "$STARSHIP_INIT_DONE" ]]; then
+  export STARSHIP_INIT_DONE=1
+  eval "$(starship init zsh)"
+fi
+
 # zoxide (cd repalcement)
 eval "$(zoxide init zsh)"
 
