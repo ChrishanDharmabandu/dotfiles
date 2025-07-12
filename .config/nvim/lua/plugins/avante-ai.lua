@@ -38,7 +38,7 @@ return {
       -- OpenAI API configuration
       openai = {
         endpoint = "https://api.openai.com/v1",
-        model = "gpt-4o", -- Or "gpt-3.5-turbo", "gpt-4-turbo", etc.
+        model = "gpt-4o-mini", -- Or "gpt-3.5-turbo", "gpt-4-turbo", etc.
         timeout = 30000,
         extra_request_body = {
           temperature = 0.7,
@@ -62,7 +62,7 @@ return {
       -- Llama.cpp configuration (assuming it exposes an OpenAI-compatible API)
       llamacpp = {
         endpoint = "http://localhost:8080/v1", -- Default llama.cpp server endpoint
-        model = "llama-2-7b-chat.Q4_K_M.gguf", -- Replace with your specific model filename
+        model = "llama.cpp", -- Replace with your specific model filename
         timeout = 60000,
         extra_request_body = {
           temperature = 0.7,
