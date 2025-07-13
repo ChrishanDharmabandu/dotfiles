@@ -16,34 +16,26 @@ return {
         name = "personal",
         path = "~/Documents/syncthing/notes/",
       },
-      -- {
-      --   name = "work",
-      --   path = "~/vaults/work",
-      -- },
     },
     ui = {
       enable = false,
     },
-    completion = { nvim_cmp = true }, -- enable nvim-cmp integration
-    new_notes_location = "current_dir", -- or "notes_subdir"
-    -- notes_subdir = "notes", -- if you keep notes in a subdirectory
-    -- daily_notes = {
-    --   folder = "daily",
-    --   date_format = "%Y-%m-%d",
-    -- },
-    -- templates = {
-    --   folder = "templates",
-    --   date_format = "%Y-%m-%d",
-    --   time_format = "%H:%M",
-    -- },
-    -- Optional: highlight settings
+    completion = { nvim_cmp = true },
+    new_notes_location = "current_dir",
     hl_groups = {
       ObsidianTodo = { bold = true, fg = "#f78c6c" },
       ObsidianDone = { bold = true, fg = "#89ddff" },
-      -- ...add more as desired
     },
-    -- Optional: set log level for debugging
     log_level = vim.log.levels.INFO,
+
+    -- Add this callbacks section to add date on save
+    callbacks = {
+      -- This function runs before writing the note buffer
+      pre_write_note = function(client, note)
+        -- Add or update the 'date' field in frontmatter with current date in %Y-%m-%d format
+        note:add_field("date", os.date("%Y-%m-%d"))
+      end,
+    },
   },
 }
 
