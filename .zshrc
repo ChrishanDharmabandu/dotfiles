@@ -144,15 +144,8 @@ export _ZO_DATA_DIR="$HOME/Documents/syncthing/share/scripts/zoxide"
 # Initialize zoxide
 eval "$(zoxide init zsh)"
 
-# apis
-# ~/.zshrc
-
-# ... (other existing .zshrc configurations) ...
-
-# Source API key loader script for secure environment variables
-# ~/.zshrc
-
-# ... (other existing .zshrc configurations) ...
+# fabric ai export  
+export FABRIC_MODE=dev
 
 # Source API key loader script for secure environment variables
 ##   The script and the .secrets.env file are expected in the Syncthing secure directory.
