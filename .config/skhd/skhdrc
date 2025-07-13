@@ -1,0 +1,37 @@
+# Focus windows
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+
+# Move windows
+alt + shift - h : yabai -m window --swap west
+alt + shift - j : yabai -m window --swap south
+alt + shift - k : yabai -m window --swap north
+alt + shift - l : yabai -m window --swap east
+
+# Split orientation (h/v)
+alt + backslash : yabai -m config split_type horizontal
+alt + v : yabai -m config split_type vertical
+
+# Fullscreen toggle
+alt - f : yabai -m window --toggle zoom-fullscreen
+
+# Floating toggle
+alt + shift - space : yabai -m window --toggle float
+
+# Launch terminal & browser
+alt - return : open -na "ghostty"
+alt - b : open -na "Firefox"
+
+# Workspace switching and moving
+alt - 1 : yabai -m space --focus 1
+...
+alt - 9 : yabai -m space --focus 9
+
+alt + shift - 1 : yabai -m window --space 1; yabai -m space --focus 1
+...
+alt + shift - 9 : yabai -m window --space 9; yabai -m space --focus 9
+
+# Reload config
+alt + shift - r : yabai -m config reload; skhd --reload
