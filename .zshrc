@@ -165,3 +165,12 @@ else
     echo "Warning: API key loader script not found at $API_KEY_LOADER_SCRIPT" >&2
     echo "Please ensure it exists and has executable permissions." >&2
 fi
+
+# go install
+export PATH=$PATH:/usr/local/go/bin
+# Golang environment variables
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+
+# Update PATH to include GOPATH and GOROOT binaries
+export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/.local/bin:$PATH
