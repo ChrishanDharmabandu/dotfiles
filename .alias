@@ -13,7 +13,7 @@ alias cl='clear'
 alias fabric='fabric-ai'
 
 alias n="nvim"
-alias gofab="./go/bin/fabric"
+alias gofab="$HOME/go/bin/fabric"
 
 # GIT
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
