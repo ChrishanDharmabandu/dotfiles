@@ -36,6 +36,9 @@ alias rsync-sample='rsync -avP --info=progress2 Hermes8B.gguf squishy@squishym1.
 alias rsync-mac='rsync -avP --info=progress2 [file] squishy@squishym1.local:[location on remote]'
 alias rysnc-local="rsync -avP --info=progress2"
 
+alias llmflash='llm -m gemini-2.5-flash'
+
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
