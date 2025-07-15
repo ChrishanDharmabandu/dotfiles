@@ -1,37 +1,56 @@
-# Focus windows
+# Focus windows (Vim hjkl)
 alt - h : yabai -m window --focus west
 alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
 alt - l : yabai -m window --focus east
 
-# Move windows
+# Move windows (Vim hjkl + Shift)
 alt + shift - h : yabai -m window --swap west
 alt + shift - j : yabai -m window --swap south
 alt + shift - k : yabai -m window --swap north
 alt + shift - l : yabai -m window --swap east
 
-# Split orientation (h/v)
-alt + backslash : yabai -m config split_type horizontal
-alt + v : yabai -m config split_type vertical
+#change focus between external displays (left and right)
+alt - s: yabai -m display --focus west
+alt - g: yabai -m display --focus east
 
-# Fullscreen toggle
+# flip along y-axis
+shift + alt - y : yabai -m space --mirror y-axis
+# flip along x-axis
+shift + alt - x : yabai -m space --mirror x-axis
+# toggle window float
+shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+# maximize a window
 alt - f : yabai -m window --toggle zoom-fullscreen
+# balance out tree of windows (resize to occupy same area)
+shift + alt - e : yabai -m space --balance
 
-# Floating toggle
-alt + shift - space : yabai -m window --toggle float
-
-# Launch terminal & browser
-alt - return : open -na "ghostty"
-alt - b : open -na "Firefox"
-
-# Workspace switching and moving
+# Focus spaces (workspaces)
 alt - 1 : yabai -m space --focus 1
-...
+alt - 2 : yabai -m space --focus 2
+alt - 3 : yabai -m space --focus 3
+alt - 4 : yabai -m space --focus 4
+alt - 5 : yabai -m space --focus 5
+alt - 6 : yabai -m space --focus 6
+alt - 7 : yabai -m space --focus 7
+alt - 8 : yabai -m space --focus 8
 alt - 9 : yabai -m space --focus 9
 
+# # Move window to space
 alt + shift - 1 : yabai -m window --space 1; yabai -m space --focus 1
-...
+alt + shift - 2 : yabai -m window --space 2; yabai -m space --focus 2
+alt + shift - 3 : yabai -m window --space 3; yabai -m space --focus 3
+alt + shift - 4 : yabai -m window --space 4; yabai -m space --focus 4
+alt + shift - 5 : yabai -m window --space 5; yabai -m space --focus 5
+alt + shift - 6 : yabai -m window --space 6; yabai -m space --focus 6
+alt + shift - 7 : yabai -m window --space 7; yabai -m space --focus 7
+alt + shift - 8 : yabai -m window --space 8; yabai -m space --focus 8
 alt + shift - 9 : yabai -m window --space 9; yabai -m space --focus 9
 
-# Reload config
-alt + shift - r : yabai -m config reload; skhd --reload
+# Close window
+alt - q : yabai -m window --close
+
+# Launch terminal (adjust as needed)
+alt - return : open -na /opt/homebrew/bin/ghostty
+alt - b : open -na "Brave Browser"
